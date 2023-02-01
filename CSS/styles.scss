@@ -1,0 +1,23 @@
+// Colors
+$orange: #fe7c31;
+
+// Page Wrapper
+.container {
+  width: 100%;
+  max-width: 1920px;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  &:first-child {
+    background-image: url(../Images/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  background-color: white;
+}
