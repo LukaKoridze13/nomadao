@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .container {
   width: 100%;
   max-width: 1920px;
@@ -15,6 +16,10 @@ section {
   height: 100vh;
   scroll-snap-align: start;
   background-color: #ececec;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0px !important;
+  overflow: hidden;
 }
 
 .greeter {
@@ -180,6 +185,112 @@ section {
 }
 .greeter .see_more img {
   width: 25px;
+}
+
+.our_projects {
+  padding: 0px 36px 0px 36px;
+}
+.our_projects h1 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 2.5vw;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fe7c31;
+}
+.our_projects .projectBox {
+  position: relative;
+}
+.our_projects .projectBox .main_image {
+  width: 4vw;
+}
+.our_projects .projectBox h2 {
+  display: flex;
+  gap: 0px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 3vw;
+  line-height: 99px;
+  color: #202020;
+}
+.our_projects .projectBox h2 span {
+  font-weight: 600;
+}
+.our_projects .projectBox > div > div:first-child {
+  display: flex;
+  gap: 20px;
+}
+.our_projects .projectBox p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8vw;
+  line-height: 39px;
+  letter-spacing: -0.02em;
+  color: #202020;
+  width: 45vw;
+  margin-top: 40px;
+}
+.our_projects .projectBox .buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+}
+.our_projects .projectBox .buttons .other {
+  padding: 8px 16px;
+  background: #202020;
+  border-radius: 8px;
+  width: 10%;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 2vw;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  color: #ececec;
+}
+.our_projects .projectBox .buttons .seemore {
+  padding: 8px 16px;
+  background: #fe7c31;
+  border-radius: 8px;
+  width: 30%;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 2vw;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  color: #ececec;
+}
+.our_projects .projectBox > img,
+.our_projects .projectBox .background {
+  position: absolute;
+}
+.our_projects .projectBox .imageOne {
+  right: 18vw;
+  top: 10vh;
+  width: 20vw;
+}
+.our_projects .projectBox .imageTwo {
+  right: 10vw;
+  top: 45vh;
+  width: 12vw;
+}
+.our_projects .projectBox .background {
+  width: 45vw;
+  height: 80vh;
+  right: 0px;
+  top: 0px;
+  background: linear-gradient(104.45deg, #166b8c 5.01%, rgba(46, 235, 167, 0.76) 51.63%, #fe7c31 96.36%);
+  opacity: 0.3;
+  filter: blur(86.5px);
+  transform: rotate(-30deg);
 }
 
 @-webkit-keyframes nomadao {
