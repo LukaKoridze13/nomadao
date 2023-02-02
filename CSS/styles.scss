@@ -1,5 +1,8 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&display=swap");
 // Colors
 $orange: #fe7c31;
+$white: #ececec;
 
 // Page Wrapper
 .container {
@@ -8,16 +11,88 @@ $orange: #fe7c31;
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 section {
   width: 100%;
   height: 100vh;
   scroll-snap-align: start;
+
   &:first-child {
-    background-image: url(../Images/background.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+    img {
+      // Mountain Image
+      width: 40.4vw;
+      position: absolute;
+      height: 41.8vh;
+      bottom: 34vh;
+      right: 0px;
+      z-index: 2;
+      // Sky
+      &:first-of-type {
+        z-index: 0;
+        width: 131.5vw;
+        height: 80.1vh;
+        top: -11vh;
+        left: -11vw;
+
+        animation: sky 1.4s 1 forwards;
+      }
+      // Background
+      &:last-of-type {
+        width: 100vw;
+        height: 82.5vh;
+        bottom: 0px;
+        z-index: 0;
+      }
+    }
+    h1 {
+      position: absolute;
+      z-index: 1;
+      left: 27.08%;
+      bottom: 20%;
+      opacity: 0.2;
+      mix-blend-mode: color-dodge;
+
+      font-family: "Gemunu Libre";
+      font-weight: 700;
+      font-size: 12.2vw;
+      letter-spacing: -0.02em;
+      color: $white;
+
+      animation: nomadao 1.4s linear 1 forwards;
+    }
   }
-  background-color: white;
+
+  background-color: $white;
+}
+
+// Animations
+@keyframes nomadao {
+  from {
+    bottom: 20%;
+    opacity: 0.2;
+    mix-blend-mode: color-dodge;
+  }
+  to {
+    bottom: 56%;
+    opacity: 1;
+    mix-blend-mode: normal;
+  }
+}
+@keyframes sky {
+  from {
+    width: 131.5vw;
+    height: 80.1vh;
+    top: -11vh;
+    left: -11vw;
+    transform: scale(1);
+  }
+  to {
+    width: 108vw;
+    height: 51vh;
+    top: 0px;
+    left: -4%;
+  }
 }
