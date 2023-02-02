@@ -1,5 +1,10 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@mixin font {
+  font-family: "Albert Sans", sans-serif;
+}
 // Colors
 $orange: #fe7c31;
 $white: #ececec;
@@ -18,54 +23,187 @@ section {
   width: 100%;
   height: 100vh;
   scroll-snap-align: start;
+  background-color: $white;
+}
 
-  &:first-child {
-    position: relative;
-    img {
-      // Mountain Image
-      width: 40.4vw;
-      position: absolute;
-      height: 41.8vh;
-      bottom: 34vh;
-      right: 0px;
-      z-index: 2;
-      // Sky
-      &:first-of-type {
-        z-index: 0;
-        width: 131.5vw;
-        height: 80.1vh;
-        top: -11vh;
-        left: -11vw;
-
-        animation: sky 1.4s 1 forwards;
-      }
-      // Background
-      &:last-of-type {
-        width: 100vw;
-        height: 82.5vh;
-        bottom: 0px;
-        z-index: 0;
-      }
-    }
-    h1 {
-      position: absolute;
-      z-index: 1;
-      left: 27.08%;
-      bottom: 20%;
-      opacity: 0.2;
-      mix-blend-mode: color-dodge;
-
-      font-family: "Gemunu Libre";
-      font-weight: 700;
-      font-size: 12.2vw;
-      letter-spacing: -0.02em;
-      color: $white;
-
-      animation: nomadao 1.4s linear 1 forwards;
-    }
+// first section
+.greeter {
+  position: relative;
+  @include font();
+  & > img {
+    position: absolute;
+  }
+  .mountain {
+    width: 40.4vw;
+    position: absolute;
+    height: 41.8vh;
+    bottom: 34vh;
+    right: 0px;
+    z-index: 2;
+  }
+  .sky {
+    z-index: 0;
+    width: 131.5vw;
+    height: 80.1vh;
+    top: -11vh;
+    left: -11vw;
+    animation: sky 1.4s 1 forwards;
   }
 
-  background-color: $white;
+  .background {
+    width: 100vw;
+    height: 82.5vh;
+    bottom: 0px;
+    z-index: 0;
+  }
+  h1 {
+    position: absolute;
+    z-index: 1;
+    left: 27.08%;
+    bottom: 20%;
+    opacity: 0.2;
+    mix-blend-mode: color-dodge;
+
+    font-family: "Gemunu Libre";
+    font-weight: 700;
+    font-size: 12.2vw;
+    letter-spacing: -0.02em;
+    color: $white;
+
+    animation: nomadao 1.4s linear 1 forwards;
+  }
+  header {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 25px;
+    border-bottom: 4px solid rgba(236, 236, 236, 0.5);
+
+    img {
+      width: 13.1vw;
+    }
+
+    ul {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    li {
+      font-weight: 400;
+      font-size: 20px;
+      color: $white;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      @include font();
+
+      img {
+        width: 18px;
+      }
+    }
+
+    li.active {
+      font-weight: 600;
+      position: relative;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        background: $orange;
+        position: absolute;
+        left: 0px;
+        bottom: -10px;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      button {
+        border-radius: 16px;
+        padding: 8px 24px 8px 24px;
+        font-weight: 400;
+        font-size: 20px;
+        color: $white;
+        background: transparent;
+        border: 1px solid $white;
+        cursor: pointer;
+        @include font();
+        &:first-child {
+          background: $orange;
+          border: none;
+        }
+      }
+    }
+  }
+  .booknow {
+    width: 24vw;
+    aspect-ratio: 4 / 1;
+    background: rgba(65, 65, 65, 0.1);
+    border: 1px solid $white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    border-radius: 8px;
+
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 55vh;
+
+    font-weight: 500;
+    font-size: 2.6vw;
+    color: $white;
+    cursor: pointer;
+    @include font();
+  }
+  & > p {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 71vh;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $white;
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(11, 11, 11, 0.25);
+  }
+  .see_more {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 86vh;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+    color: $white;
+    text-shadow: 0px 5.17647px 5.17647px rgba(11, 11, 11, 0.25);
+
+    img {
+      width: 25px;
+    }
+  }
 }
 
 // Animations
