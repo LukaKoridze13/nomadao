@@ -1,0 +1,109 @@
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 50px;
+    div {
+      &:last-child {
+        width: 100%;
+        margin-inline: auto;
+        p {
+          text-align: center;
+        }
+        div {
+          &:first-child {
+            text-align: center;
+            margin-inline: auto;
+          }
+        }
+      }
+    }
+    ul {
+      margin-inline: auto;
+      text-align: center;
+    }
+    .socials {
+      flex-wrap: wrap;
+      width: 90%;
+      margin: 50px auto;
+    }
+  }
+  .subscribe {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    p {
+      font-size: 26px;
+      margin: auto;
+    }
+    input {
+      width: 90%;
+      margin-top: 20px;
+    }
+    button {
+      position: static;
+      margin-top: 15px;
+    }
+  }
+  section.roadmap {
+    margin-top: 70px;
+    gap: 50px;
+    .roadmap_container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .phase {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .blue {
+      width: 3px;
+      height: 60px;
+      margin-top: 0px;
+    }
+  }
+  section.our_partners {
+    gap: 50px;
+    img {
+      width: 38vw;
+    }
+  }
+  .sectionHeading {
+    font-size: 30px !important;
+  }
+  .sectionParagraph {
+    font-size: 12px !important;
+    line-height: normal !important;
+    text-align: left !important;
+  }
+  section.our_team {
+    flex-direction: column;
+    margin-top: 50px;
+    .left {
+      width: 90%;
+    }
+    .right{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: fit-content;
+        margin-top: 30px;
+        .card{
+            position: static !important;
+            opacity: 1 !important;
+            width: 90% !important;
+            transform: none !important;
+            max-width: 350px;
+            transition: none !important;
+            div{
+                width: 100% !important;
+                
+            }
+        }
+    }
+  }
+}

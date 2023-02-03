@@ -2,31 +2,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
-.container {
-  width: 100%;
-  max-width: 1920px;
-  height: 100vh;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
-  overflow: auto;
-  overflow-x: hidden;
-  margin: auto;
+body {
+  background: #d8d8d8;
+  background-image: url(../Images/background_shape.svg), url(../Images/background_shape4.svg), url(../Images/background_shape.svg), url(../Images/background_shape2.svg), url(../Images/background_shape3.svg), url(../Images/background_shape5.svg);
+  background-repeat: no-repeat;
+  background-position: right top 15%, right top 60%, right top 105%, left top 90%, left top 50%, left top 17%;
 }
 
-section {
+.main {
   width: 100%;
-  height: 100vh;
-  scroll-snap-align: start;
-  background-color: #ececec;
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: 0px !important;
-  overflow: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+section .sectionHeading {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 80px;
+  text-align: right;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fe7c31;
+}
+section .sectionParagraph {
+  font-family: "Manrope";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 36px;
+  text-align: right;
+  letter-spacing: -0.02em;
+  color: #202020;
+}
+section .sectionButton {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 29.98px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  color: #ececec;
+  padding: 8px 16px;
+  background: #fe7c31;
+  border-radius: 8px;
+  margin-top: 48px;
 }
 
 .greeter {
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  height: 100vh;
+  overflow-x: hidden;
   font-family: "Albert Sans", sans-serif;
+  scroll-snap-align: start;
+  overflow-y: hidden;
 }
 .greeter > img {
   position: absolute;
@@ -113,7 +143,7 @@ section {
   color: #ececec;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  font-family: "Albert Sans", sans-serif;
+  font-family: "Albert Sans";
 }
 .greeter header li img {
   width: 18px;
@@ -210,13 +240,18 @@ section {
 }
 
 .our_projects {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  height: 100vh;
   padding: 0px 100px 0px 100px;
+  scroll-snap-align: start;
 }
 .our_projects h1 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: auto;
+  margin: 30px auto;
   font-family: "Inter";
   font-weight: 600;
   font-size: 2.5vw;
@@ -312,17 +347,6 @@ section {
   top: 56vh;
   width: 12vw;
 }
-.our_projects .projectBox .background {
-  width: 45vw;
-  height: 80vh;
-  right: -10vw;
-  top: 10vh;
-  background: linear-gradient(104.45deg, #166b8c 5.01%, rgba(46, 235, 167, 0.76) 51.63%, #fe7c31 96.36%);
-  opacity: 0.4;
-  filter: blur(86.5px);
-  transform: rotate(-30deg);
-  z-index: -1;
-}
 
 .our_projects:nth-child(odd) .projectBox > div {
   right: 0;
@@ -360,54 +384,11 @@ section {
   right: -10vw;
 }
 
-section .sectionHeading {
-  font-family: "Inter";
-  font-weight: 600;
-  font-size: 48px;
-  line-height: 80px;
-  text-align: right;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: #fe7c31;
-}
-section .sectionParagraph {
-  font-family: "Manrope";
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 36px;
-  text-align: right;
-  letter-spacing: -0.02em;
-  color: #202020;
-}
-section .sectionButton {
-  font-family: "Inter";
-  font-weight: 500;
-  font-size: 29.98px;
-  line-height: 36px;
-  letter-spacing: -0.02em;
-  color: #ececec;
-  padding: 8px 16px;
-  background: #fe7c31;
-  border-radius: 8px;
-  margin-top: 48px;
-}
-section .background-color {
-  position: absolute;
-  width: 45vw;
-  height: 80vh;
-  right: -10vw;
-  top: 10vh;
-  background: linear-gradient(104.45deg, #166b8c 5.01%, rgba(46, 235, 167, 0.76) 51.63%, #fe7c31 96.36%);
-  opacity: 0.4;
-  filter: blur(86.5px);
-  transform: rotate(-30deg);
-  z-index: -1;
-}
-
 section.our_team {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-top: 150px;
 }
 section.our_team .left {
   width: 30vw;
@@ -500,6 +481,203 @@ section.our_team .right .card:nth-child(2) {
 section.our_team .right .card:last-child {
   left: 350px;
   top: 0px;
+}
+
+section.our_partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 150px;
+}
+section.our_partners .sectionHeading {
+  text-align: center;
+}
+section.our_partners .sectionParagraph {
+  width: 70vw;
+  text-align: center;
+}
+section.our_partners .partners {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+section.roadmap {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+section.roadmap .sectionHeading {
+  text-align: center;
+}
+section.roadmap .roadmap_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+section.roadmap .blue {
+  width: 100px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: rgb(18, 125, 214);
+  margin-top: 20px;
+}
+section.roadmap .blue_active {
+  width: 250px;
+}
+section.roadmap .phase {
+  color: #202020;
+  width: 103px;
+}
+section.roadmap .phase button {
+  width: 103px;
+  height: 40px;
+  background: rgba(216, 216, 216, 0.2);
+  border: 2px solid #fe7c31;
+  border-radius: 16px;
+  font-family: "Albert Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+section.roadmap .phase h4 {
+  font-family: "Albert Sans";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 16px;
+  text-align: left;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+section.roadmap .phase ul {
+  margin-top: 15px;
+  list-style-type: disc;
+  list-style-position: inside;
+  font-family: "Albert Sans";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+section.roadmap .phase ul li {
+  margin-bottom: 10px;
+  width: 170px;
+}
+section.roadmap .phase_active button {
+  background-color: #fe7c31;
+}
+
+.subscribe {
+  margin: 140px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.subscribe p {
+  font-family: "Albert Sans";
+  font-size: 32px;
+  line-height: 38px;
+  color: #202020;
+}
+.subscribe input::-moz-placeholder {
+  font-family: "Albert Sans";
+  font-size: 24px;
+  color: #b1b1b1;
+}
+.subscribe input:-ms-input-placeholder {
+  font-family: "Albert Sans";
+  font-size: 24px;
+  color: #b1b1b1;
+}
+.subscribe input::placeholder {
+  font-family: "Albert Sans";
+  font-size: 24px;
+  color: #b1b1b1;
+}
+.subscribe input {
+  background: #ececec;
+  font-family: "Albert Sans";
+  font-size: 24px;
+  border: 1px solid #9e9e9e;
+  border-radius: 16px;
+  color: #202020;
+  padding: 16px 26px 16px 24px;
+  height: 61px;
+}
+.subscribe button {
+  position: absolute;
+  right: -158px;
+  width: 182px;
+  height: 61px;
+  background: #fe7c31;
+  border: 1px solid #202020;
+  border-radius: 16px;
+  font-family: "Albert Sans";
+  font-size: 24px;
+  text-align: center;
+  color: #202020;
+}
+
+footer {
+  margin-top: 90px;
+  padding-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: #202020;
+  font-family: "Albert Sans";
+}
+footer > div {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+footer li {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+footer li:first-child {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+footer p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+footer p:first-child {
+  font-weight: 500;
+  font-size: 20px;
+}
+footer .email {
+  margin-top: 30px;
+}
+footer .socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 @-webkit-keyframes nomadao {
