@@ -79,6 +79,9 @@
     flex-direction: column;
     margin-top: 50px;
   }
+  section.our_team .sectionHeading {
+    text-align: center !important;
+  }
   section.our_team .left {
     width: 90%;
   }
@@ -102,5 +105,113 @@
   }
   section.our_team .right .card div {
     width: 100% !important;
+  }
+  section.about_us {
+    flex-direction: column-reverse;
+    width: 100%;
+    padding: 10px;
+  }
+  section.about_us .right {
+    width: 100%;
+  }
+  section.about_us .right .sectionHeading {
+    text-align: center;
+    width: 100%;
+  }
+  section.about_us .right .sectionButton {
+    display: block;
+    margin: 30px auto !important;
+    font-size: 20px;
+    padding: 8px;
+  }
+  section.about_us .left {
+    display: none;
+  }
+  .our_projects {
+    padding: 0px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow: auto;
+  }
+  .our_projects h1 {
+    width: 190px;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 0px;
+  }
+  .our_projects .projectBox {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: static !important;
+  }
+  .our_projects .projectBox > div {
+    width: 90% !important;
+    position: static !important;
+    transform: translateY(0);
+    margin: 50px auto;
+  }
+  .our_projects .projectBox .main_image {
+    width: 40px;
+  }
+  .our_projects .projectBox h2 {
+    display: flex;
+    gap: 0px;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 99px;
+  }
+  .our_projects .projectBox h2 span {
+    font-weight: 600;
+  }
+  .our_projects .projectBox > div > div:first-child {
+    display: flex;
+    gap: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+  }
+  .our_projects .projectBox p {
+    font-size: 14px;
+    line-height: 20px;
+    width: 90vw;
+    margin-top: 20px;
+  }
+  .our_projects .projectBox .buttons .other {
+    padding: 8px;
+    border-radius: 8px;
+    width: 25vw;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .our_projects .projectBox .buttons .seemore {
+    padding: 8px;
+    border-radius: 8px;
+    width: 50vw;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .our_projects .projectBox > img,
+.our_projects .projectBox .background {
+    position: absolute;
+  }
+  .our_projects .projectBox .imageOne {
+    display: none;
+  }
+  .our_projects .projectBox .imageTwo {
+    display: none;
+  }
+  .our_projects:nth-child(odd) .projectBox > div {
+    transform: translateX(0%);
+  }
+  .greeter {
+    overflow-x: hidden;
+  }
+  .greeter .sky, .greeter .background, .greeter .mountain {
+    width: 200vw;
+    transform: translateX(-50vw);
   }
 }/*# sourceMappingURL=responsive.css.map */

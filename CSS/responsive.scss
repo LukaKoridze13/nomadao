@@ -82,28 +82,141 @@
   section.our_team {
     flex-direction: column;
     margin-top: 50px;
+    .sectionHeading {
+      text-align: center !important;
+    }
     .left {
       width: 90%;
     }
-    .right{
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        height: fit-content;
-        margin-top: 30px;
-        .card{
-            position: static !important;
-            opacity: 1 !important;
-            width: 90% !important;
-            transform: none !important;
-            max-width: 350px;
-            transition: none !important;
-            div{
-                width: 100% !important;
-                
-            }
+    .right {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: fit-content;
+      margin-top: 30px;
+      .card {
+        position: static !important;
+        opacity: 1 !important;
+        width: 90% !important;
+        transform: none !important;
+        max-width: 350px;
+        transition: none !important;
+        div {
+          width: 100% !important;
         }
+      }
+    }
+  }
+  section.about_us {
+    flex-direction: column-reverse;
+    width: 100%;
+    padding: 10px;
+    .right {
+      width: 100%;
+      .sectionHeading {
+        text-align: center;
+        width: 100%;
+      }
+
+      .sectionButton {
+        display: block;
+        margin: 30px auto !important;
+        font-size: 20px;
+        padding: 8px;
+      }
+    }
+    .left{
+        display: none;
+    }
+  }
+  .our_projects {
+    padding: 0px;
+    height: fit-content;
+    overflow: auto;
+    h1 {
+      width: 190px;
+      font-size: 25px;
+      text-align: center;
+      margin-top: 0px;
+    }
+    .projectBox {
+      height: fit-content;
+      position: static !important;
+      & > div {
+        width: 90% !important;
+        position: static !important;
+        transform: translateY(0);
+        margin: 50px auto;
+      }
+      .main_image {
+        width: 40px;
+      }
+      h2 {
+        display: flex;
+        gap: 0px;
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 99px;
+
+        span {
+          font-weight: 600;
+        }
+      }
+      & > div > div:first-child {
+        display: flex;
+        gap: 20px;
+        width: fit-content;
+        margin: auto;
+      }
+      p {
+        font-size: 14px;
+        line-height: 20px;
+        width: 90vw;
+        margin-top: 20px;
+      }
+      .buttons {
+        .other {
+          padding: 8px;
+          border-radius: 8px;
+          width: 25vw;
+          font-size: 16px;
+          line-height: 16px;
+        }
+        .seemore {
+          padding: 8px;
+          border-radius: 8px;
+          width: 50vw;
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+      & > img,
+      .background {
+        position: absolute;
+      }
+      .imageOne {
+        display: none;
+      }
+      .imageTwo {
+        display: none;
+      }
+    }
+  }
+
+  .our_projects:nth-child(odd) {
+    .projectBox {
+      & > div {
+        transform: translateX(0%);
+      }
+    }
+  }
+  .greeter{
+    overflow-x: hidden;
+    .sky,.background,.mountain{
+        width: 200vw;
+        transform: translateX(-50vw);
     }
   }
 }
