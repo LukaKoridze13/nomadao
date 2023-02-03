@@ -10,6 +10,7 @@
       scroll-snap-type: y mandatory;
   overflow: auto;
   overflow-x: hidden;
+  margin: auto;
 }
 
 section {
@@ -344,13 +345,15 @@ section {
   padding-inline: 100px;
 }
 .about_us .left {
-  display: flex;
+  width: 40vw;
   flex-wrap: wrap;
-  width: 45vw;
-  gap: 10px;
+  justify-content: space-between;
 }
 .about_us .right {
-  width: 40vw;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .about_us .background {
   top: 10vh;
@@ -387,7 +390,6 @@ section .sectionButton {
   background: #fe7c31;
   border-radius: 8px;
   margin-top: 48px;
-  margin-left: 71%;
 }
 section .background-color {
   position: absolute;
@@ -480,7 +482,8 @@ section.our_team .right .card div::after {
 section.our_team .right .card {
   position: absolute;
   opacity: 0.8;
-  transition: all 1s;
+  transition: all 1s linear, opacity 0s, z-index 0s;
+  transition-property: top left;
 }
 section.our_team .right .card:first-child {
   left: 0px;
