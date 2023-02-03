@@ -71,15 +71,12 @@ section {
     width: 777.33px;
     height: 534.66px;
     bottom: 435.99px;
-    right: 0px;
     z-index: 2;
-    // animation: mountain 1.4s linear 1 forwards;
+    // animation: sky 1.4s linear 1 forwards;
   }
   .sky {
     width: 1920px;
     height: 574.66px;
-    top: 0px;
-    left: calc(1920px - 100%) / 2;
     // animation: sky 1.4s linear 1 forwards;
   }
 
@@ -87,9 +84,7 @@ section {
     width: 1920px;
     height: 1055.99px;
     z-index: 0;
-    bottom: 0px;
-    left: 0px;
-    // animation: blur 1.4s linear 1 forwards;
+    // animation: sky 1.4s linear 1 forwards;
   }
   .socials {
     display: flex;
@@ -273,17 +268,13 @@ section {
 }
 @keyframes sky {
   from {
-    width: 131.5vw;
-    height: 80.1vh;
-    top: -11vh;
-    left: -11vw;
-    transform: scale(1);
+    transform: scale(1.4);
+    filter: blur(4px);
+
   }
   to {
-    width: 108vw;
-    height: 51vh;
-    top: 0px;
-    left: -4%;
+    filter: blur(0px);
+    text-replace: scale(1);
   }
 }
 @keyframes blur {

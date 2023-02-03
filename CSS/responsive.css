@@ -1,3 +1,17 @@
+@media (max-width: 1440px) {
+  .greeter .mountain {
+    width: 584.4586466165px;
+    height: 402px;
+  }
+  .greeter .sky {
+    width: 1443.6090225564px;
+    height: 432.0751879699px;
+  }
+  .greeter .background {
+    width: 1443.6090225564px;
+    height: 793.977443609px;
+  }
+}
 @media (max-width: 480px) {
   footer {
     flex-direction: column;
@@ -207,11 +221,30 @@
   .our_projects:nth-child(odd) .projectBox > div {
     transform: translateX(0%);
   }
-  .greeter {
-    overflow-x: hidden;
+  .greeter .mountain {
+    width: 388.665px;
+    height: 356.44px;
   }
-  .greeter .sky, .greeter .background, .greeter .mountain {
-    width: 200vw;
-    transform: translateX(-50vw);
+  .greeter .sky {
+    width: 960px;
+    height: 383.1066666667px;
+  }
+  .greeter .background {
+    width: 960px;
+    height: 703.9933333333px;
+  }
+}
+@media (min-height: 668px) {
+  .greeter .mountain {
+    width: 518.22px;
+    height: 356.44px;
+  }
+  .greeter .sky {
+    width: 1280px;
+    height: 383.1066666667px;
+  }
+  .greeter .background {
+    width: 1280px;
+    height: 703.9933333333px;
   }
 }/*# sourceMappingURL=responsive.css.map */

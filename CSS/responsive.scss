@@ -1,3 +1,21 @@
+@media (max-width: 1440px) {
+  .greeter{
+    .mountain {
+      width: calc(777.33px / 1.33);
+      height: calc(534.66px / 1.33);
+    }
+    .sky {
+      width: calc(1920px/1.33);
+      height: calc(574.66px/1.33);
+    }
+  
+    .background {
+      width: calc(1920px / 1.33);
+      height: calc(1055.99px /1.33);
+    }
+  }
+}
+
 @media (max-width: 480px) {
   footer {
     flex-direction: column;
@@ -213,10 +231,36 @@
     }
   }
   .greeter{
-    overflow-x: hidden;
-    .sky,.background,.mountain{
-        width: 200vw;
-        transform: translateX(-50vw);
+    .mountain {
+      width: calc(777.33px / 2);
+      height: calc(534.66px / 1.5);
+    }
+    .sky {
+      width: calc(1920px/2);
+      height: calc(574.66px/1.5);
+    }
+  
+    .background {
+      width: calc(1920px / 2);
+      height: calc(1055.99px /1.5);
+    }
+  }
+  
+}
+@media (min-height:668px) {
+  .greeter{
+    .mountain {
+      width: calc(777.33px / 1.5);
+      height: calc(534.66px / 1.5);
+    }
+    .sky {
+      width: calc(1920px/1.5);
+      height: calc(574.66px/1.5);
+    }
+  
+    .background {
+      width: calc(1920px / 1.5);
+      height: calc(1055.99px /1.5);
     }
   }
 }
