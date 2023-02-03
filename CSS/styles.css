@@ -53,40 +53,32 @@ section .sectionButton {
   position: sticky;
   top: 0px;
   height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: "Albert Sans", sans-serif;
   scroll-snap-align: start;
-  overflow-y: hidden;
 }
 .greeter > img {
   position: absolute;
 }
 .greeter .mountain {
-  width: 40.4vw;
-  position: absolute;
-  height: 41.8vh;
-  bottom: 34vh;
-  right: -1.01vw;
+  width: 777.33px;
+  height: 534.66px;
+  bottom: 435.99px;
+  right: 0px;
   z-index: 2;
-  -webkit-animation: mountain 1.4s linear 1 forwards;
-          animation: mountain 1.4s linear 1 forwards;
 }
 .greeter .sky {
-  z-index: 0;
-  width: 131.5vw;
-  height: 80.1vh;
-  top: -11vh;
-  left: -11vw;
-  -webkit-animation: sky 1.4s linear 1 forwards;
-          animation: sky 1.4s linear 1 forwards;
+  width: 1920px;
+  height: 574.66px;
+  top: 0px;
+  left: calc(1920px - 100%)/2;
 }
 .greeter .background {
-  width: 100vw;
-  height: 82.5vh;
-  bottom: 0px;
+  width: 1920px;
+  height: 1055.99px;
   z-index: 0;
-  -webkit-animation: blur 1.4s linear 1 forwards;
-          animation: blur 1.4s linear 1 forwards;
+  bottom: 0px;
+  left: 0px;
 }
 .greeter .socials {
   display: flex;
@@ -239,6 +231,113 @@ section .sectionButton {
   width: 25px;
 }
 
+@-webkit-keyframes nomadao {
+  from {
+    bottom: 32%;
+    opacity: 0.2;
+    mix-blend-mode: color-dodge;
+    z-index: 0;
+  }
+  to {
+    bottom: 56%;
+    opacity: 1;
+    mix-blend-mode: normal;
+    z-index: 1;
+  }
+}
+
+@keyframes nomadao {
+  from {
+    bottom: 32%;
+    opacity: 0.2;
+    mix-blend-mode: color-dodge;
+    z-index: 0;
+  }
+  to {
+    bottom: 56%;
+    opacity: 1;
+    mix-blend-mode: normal;
+    z-index: 1;
+  }
+}
+@-webkit-keyframes sky {
+  from {
+    width: 131.5vw;
+    height: 80.1vh;
+    top: -11vh;
+    left: -11vw;
+    transform: scale(1);
+  }
+  to {
+    width: 108vw;
+    height: 51vh;
+    top: 0px;
+    left: -4%;
+  }
+}
+@keyframes sky {
+  from {
+    width: 131.5vw;
+    height: 80.1vh;
+    top: -11vh;
+    left: -11vw;
+    transform: scale(1);
+  }
+  to {
+    width: 108vw;
+    height: 51vh;
+    top: 0px;
+    left: -4%;
+  }
+}
+@-webkit-keyframes blur {
+  from {
+    filter: blur(4px);
+    transform: scale(1.3);
+  }
+  to {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+@keyframes blur {
+  from {
+    filter: blur(4px);
+    transform: scale(1.3);
+  }
+  to {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes mountain {
+  from {
+    filter: blur(4px);
+    transform: scale(1.3);
+    right: -10vw;
+    bottom: 38vh;
+  }
+  to {
+    filter: blur(0px);
+    transform: scale(1);
+    bottom: 34vh;
+    right: -1.01vw;
+  }
+}
+@keyframes mountain {
+  from {
+    filter: blur(4px);
+    transform: scale(1.3);
+    right: -10vw;
+    bottom: 38vh;
+  }
+  to {
+    filter: blur(0px);
+    transform: scale(1);
+    bottom: 34vh;
+    right: -1.01vw;
+  }
+}
 .our_projects {
   position: -webkit-sticky;
   position: sticky;
@@ -678,112 +777,4 @@ footer .socials {
   align-items: center;
   gap: 20px;
   margin-top: 20px;
-}
-
-@-webkit-keyframes nomadao {
-  from {
-    bottom: 32%;
-    opacity: 0.2;
-    mix-blend-mode: color-dodge;
-    z-index: 0;
-  }
-  to {
-    bottom: 56%;
-    opacity: 1;
-    mix-blend-mode: normal;
-    z-index: 1;
-  }
-}
-
-@keyframes nomadao {
-  from {
-    bottom: 32%;
-    opacity: 0.2;
-    mix-blend-mode: color-dodge;
-    z-index: 0;
-  }
-  to {
-    bottom: 56%;
-    opacity: 1;
-    mix-blend-mode: normal;
-    z-index: 1;
-  }
-}
-@-webkit-keyframes sky {
-  from {
-    width: 131.5vw;
-    height: 80.1vh;
-    top: -11vh;
-    left: -11vw;
-    transform: scale(1);
-  }
-  to {
-    width: 108vw;
-    height: 51vh;
-    top: 0px;
-    left: -4%;
-  }
-}
-@keyframes sky {
-  from {
-    width: 131.5vw;
-    height: 80.1vh;
-    top: -11vh;
-    left: -11vw;
-    transform: scale(1);
-  }
-  to {
-    width: 108vw;
-    height: 51vh;
-    top: 0px;
-    left: -4%;
-  }
-}
-@-webkit-keyframes blur {
-  from {
-    filter: blur(4px);
-    transform: scale(1.3);
-  }
-  to {
-    filter: blur(0px);
-    transform: scale(1);
-  }
-}
-@keyframes blur {
-  from {
-    filter: blur(4px);
-    transform: scale(1.3);
-  }
-  to {
-    filter: blur(0px);
-    transform: scale(1);
-  }
-}
-@-webkit-keyframes mountain {
-  from {
-    filter: blur(4px);
-    transform: scale(1.3);
-    right: -10vw;
-    bottom: 38vh;
-  }
-  to {
-    filter: blur(0px);
-    transform: scale(1);
-    bottom: 34vh;
-    right: -1.01vw;
-  }
-}
-@keyframes mountain {
-  from {
-    filter: blur(4px);
-    transform: scale(1.3);
-    right: -10vw;
-    bottom: 38vh;
-  }
-  to {
-    filter: blur(0px);
-    transform: scale(1);
-    bottom: 34vh;
-    right: -1.01vw;
-  }
 }/*# sourceMappingURL=styles.css.map */
