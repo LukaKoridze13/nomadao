@@ -16,11 +16,13 @@ body {
   overflow: auto;
 }
 
+section {
+  overflow: hidden;
+}
 section .sectionHeading {
   font-family: "Inter";
   font-weight: 600;
   font-size: 48px;
-  line-height: 80px;
   text-align: right;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -30,16 +32,15 @@ section .sectionParagraph {
   font-family: "Manrope";
   font-weight: 500;
   font-size: 32px;
-  line-height: 36px;
   text-align: right;
   letter-spacing: -0.02em;
   color: #202020;
+  margin-top: 20px;
 }
 section .sectionButton {
   font-family: "Inter";
   font-weight: 500;
   font-size: 29.98px;
-  line-height: 36px;
   letter-spacing: -0.02em;
   color: #ececec;
   padding: 8px 16px;
@@ -49,33 +50,23 @@ section .sectionButton {
 }
 
 .greeter {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
+  display: block;
+  position: relative;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   font-family: "Albert Sans", sans-serif;
-  scroll-snap-align: start;
 }
-.greeter > img {
+.greeter .burger_menu {
+  display: none;
+}
+.greeter .content {
   position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
-.greeter .mountain {
-  width: 777.33px;
-  height: 534.66px;
-  bottom: 435.99px;
-  z-index: 2;
-}
-.greeter .sky {
-  width: 1920px;
-  height: 574.66px;
-}
-.greeter .background {
-  width: 1920px;
-  height: 1055.99px;
-  z-index: 0;
-}
-.greeter .socials {
+.greeter .content .socials {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -85,13 +76,13 @@ section .sectionButton {
   transform: translateY(-50%);
   z-index: 10;
 }
-.greeter .socials img {
+.greeter .content .socials img {
   cursor: pointer;
 }
-.greeter .socials img:first-child {
+.greeter .content .socials img:first-child {
   height: 40px;
 }
-.greeter h1 {
+.greeter .content h1 {
   position: absolute;
   z-index: 1;
   left: 27.08%;
@@ -106,7 +97,7 @@ section .sectionButton {
   -webkit-animation: nomadao 1.4s linear 1 forwards;
           animation: nomadao 1.4s linear 1 forwards;
 }
-.greeter header {
+.greeter .content header {
   position: relative;
   z-index: 5;
   display: flex;
@@ -116,15 +107,15 @@ section .sectionButton {
   padding: 25px;
   border-bottom: 4px solid rgba(236, 236, 236, 0.5);
 }
-.greeter header img {
+.greeter .content header img {
   width: 13.1vw;
 }
-.greeter header ul {
+.greeter .content header ul {
   display: flex;
   gap: 30px;
   align-items: center;
 }
-.greeter header li {
+.greeter .content header li {
   font-weight: 400;
   font-size: 20px;
   color: #ececec;
@@ -132,14 +123,14 @@ section .sectionButton {
   cursor: pointer;
   font-family: "Albert Sans";
 }
-.greeter header li img {
+.greeter .content header li img {
   width: 18px;
 }
-.greeter header li.active {
+.greeter .content header li.active {
   font-weight: 600;
   position: relative;
 }
-.greeter header li.active::after {
+.greeter .content header li.active::after {
   content: "";
   width: 100%;
   height: 4px;
@@ -148,11 +139,11 @@ section .sectionButton {
   left: 0px;
   bottom: -10px;
 }
-.greeter header .buttons {
+.greeter .content header .buttons {
   display: flex;
   gap: 20px;
 }
-.greeter header .buttons button {
+.greeter .content header .buttons button {
   border-radius: 16px;
   padding: 8px 24px 8px 24px;
   font-weight: 400;
@@ -163,11 +154,11 @@ section .sectionButton {
   cursor: pointer;
   font-family: "Albert Sans", sans-serif;
 }
-.greeter header .buttons button:first-child {
+.greeter .content header .buttons button:first-child {
   background: #fe7c31;
   border: none;
 }
-.greeter .booknow {
+.greeter .content .booknow {
   width: 24vw;
   aspect-ratio: 4/1;
   background: rgba(65, 65, 65, 0.1);
@@ -187,7 +178,7 @@ section .sectionButton {
   cursor: pointer;
   font-family: "Albert Sans", sans-serif;
 }
-.greeter > p {
+.greeter .content > p {
   position: absolute;
   z-index: 5;
   left: 50%;
@@ -195,14 +186,13 @@ section .sectionButton {
   top: 71vh;
   font-weight: 500;
   font-size: 24px;
-  line-height: 80px;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #ececec;
   mix-blend-mode: normal;
   text-shadow: 0px 4px 4px rgba(11, 11, 11, 0.25);
 }
-.greeter .see_more {
+.greeter .content .see_more {
   position: absolute;
   z-index: 5;
   left: 50%;
@@ -216,111 +206,183 @@ section .sectionButton {
   border: none;
   font-weight: 300;
   font-size: 25px;
-  line-height: 44px;
   letter-spacing: -0.02em;
   text-transform: capitalize;
   color: #ececec;
   text-shadow: 0px 5.17647px 5.17647px rgba(11, 11, 11, 0.25);
 }
-.greeter .see_more img {
+.greeter .content .see_more img {
   width: 25px;
 }
-
-@-webkit-keyframes nomadao {
-  from {
-    bottom: 32%;
-    opacity: 0.2;
-    mix-blend-mode: color-dodge;
-    z-index: 0;
-  }
-  to {
-    bottom: 56%;
-    opacity: 1;
-    mix-blend-mode: normal;
-    z-index: 1;
-  }
+.greeter .mobile_menu {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #202020;
+  display: none;
+}
+.greeter .mobile_menu .close {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  width: 40px;
+}
+.greeter .mobile_menu header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 25px;
+  height: 100%;
+}
+.greeter .mobile_menu header img {
+  width: 70vw;
+}
+.greeter .mobile_menu header ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+.greeter .mobile_menu header li {
+  font-weight: 400;
+  font-size: 25px;
+  color: #ececec;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-family: "Albert Sans";
+}
+.greeter .mobile_menu header li img {
+  width: 18px;
+}
+.greeter .mobile_menu header li.active {
+  font-weight: 600;
+  position: relative;
+}
+.greeter .mobile_menu header li.active::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: #fe7c31;
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+}
+.greeter .mobile_menu header .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.greeter .mobile_menu header .buttons button {
+  border-radius: 16px;
+  padding: 8px 24px 8px 24px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ececec;
+  background: transparent;
+  border: 1px solid #ececec;
+  cursor: pointer;
+  font-family: "Albert Sans", sans-serif;
+}
+.greeter .mobile_menu header .buttons button:first-child {
+  background: #fe7c31;
+  border: none;
+}
+.greeter .background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  -webkit-animation: blur 1.4s linear 1 forwards;
+          animation: blur 1.4s linear 1 forwards;
+}
+.greeter .background h1 {
+  position: absolute;
+  font-family: "Gemunu Libre";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12vw;
+  color: #ececec;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 55%;
+  z-index: 10;
+  -webkit-animation: nomadao 1.4s linear 1 forwards;
+          animation: nomadao 1.4s linear 1 forwards;
+}
+.greeter .background .mountain {
+  position: absolute;
+  width: 40.486%;
+  height: 42.814%;
+  bottom: 32.814%;
+  right: 0px;
+  z-index: 11;
+}
+.greeter .background .sky {
+  position: absolute;
+  width: 100%;
+  height: 50.046%;
+  top: 0px;
+  left: 0px;
+}
+.greeter .background .land {
+  position: absolute;
+  width: 100%;
+  height: 81.543%;
+  bottom: 0px;
+  left: 0px;
+  z-index: 2;
 }
 
-@keyframes nomadao {
-  from {
-    bottom: 32%;
-    opacity: 0.2;
-    mix-blend-mode: color-dodge;
-    z-index: 0;
-  }
-  to {
-    bottom: 56%;
-    opacity: 1;
-    mix-blend-mode: normal;
-    z-index: 1;
-  }
-}
-@-webkit-keyframes sky {
-  from {
-    transform: scale(1.4);
-    filter: blur(4px);
-  }
-  to {
-    filter: blur(0px);
-    text-replace: scale(1);
-  }
-}
-@keyframes sky {
-  from {
-    transform: scale(1.4);
-    filter: blur(4px);
-  }
-  to {
-    filter: blur(0px);
-    text-replace: scale(1);
-  }
-}
 @-webkit-keyframes blur {
   from {
-    filter: blur(4px);
-    transform: scale(1.3);
+    transform: scale(1.5);
+    filter: blur(1px);
   }
   to {
-    filter: blur(0px);
     transform: scale(1);
+    filter: blur(0px);
   }
 }
+
 @keyframes blur {
   from {
-    filter: blur(4px);
-    transform: scale(1.3);
+    transform: scale(1.5);
+    filter: blur(1px);
   }
   to {
-    filter: blur(0px);
     transform: scale(1);
+    filter: blur(0px);
   }
 }
-@-webkit-keyframes mountain {
+@-webkit-keyframes nomadao {
   from {
-    filter: blur(4px);
-    transform: scale(1.3);
-    right: -10vw;
-    bottom: 38vh;
+    opacity: 0.2;
+    bottom: 30.814%;
+    font-size: 8vw;
   }
   to {
-    filter: blur(0px);
-    transform: scale(1);
-    bottom: 34vh;
-    right: -1.01vw;
+    opacity: 1;
+    bottom: 55%;
+    font-size: 12vw;
   }
 }
-@keyframes mountain {
+@keyframes nomadao {
   from {
-    filter: blur(4px);
-    transform: scale(1.3);
-    right: -10vw;
-    bottom: 38vh;
+    opacity: 0.2;
+    bottom: 30.814%;
+    font-size: 8vw;
   }
   to {
-    filter: blur(0px);
-    transform: scale(1);
-    bottom: 34vh;
-    right: -1.01vw;
+    opacity: 1;
+    bottom: 55%;
+    font-size: 12vw;
   }
 }
 .our_projects {
@@ -339,7 +401,6 @@ section .sectionButton {
   font-family: "Inter";
   font-weight: 600;
   font-size: 2.5vw;
-  line-height: 80px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -367,7 +428,6 @@ section .sectionButton {
   font-family: "Inter";
   font-weight: 400;
   font-size: 3vw;
-  line-height: 99px;
   color: #202020;
 }
 .our_projects .projectBox h2 span {
@@ -382,7 +442,6 @@ section .sectionButton {
   font-style: normal;
   font-weight: 400;
   font-size: 1.8vw;
-  line-height: 39px;
   letter-spacing: -0.02em;
   color: #202020;
   width: 45vw;
@@ -401,7 +460,6 @@ section .sectionButton {
   font-family: "Inter";
   font-weight: 500;
   font-size: 2vw;
-  line-height: 36px;
   letter-spacing: -0.02em;
   color: #ececec;
 }
@@ -413,7 +471,6 @@ section .sectionButton {
   font-family: "Inter";
   font-weight: 500;
   font-size: 2vw;
-  line-height: 36px;
   letter-spacing: -0.02em;
   color: #ececec;
 }
@@ -422,13 +479,13 @@ section .sectionButton {
   position: absolute;
 }
 .our_projects .projectBox .imageOne {
-  right: 18vw;
-  top: 17vh;
+  right: 8vw;
+  top: 20vh;
   width: 20vw;
 }
 .our_projects .projectBox .imageTwo {
-  right: 10vw;
-  top: 56vh;
+  right: 5vw;
+  top: 60vh;
   width: 12vw;
 }
 
@@ -436,7 +493,7 @@ section .sectionButton {
   right: 0;
 }
 .our_projects:nth-child(odd) .projectBox .imageOne {
-  left: 12vw;
+  left: 8vw;
 }
 .our_projects:nth-child(odd) .projectBox .imageTwo {
   left: 5vw;
@@ -454,8 +511,35 @@ section .sectionButton {
 }
 .about_us .left {
   width: 40vw;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about_us .left .top {
+  width: 100%;
+  display: flex;
+  gap: 5%;
+}
+.about_us .left .top img:first-child {
+  width: 40%;
+  aspect-ratio: 1.22;
+}
+.about_us .left .top img:last-child {
+  width: 55%;
+  aspect-ratio: 1.4;
+}
+.about_us .left .bottom {
+  width: 100%;
+  display: flex;
+  gap: 5%;
+}
+.about_us .left .bottom img:first-child {
+  width: 35%;
+  aspect-ratio: 0.99;
+}
+.about_us .left .bottom img:last-child {
+  width: 60%;
+  aspect-ratio: 1.56;
 }
 .about_us .right {
   width: 35vw;
@@ -607,14 +691,14 @@ section.roadmap .roadmap_container {
   gap: 10px;
 }
 section.roadmap .blue {
-  width: 100px;
+  width: 7vw;
   height: 3px;
   border-radius: 2px;
   background-color: rgb(18, 125, 214);
   margin-top: 20px;
 }
 section.roadmap .blue_active {
-  width: 250px;
+  width: 12vw;
 }
 section.roadmap .phase {
   color: #202020;
@@ -629,7 +713,6 @@ section.roadmap .phase button {
   font-family: "Albert Sans";
   font-weight: 700;
   font-size: 16px;
-  line-height: 16px;
   text-align: center;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -638,7 +721,6 @@ section.roadmap .phase h4 {
   font-family: "Albert Sans";
   font-weight: 700;
   font-size: 20px;
-  line-height: 16px;
   text-align: left;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -651,7 +733,6 @@ section.roadmap .phase ul {
   font-family: "Albert Sans";
   font-weight: 500;
   font-size: 20px;
-  line-height: 16px;
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
@@ -677,7 +758,6 @@ section.roadmap .phase_active button {
 .subscribe p {
   font-family: "Albert Sans";
   font-size: 32px;
-  line-height: 38px;
   color: #202020;
 }
 .subscribe input::-moz-placeholder {

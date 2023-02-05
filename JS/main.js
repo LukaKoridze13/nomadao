@@ -33,37 +33,12 @@ if (window.innerWidth > 480) {
   }, 4000);
 }
 
-let mountain = document.querySelector('.mountain')
-let sky = document.querySelector('.sky')
-let background = document.querySelector('.background')
-
-if(window.innerWidth>1440){
-  sky.style.left = `-${(1920-window.innerWidth)/2}px`
-  background.style.left = `-${(1920-window.innerWidth)/2}px`
-  sky.style.top = `-${(1278-window.innerHeight)/2}px`
-  background.style.bottom = `-${(1278-window.innerHeight)/2}px`
-  mountain.style.bottom =`${-(1278-window.innerHeight)/2+435.99}px` 
-  mountain.style.right = `-${(1920-window.innerWidth)/2}px`
-}else if(window.innerWidth>480){
-  sky.style.left = `-${(1920/1.33-window.innerWidth)/2}px`
-  background.style.left = `-${(1920/1.33-window.innerWidth)/2}px`
-  sky.style.top = `-${(1278/1.33-window.innerHeight)/2}px`
-  background.style.bottom = `-${(1278/1.33-window.innerHeight)/2}px`
-  mountain.style.bottom =`${-(1278/1.33-window.innerHeight)/2+435.99/1.33}px` 
-  mountain.style.right = `-${(1920/1.33-window.innerWidth)/2}px`
-  if(window.innerHeight>667){
-    sky.style.left = `-${(1920/1.5-window.innerWidth)/2}px`
-  background.style.left = `-${(1920/1.5-window.innerWidth)/2}px`
-  sky.style.top = `-${(1278/1.5-window.innerHeight)/2}px`
-  background.style.bottom = `-${(1278/1.5-window.innerHeight)/2}px`
-  mountain.style.bottom =`${-(1278/1.5-window.innerHeight)/2+435.99/1.5}px` 
-  mountain.style.right = `-${(1920/1.5-window.innerWidth)/2}px`
-  }
-}else{
-  sky.style.left = `-${(1920/2-window.innerWidth)/2}px`
-  background.style.left = `-${(1920/2-window.innerWidth)/2}px`
-  sky.style.top = `-${(1278/1.5-window.innerHeight)/2}px`
-  background.style.bottom = `-${(1278/1.5-window.innerHeight)/2}px`
-  mountain.style.bottom =`${-(1278/1.5-window.innerHeight)/2+435.99/1.5}px` 
-  mountain.style.right = `-${(1920/2-window.innerWidth)/2}px`
-}
+const mobileMenu = document.querySelector(".mobile_menu");
+const burgerButton = document.querySelector(".burger_menu");
+const closeBurgerMenu = document.querySelector(".close");
+burgerButton.addEventListener("click", () => {
+  mobileMenu.style.display = "block";
+});
+closeBurgerMenu.addEventListener("click", () => {
+  mobileMenu.style.display = "none";
+});
