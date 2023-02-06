@@ -140,7 +140,5 @@ a {
 
 button{
     border: none;
-}
-button:hover{
     cursor: pointer;
 }
