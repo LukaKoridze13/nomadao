@@ -17,14 +17,12 @@ $background: #d8d8d8;
   margin: 0 auto;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  background: $background;
   .snap-item {
     width: 100%;
     height: 100vh;
-    background-color: $background;
     padding: 20px;
     scroll-snap-align: start;
-    position: sticky;
-    top: 0px;
   }
   .first-snap-item {
     padding: 0px;
