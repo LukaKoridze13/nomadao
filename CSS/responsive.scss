@@ -226,39 +226,52 @@
         nav {
           display: none;
         }
-        img{
+        img {
           width: 40vw;
         }
-        .burger_menu{
+        .burger_menu {
           display: block;
           width: 10vw;
         }
       }
-      .socials{
+      .socials {
         width: fit-content;
         top: 66%;
         left: 50%;
         transform: translateX(-50%);
         flex-direction: row;
       }
-      .booknow{
+      .booknow {
         width: 54vw;
         font-size: 6.6vw;
       }
-      &>p{
+      & > p {
         width: 76%;
         text-align: center;
         top: 75%;
       }
     }
   }
-  section.roadmap .blue_active{
+  section.roadmap .blue_active {
     height: 120px;
   }
-  .greeter .content .see_more{
+  .greeter .content .see_more {
     width: 100%;
     justify-content: center;
     bottom: 20px;
+  }
+  section.featured {
+    .cont{
+      gap: 50px;
+    }
+    .featured_card {
+      width: 70%;
+      flex-direction: column;
+      img{
+        width: 100%;
+        aspect-ratio: 1.1/1;
+      }
+    }
   }
 }
 

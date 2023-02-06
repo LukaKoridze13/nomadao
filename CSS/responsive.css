@@ -252,6 +252,17 @@
     justify-content: center;
     bottom: 20px;
   }
+  section.featured .cont {
+    gap: 50px;
+  }
+  section.featured .featured_card {
+    width: 70%;
+    flex-direction: column;
+  }
+  section.featured .featured_card img {
+    width: 100%;
+    aspect-ratio: 1.1/1;
+  }
 }
 @-webkit-keyframes nomadao_mobile {
   from {
