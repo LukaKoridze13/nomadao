@@ -7,7 +7,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="./CSS/reset.css" />
     <link rel="stylesheet" href="./CSS/styles.css" />
-    <link rel="stylesheet" href="./CSS/responsive.css" />
     <!-- Favicon -->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./Images/favicon/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./Images/favicon/apple-touch-icon-114x114.png" />
@@ -32,29 +31,51 @@
     <title>NOMADAO</title>
   </head>
   <body>
+    <header>
+      <img src="./Images/logo.png" alt="NOMADAO LOGO" />
+      <nav>
+        <ul>
+          <li class="active">Home</li>
+          <li id="drop_down">
+            Our Projects
+            <img src="./Images/drop_down.svg" alt="Arrow Down" />
+            <div class="drop_down">
+              <a href="#project1">
+                <div class="project_box">
+                  <h2 class="project">Project 1</h2>
+                  <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+              </a>
+              <a href="#project2">
+                <div class="project_box">
+                  <h2 class="project">Project 2</h2>
+                  <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+              </a>
+              <a href="#project3">
+                <div class="project_box">
+                  <h2 class="project">Project 3</h2>
+                  <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="#about_us">About us</a></li>
+          <li><a href="./Whitepaper.html">Whitepaper</a></li>
+          <li>Book Now</li>
+        </ul>
+      </nav>
+
+      <div class="buttons">
+        <button>Buy NFT</button>
+        <button class="hoverButton">Login</button>
+      </div>
+      <img src="./Images/burger_menu.svg" alt="Burger Icon" class="burger_menu" />
+    </header>
     <div class="snap">
       <section class="snap-item first-snap-item">
         <div class="welcome">
           <div class="content">
-            <header>
-              <img src="./Images/logo_white.svg" alt="NOMADAO LOGO" />
-              <nav>
-                <ul>
-                  <li class="active">Home</li>
-                  <li>
-                    Our Projects
-                    <img src="./Images/drop_down.svg" alt="Arrow Down" />
-                  </li>
-                  <li>About us</li>
-                  <li>Book Now</li>
-                </ul>
-              </nav>
-              <div class="buttons">
-                <button>Buy NFT</button>
-                <button>Login</button>
-              </div>
-              <img src="./Images/burger_menu.svg" alt="Burger Icon" class="burger_menu" />
-            </header>
             <div class="socials">
               <img src="./Images/facebook.svg" alt="Facebook" />
               <img src="./Images/twitter.svg" alt="twitter" />
@@ -64,10 +85,10 @@
             </div>
             <button class="booknow">BOOK NOW</button>
             <p>Crypto travel solutions & much more</p>
-            <button class="see_more">
+            <a href="#project1" class="see_more">
               <img src="./Images/arrow_in_circle.svg" alt="Down Arrow" />
               <p>See More</p>
-            </button>
+            </a>
           </div>
 
           <div class="background">
@@ -83,8 +104,31 @@
               <nav>
                 <ul>
                   <li class="active">Home</li>
-                  <li>Our Projects</li>
-                  <li>About us</li>
+                  <li id="mobile_drop_down">
+                    Our Projects
+                    <img src="./Images/drop_down.svg" alt="Arrow Down" />
+                    <div class="mobile_drop_down">
+                      <a href="#project1">
+                        <div class="project_box">
+                          <h2 class="project">Project 1</h2>
+                          <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </a>
+                      <a href="#project2">
+                        <div class="project_box">
+                          <h2 class="project">Project 2</h2>
+                          <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </a>
+                      <a href="#project3">
+                        <div class="project_box">
+                          <h2 class="project">Project 3</h2>
+                          <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li><a href="#about_us">About us</a></li>
                   <li>Book Now</li>
                 </ul>
               </nav>
@@ -97,7 +141,7 @@
           </div>
         </div>
       </section>
-      <section class="snap-item">
+      <section class="snap-item" id="project1">
         <div class="our_projects">
           <h1 class="sectionHeading">Our Projects</h1>
           <div class="side">
@@ -110,8 +154,8 @@
             </div>
             <p>Lorem ipsum dolor sit amet consectetur. Ipsum aliquam mattis sed lectus dui tincidunt. Accumsan diam diam pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.</p>
             <div class="buttons">
-              <button class="other">Other</button>
-              <button class="seemore">See more</button>
+              <button class="other hoverButton">Other</button>
+              <button class="seemore hoverButton">See more</button>
             </div>
           </div>
           <div class="images">
@@ -120,7 +164,7 @@
           </div>
         </div>
       </section>
-      <section class="snap-item">
+      <section class="snap-item" id="project2">
         <div class="our_projects our_projects_second">
           <div class="side">
             <div class="side_heading">
@@ -132,8 +176,8 @@
             </div>
             <p>Lorem ipsum dolor sit amet consectetur. Ipsum aliquam mattis sed lectus dui tincidunt. Accumsan diam diam pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.</p>
             <div class="buttons">
-              <button class="other">Other</button>
-              <button class="seemore">See more</button>
+              <button class="other hoverButton">Other</button>
+              <button class="seemore hoverButton">See more</button>
             </div>
           </div>
           <div class="images">
@@ -142,7 +186,7 @@
           </div>
         </div>
       </section>
-      <section class="snap-item">
+      <section class="snap-item" id="project3">
         <div class="our_projects">
           <div class="side">
             <div class="side_heading">
@@ -154,8 +198,8 @@
             </div>
             <p>Lorem ipsum dolor sit amet consectetur. Ipsum aliquam mattis sed lectus dui tincidunt. Accumsan diam diam pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.</p>
             <div class="buttons">
-              <button class="other">Other</button>
-              <button class="seemore">See more</button>
+              <button class="other hoverButton">Other</button>
+              <button class="seemore hoverButton">See more</button>
             </div>
           </div>
           <div class="images">
@@ -164,7 +208,7 @@
           </div>
         </div>
       </section>
-      <div class="snap-item last-snap-item">
+      <div class="snap-item last-snap-item" id="about_us">
         <section>
           <div class="about_us">
             <h3 class="sectionHeading">about us</h3>
@@ -181,7 +225,7 @@
             <div class="right">
               <h3 class="sectionHeading">about us</h3>
               <p class="sectionParagraph">Lorem ipsum dolor sit amet consectetur. Ut hendrerit bibendum lectus odio. Viverra vel rhoncus purus bibendum facilisi. Natoque molestie ultrices volutpat aliquet fermentum viverra. Sed turpis velit amet purus condimentum feugiat nunc.</p>
-              <button class="sectionButton">Learn more</button>
+              <button class="sectionButton hoverButton">Learn more</button>
             </div>
           </div>
         </section>
@@ -337,11 +381,11 @@
         <form class="subscribe">
           <p>Get updates & more</p>
           <input type="email" placeholder="Your E-mail" />
-          <button>SUBSCRIBE</button>
+          <button class="hoverButton">SUBSCRIBE</button>
         </form>
         <!-- Footer -->
         <footer>
-          <img src="./Images/logo_black.svg" alt="Logo" />
+          <img src="./Images/logo_black.png" alt="Logo" class="footer_logo" />
           <div>
             <ul>
               <li>Company</li>
@@ -354,26 +398,25 @@
               <li>Affiliate Program</li>
             </ul>
           </div>
+          <div class="apart"></div>
           <div>
             <div>
-              <div>
-                <p>Call Us</p>
-                <p>+442081575153</p>
-              </div>
-              <div class="email">
-                <p>Email for Us</p>
-                <p>info@nomadao.net</p>
-              </div>
+              <p>Call Us</p>
+              <p>+442081575153</p>
             </div>
-            <div>
-              <p>Follow us on social media</p>
-              <div class="socials">
-                <img src="./Images/fb_gray.svg" alt="Facebook" />
-                <img src="./Images/ig_gray.svg" alt="Instagram" />
-                <img src="./Images/ln_gray.svg" alt="Linkedin" />
-                <img src="./Images/tw_gray.svg" alt="Twitter" />
-                <img src="./Images/dc_gray.svg" alt="Discord" />
-              </div>
+            <div class="email">
+              <p>Email for Us</p>
+              <p>info@nomadao.net</p>
+            </div>
+          </div>
+          <div>
+            <p>Follow us on social media</p>
+            <div class="socials">
+              <img src="./Images/fb_gray.svg" alt="Facebook" />
+              <img src="./Images/ig_gray.svg" alt="Instagram" />
+              <img src="./Images/ln_gray.svg" alt="Linkedin" />
+              <img src="./Images/tw_gray.svg" alt="Twitter" />
+              <img src="./Images/dc_gray.svg" alt="Discord" />
             </div>
           </div>
         </footer>

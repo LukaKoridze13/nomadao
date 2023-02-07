@@ -142,3 +142,12 @@ button{
     border: none;
     cursor: pointer;
 }
+li{
+    user-select: none;
+}
+a{
+    color: #ececec;
+}
+*{
+    transition: all 0.1s linear;
+}

@@ -32,7 +32,7 @@ if (window.innerWidth > 480) {
     });
   }, 4000);
 }
-
+// Burger Menu
 const mobileMenu = document.querySelector(".mobile_menu");
 const burgerButton = document.querySelector(".burger_menu");
 const closeBurgerMenu = document.querySelector(".close");
@@ -42,3 +42,50 @@ burgerButton.addEventListener("click", () => {
 closeBurgerMenu.addEventListener("click", () => {
   mobileMenu.style.display = "none";
 });
+
+// Our Projects drop down
+const dropDown = document.querySelector("#drop_down");
+const dropDownMenu = document.querySelector(".drop_down");
+const dropDownImage = document.querySelector("#drop_down img");
+dropDown.addEventListener('click',()=>{
+  dropDownMenu.classList.toggle('visible')
+  dropDownImage.classList.toggle('rotate')
+})
+
+const dropDownMobile = document.querySelector("#mobile_drop_down");
+const dropDownMenuMobile = document.querySelector(".mobile_drop_down");
+const dropDownImageMobile = document.querySelector("#mobile_drop_down img");
+dropDownMobile.addEventListener('click',()=>{
+  dropDownMenuMobile.classList.toggle('visible')
+  dropDownImageMobile.classList.toggle('rotate')
+})
+const dropDownAnchors = dropDownMobile.querySelectorAll('.drop_down a')
+const dropDownMobileAnchors = document.querySelectorAll(".mobile_drop_down a")
+dropDownMobileAnchors.forEach((e)=>{
+  e.addEventListener('click', () =>{
+    closeBurgerMenu.click()
+  })
+})
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+
+// Active li
+const lis =  document.querySelectorAll('header li')
+lis.forEach((li,index)=>{
+  li.addEventListener('click', (e)=>{
+    lis.forEach((li)=>{
+      li.classList.remove('active')
+    })
+    li.classList.add('active');
+  })
+})
