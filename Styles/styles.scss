@@ -470,10 +470,12 @@ header {
       bottom: 32.814%;
       right: 0px;
       z-index: 11;
+      transition: all 2s;
     }
     .sky {
       position: absolute;
       width: 250vw;
+      height: 50vh;
       top: 0px;
       left: 0px;
       transition: all 2s;
@@ -486,6 +488,7 @@ header {
       bottom: 0px;
       left: 0px;
       z-index: 2;
+      transition: all 2s;
     }
   }
 }
@@ -1124,12 +1127,12 @@ footer {
       height: 50px;
       margin-right: 30px;
     }
-    .last{
+    .last {
       display: block;
     }
   }
-  .mobile_menu{
-    nav{
+  .mobile_menu {
+    nav {
       display: block;
     }
   }
@@ -1184,7 +1187,7 @@ footer {
     .burger_menu {
       width: 40px;
     }
-    
+
     padding: 8px 16px;
     .theme_mobile {
       width: 40px;
@@ -1201,6 +1204,10 @@ footer {
       left: -50vw;
       h1 {
         animation: nomadao_mobile 1.4s linear 1 forwards;
+      }
+      .sky{
+        width: 430vw;
+        height: 50vh;
       }
     }
     .content {

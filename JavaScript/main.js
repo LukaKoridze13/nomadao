@@ -42,9 +42,9 @@ if (theme === "light") {
   document.body.classList.add("light");
   themeChange.src = "./Images/moon.png";
   themeChangeMobile.src = "./Images/moon.png";
-  sky.style.transfrom = 'translateX(0%)'
-  land.src = "./Images/Land.png";
-  mountain.src = "./Images/Mountain.png";
+  sky.style.transform='translateX(-0%)'
+  land.style.filter = 'brightness(100%)'
+  mountain.style.filter = 'brightness(100%)'
 } else {
   theme = "dark";
   localStorage.setItem("Nomadao-Theme", "dark");
@@ -53,8 +53,8 @@ if (theme === "light") {
   themeChange.src = "./Images/sun.png";
   themeChangeMobile.src = "./Images/sun.png";
   sky.style.transform='translateX(-60%)'
-  land.src = "./Images/Land_dark.png";
-  mountain.src = "./Images/Mountain_dark.png";
+  land.style.filter = 'brightness(30%)'
+  mountain.style.filter = 'brightness(30%)'
 }
 
 // Open Mobile Navigation Menu
@@ -138,8 +138,8 @@ function changeTheme() {
     themeChange.src = "./Images/moon.png";
     themeChangeMobile.src = "./Images/moon.png";
     sky.style.transform='translateX(-0%)'
-    land.src = "./Images/Land.png";
-    mountain.src = "./Images/Mountain.png";
+    land.style.filter = 'brightness(100%)'
+    mountain.style.filter = 'brightness(100%)'
   } else {
     theme = "dark";
     localStorage.setItem("Nomadao-Theme", "dark");
@@ -148,8 +148,8 @@ function changeTheme() {
     themeChange.src = "./Images/sun.png";
     themeChangeMobile.src = "./Images/sun.png";
     sky.style.transform='translateX(-60%)'
-    land.src = "./Images/Land_dark.png";
-    mountain.src = "./Images/Mountain_dark.png";
+    land.style.filter = 'brightness(30%)'
+    mountain.style.filter = 'brightness(30%)'
   }
 }
 
