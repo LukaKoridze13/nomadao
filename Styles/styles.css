@@ -526,6 +526,9 @@ header .last {
 }
 .our_projects .main_image {
   width: 80px;
+  height: 80px;
+  background-image: url(../Images/medperson.svg);
+  background-size: cover;
 }
 .our_projects .side_heading {
   display: flex;
@@ -1027,6 +1030,44 @@ footer .apart {
 footer .footer_logo {
   width: 189px;
   height: 61px;
+  background-image: url(../Images/logo_black.png);
+}
+
+.dark .main_image {
+  background-image: url(../Images/medperson_black.svg);
+}
+.dark .our_projects h2 {
+  color: #ececec;
+}
+.dark .our_projects p {
+  color: #ececec;
+}
+.dark .our_projects .buttons .other {
+  background-color: #ececec;
+  color: #202020;
+}
+.dark .sectionParagraph {
+  color: #ececec;
+}
+.dark footer {
+  background-color: #3f3f3f;
+  color: #ececec;
+}
+.dark header {
+  transition: background 2s;
+  background: rgba(255, 255, 255, 0.2);
+}
+.dark section.roadmap .phase {
+  color: #ececec;
+}
+.dark section.roadmap .phase button {
+  color: #ececec;
+}
+.dark .subscribe p {
+  color: #ececec;
+}
+.dark .footer_logo {
+  background-image: url(../Images/logo.png);
 }
 
 @media (max-width: 1100px) {

@@ -87,7 +87,6 @@ header {
   flex-wrap: wrap;
   padding: 24px 64px;
   background: #20202057;
-
   img {
     width: 190px;
     aspect-ratio: 3.11/1;
@@ -559,7 +558,11 @@ header {
   }
   .main_image {
     width: 80px;
+    height: 80px;
+    background-image: url(../Images/medperson.svg);
+    background-size: cover;
   }
+
   .side_heading {
     display: flex;
     gap: 20px;
@@ -627,6 +630,7 @@ header {
     align-self: flex-end;
   }
 }
+
 .our_projects_second {
   flex-direction: row-reverse;
   .imageTwo {
@@ -1067,6 +1071,48 @@ footer {
   .footer_logo {
     width: 189px;
     height: 61px;
+    background-image: url(../Images/logo_black.png);
+  }
+}
+
+// Dark Mode
+.dark {
+  .main_image {
+    background-image: url(../Images/medperson_black.svg);
+  }
+  .our_projects h2 {
+    color: $white;
+  }
+  .our_projects p {
+    color: $white;
+  }
+  .our_projects .buttons .other {
+    background-color: $white;
+    color: $black;
+  }
+  .sectionParagraph {
+    color: $white;
+  }
+  footer {
+    background-color: #3f3f3f;
+    color: $white;
+  }
+  header {
+    transition: background 2s;
+
+    background: rgba(265, 265, 265, 0.2);
+  }
+  section.roadmap .phase {
+    color: $white;
+  }
+  section.roadmap .phase button{
+    color: $white;
+  }
+  .subscribe p{
+    color: $white;
+  }
+  .footer_logo {
+    background-image: url(../Images/logo.png);
   }
 }
 
@@ -1205,7 +1251,7 @@ footer {
       h1 {
         animation: nomadao_mobile 1.4s linear 1 forwards;
       }
-      .sky{
+      .sky {
         width: 430vw;
         height: 50vh;
       }
