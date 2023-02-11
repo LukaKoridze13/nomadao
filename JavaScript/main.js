@@ -1,20 +1,3 @@
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    });
-  });
-});
-
-// Dark/light Mode
-let theme = localStorage.getItem("Nomadao-Theme");
-if (theme === null) {
-  localStorage.setItem("Nomadao-Theme", "light");
-  theme = "light";
-}
 // Burger Menu
 const mobileMenu = document.querySelector(".mobile_menu"); // Mobile Navigation Menu
 const burgerButton = document.querySelector(".burger_menu"); // Mobile Navigation Button
@@ -34,6 +17,47 @@ const sky = document.querySelector(".sky"); // sky
 const land = document.querySelector(".land"); // land
 const mountain = document.querySelector(".mountain"); // mountain
 
+let loaded = 0;
+land.addEventListener("load", () => {
+  loaded += 1;
+  if (loaded === 3) {
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(".container").style.display = "block";
+  }
+});
+sky.addEventListener("load", () => {
+  loaded += 1;
+  if (loaded === 3) {
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(".container").style.display = "block";
+  }
+});
+mountain.addEventListener("load", () => {
+  loaded += 1;
+  if (loaded === 3) {
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(".container").style.display = "block";
+  }
+});
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+// Dark/light Mode
+let theme = localStorage.getItem("Nomadao-Theme");
+if (theme === null) {
+  localStorage.setItem("Nomadao-Theme", "light");
+  theme = "light";
+}
+
 // Rerenders webste depending on theme
 if (theme === "light") {
   theme = "light";
@@ -42,9 +66,9 @@ if (theme === "light") {
   document.body.classList.add("light");
   themeChange.src = "./Images/moon.png";
   themeChangeMobile.src = "./Images/moon.png";
-  sky.style.transform='translateX(-0%)'
-  land.style.filter = 'brightness(100%)'
-  mountain.style.filter = 'brightness(100%)'
+  sky.style.transform = "translateX(-0%)";
+  land.style.filter = "brightness(100%)";
+  mountain.style.filter = "brightness(100%)";
 } else {
   theme = "dark";
   localStorage.setItem("Nomadao-Theme", "dark");
@@ -52,9 +76,9 @@ if (theme === "light") {
   document.body.classList.add("dark");
   themeChange.src = "./Images/sun.png";
   themeChangeMobile.src = "./Images/sun.png";
-  sky.style.transform='translateX(-60%)'
-  land.style.filter = 'brightness(30%)'
-  mountain.style.filter = 'brightness(30%)'
+  sky.style.transform = "translateX(-60%)";
+  land.style.filter = "brightness(30%)";
+  mountain.style.filter = "brightness(30%)";
 }
 
 // Open Mobile Navigation Menu
@@ -137,9 +161,9 @@ function changeTheme() {
     document.body.classList.add("light");
     themeChange.src = "./Images/moon.png";
     themeChangeMobile.src = "./Images/moon.png";
-    sky.style.transform='translateX(-0%)'
-    land.style.filter = 'brightness(100%)'
-    mountain.style.filter = 'brightness(100%)'
+    sky.style.transform = "translateX(-0%)";
+    land.style.filter = "brightness(100%)";
+    mountain.style.filter = "brightness(100%)";
   } else {
     theme = "dark";
     localStorage.setItem("Nomadao-Theme", "dark");
@@ -147,9 +171,9 @@ function changeTheme() {
     document.body.classList.add("dark");
     themeChange.src = "./Images/sun.png";
     themeChangeMobile.src = "./Images/sun.png";
-    sky.style.transform='translateX(-60%)'
-    land.style.filter = 'brightness(30%)'
-    mountain.style.filter = 'brightness(30%)'
+    sky.style.transform = "translateX(-60%)";
+    land.style.filter = "brightness(30%)";
+    mountain.style.filter = "brightness(30%)";
   }
 }
 
@@ -187,4 +211,17 @@ if (window.innerWidth > 480) {
       }
     });
   }, 4000);
+}
+
+function arisSxvaSimbolo(event) {
+  const alphabet = "აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ";
+  let sheicavsSxvaSimbolos = false; // თუ ეს ცვლადი გახდა true, ესეიგი ქართულის გარდა სხვა სიმბოლოსაც შეიცავს
+  for (let x of event.target.value) {
+    // თუ aplhabet ანუ ქართული ანბანი არ შიეცავს x(რომელიც არის არის text-ად გადმოცემული სტრინგის თითოეული ასო ლუპში), ესეიგი x სხვა სიმბოლოა და sheicavsSxvaSimbolos ცვლადი ხდება true.
+    if (!alphabet.includes(x)) {
+      sheicavsSxvaSimbolos = true;
+      break;
+    }
+  }
+  return sheicavsSxvaSimbolos;
 }
