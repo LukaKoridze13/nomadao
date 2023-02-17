@@ -27,55 +27,80 @@
     <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <!-- metamask -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>NOMADAO</title>
   </head>
   <body class="light">
-    <div class="loading">
+    <!-- <div class="loading">
       <div class="box">
         <div class="loader"><span></span></div>
         <div class="loader"><span></span></div>
         <div class="loader"><i></i></div>
         <div class="loader"><i></i></div>
       </div>
-    </div>
+    </div> -->
     <div class="container">
+      <div class="panel">
+        <button id="metamask" class="hoverButton" style="display: flex; align-items: center; gap: 10px"><span>Sign in</span> <img src="./Images/metamask.png" alt="Metamask" /></button>
+        <div id="dashboard"></div>
+      </div>
       <header>
         <img src="./Images/logo.png" alt="NOMADAO LOGO" />
         <nav>
           <ul>
-            <li class="active">Home</li>
+            <li class="active"><a href="#homescroll">Home</a></li>
             <li id="drop_down">
               <span>Our Projects</span>
               <img src="./Images/drop_down.svg" alt="Arrow Down" />
               <div class="drop_down">
-                <a href="#project1">
+                <a href="#MetaBooking">
                   <div class="project_box">
-                    <h2 class="project">Project 1</h2>
-                    <p class="project_description">Lorem ipsum, dolor sit amet con adipisicing elit.</p>
+                    <h2 class="project">MetaBooking</h2>
+                    <p class="project_description">3D visualization solutions allowing hotels to showcase their rooms, spas, restaurants and other areas of interest in 3D with Integrated payment solution and booking module.</p>
                   </div>
                 </a>
-                <a href="#project2">
+                <a href="#NomadVerse">
                   <div class="project_box">
-                    <h2 class="project">Project 2</h2>
-                    <p class="project_description">Lorem ipsum, dolor sit amet con adipisicing elit.</p>
+                    <h2 class="project">NomadVerse</h2>
+                    <p class="project_description">Virtual reality built in Unreal Engine 5 that unlocks new, virtual experiences for visitors. Hotels offer their visitors games, challenges, digital tours & concerts, virtual services, and much more.</p>
                   </div>
                 </a>
-                <a href="#project3">
+                <a href="#NomadAI">
                   <div class="project_box">
-                    <h2 class="project">Project 3</h2>
-                    <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <h2 class="project">NomadAI</h2>
+                    <p class="project_description">Analytic and forecasting tool used by the community members to optimize hotel pricing and capitalize on underprices assets.</p>
+                  </div>
+                </a>
+                <a href="#NomadPay">
+                  <div class="project_box">
+                    <h2 class="project">NomadPay</h2>
+                    <p class="project_description">A decentralized cryptocurrency exchange focused on providing seamless, cost effective payment solutions for hotels and travelers across borders.</p>
+                  </div>
+                </a>
+                <a href="#NomadPerson">
+                  <div class="project_box">
+                    <h2 class="project">NomadPerson</h2>
+                    <p class="project_description">Tokenization solutions for personal and corporate brands, facilitating community development and creating new, digital revenue streams.</p>
+                  </div>
+                </a>
+                <a href="#CashLink">
+                  <div class="project_box">
+                    <h2 class="project">CashLink</h2>
+                    <p class="project_description">Asset management solution for managing funds, digital assets, bookings and personal cabinets for ambassadors, agents and community members within Nomad Ecosystem.</p>
                   </div>
                 </a>
               </div>
             </li>
             <li><a href="#about_us">About us</a></li>
-            <li>Book Now</li>
+            <li>User Panel</li>
           </ul>
         </nav>
         <div class="buttons">
           <img src="./Images/moon.png" alt="Moon / Sun" class="theme" />
           <button>Buy NFT</button>
-          <button class="hoverButton">Login</button>
         </div>
         <div class="last">
           <img src="./Images/moon.png" alt="Moon / Sun" class="theme_mobile" />
@@ -92,38 +117,56 @@
                 Our Projects
                 <img src="./Images/drop_down.svg" alt="Arrow Down" />
                 <div class="mobile_drop_down">
-                  <a href="#project1">
+                  <a href="#MetaBooking">
                     <div class="project_box">
-                      <h2 class="project">Project 1</h2>
-                      <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                      <h2 class="project">MetaBooking</h2>
+                      <p class="project_description">3D visualization solutions allowing hotels to showcase their rooms, spas, restaurants and other areas of interest in 3D with Integrated payment solution and booking module.</p>
                     </div>
                   </a>
-                  <a href="#project2">
+                  <a href="#NomadVerse">
                     <div class="project_box">
-                      <h2 class="project">Project 2</h2>
-                      <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                      <h2 class="project">NomadVerse</h2>
+                      <p class="project_description">Virtual reality built in Unreal Engine 5 that unlocks new, virtual experiences for visitors. Hotels offer their visitors games, challenges, digital tours & concerts, virtual services, and much more.</p>
                     </div>
                   </a>
-                  <a href="#project3">
+                  <a href="#NomadAI">
                     <div class="project_box">
-                      <h2 class="project">Project 3</h2>
-                      <p class="project_description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                      <h2 class="project">NomadAI</h2>
+                      <p class="project_description">Analytic and forecasting tool used by the community members to optimize hotel pricing and capitalize on underprices assets.</p>
+                    </div>
+                  </a>
+                  <a href="#NomadPay">
+                    <div class="project_box">
+                      <h2 class="project">NomadPay</h2>
+                      <p class="project_description">A decentralized cryptocurrency exchange focused on providing seamless, cost effective payment solutions for hotels and travelers across borders.</p>
+                    </div>
+                  </a>
+                  <a href="#NomadPerson">
+                    <div class="project_box">
+                      <h2 class="project">NomadPerson</h2>
+                      <p class="project_description">Tokenization solutions for personal and corporate brands, facilitating community development and creating new, digital revenue streams.</p>
+                    </div>
+                  </a>
+                  <a href="#CashLink">
+                    <div class="project_box">
+                      <h2 class="project">CashLink</h2>
+                      <p class="project_description">Asset management solution for managing funds, digital assets, bookings and personal cabinets for ambassadors, agents and community members within Nomad Ecosystem.</p>
                     </div>
                   </a>
                 </div>
               </li>
               <li><a href="#about_us">About us</a></li>
-              <li>Book Now</li>
+              <li>User Panel</li>
             </ul>
           </nav>
           <div class="buttons">
             <button>Buy NFT</button>
-            <button>Login</button>
+            <!-- <button>Login</button> -->
           </div>
         </header>
       </div>
-      <div class="snap">
-        <section class="snap-item first-snap-item">
+      <div class="snap" id="snap">
+        <section class="snap-item first-snap-item" id="homescroll">
           <div class="welcome">
             <div class="content">
               <div class="socials">
@@ -135,83 +178,149 @@
               </div>
               <button class="booknow">BOOK NOW</button>
               <p>Crypto travel solutions & much more</p>
-              <a href="#project1" class="see_more">
+              <a href="#MetaBooking" class="see_more">
                 <img src="./Images/arrow_in_circle.svg" alt="Down Arrow" />
                 <p>See More</p>
               </a>
             </div>
             <div class="background">
               <h1>NOMADAO</h1>
-              <img src="./Images/Sky.png" alt="Sky" class="sky">
+              <img src="./Images/Sky.png" alt="Sky" class="sky" />
               <img src="./Images/Mountain.png" alt="Mountain" class="mountain" />
               <img src="./Images/Land.png" alt="Land" class="land" />
             </div>
           </div>
         </section>
-        <section class="snap-item" id="project1">
+        <section class="snap-item" id="MetaBooking">
           <div class="our_projects">
             <h1 class="sectionHeading">Our Projects</h1>
             <div class="side">
               <div class="side_heading">
                 <div class="main_image"></div>
                 <h2>
-                  <span>MED</span>
-                  PERSON
+                  <span>Meta</span>
+                  Booking
                 </h2>
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur. Ipsum aliquam mattis sed lectus dui tincidunt. Accumsan diam diam pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.</p>
+              <p>Booking process always begins with visual identification of hotel and the premises. Conventionally, travelers mainly have photos as their primary tool for exploring their options. MetaBooking is a 3D visualization solution provider that equips NOMADAO's partner hotels with tools and designs they need to create their digital space and allow clients to explore with full freedom.</p>
               <div class="buttons">
                 <button class="other hoverButton">Other</button>
                 <button class="seemore hoverButton">See more</button>
               </div>
             </div>
             <div class="images">
-              <img src="./Images/medperson.png" alt="Medperson" class="imageOne" />
-              <img src="./Images/medperson2.png" alt="Medperson" class="imageTwo" />
+              <img src="./Images/hotel.png" alt="Hotel" class="imageOne" />
+              <img src="./Images/hotel2.png" alt="Hotel" class="imageTwo" />
             </div>
           </div>
         </section>
-        <section class="snap-item" id="project2">
+        <section class="snap-item" id="NomadVerse">
           <div class="our_projects our_projects_second">
             <div class="side">
               <div class="side_heading">
                 <div class="main_image"></div>
                 <h2>
-                  <span>MED</span>
-                  PERSON
+                  <span>Nomad</span>
+                  Verse
                 </h2>
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur. Ipsum aliquam mattis sed lectus dui tincidunt. Accumsan diam diam pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.</p>
+              <p>NomadVerse gives community members and guests of partner hotels to enjoy virtual experiences and tours, attend events & concerts, play games and meet with others without leaving their room. Hotels can offer additional services and facilities within the premises of their virtual architecture.</p>
               <div class="buttons">
                 <button class="other hoverButton">Other</button>
                 <button class="seemore hoverButton">See more</button>
               </div>
             </div>
             <div class="images">
-              <img src="./Images/medperson.png" alt="Medperson" class="imageOne" />
-              <img src="./Images/medperson2.png" alt="Medperson" class="imageTwo" />
+              <img src="./Images/metaverse.jpg" alt="Metaverse" class="imageOne" />
+              <img src="./Images/metaverse2.webp" alt="Metaverse" class="imageTwo" />
             </div>
           </div>
         </section>
-        <section class="snap-item" id="project3">
+        <section class="snap-item" id="NomadAI">
           <div class="our_projects">
             <div class="side">
               <div class="side_heading">
                 <div class="main_image"></div>
                 <h2>
-                  <span>MED</span>
-                  PERSON
+                  <span>Nomad</span>
+                  AI
                 </h2>
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur. Ipsum aliquam mattis sed lectus dui tincidunt. Accumsan diam diam pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.pharetra nisl odio. Dignissim donec elementum pellentesque volutpat urna volutpat mattis.</p>
+              <p>Nomad AI is a pricing and demand forcasting tool designed for hotels to appropriately price their rooms and optimize their ADR. It offers historic data analytics for hotels and their competitors, while providing tools for forecasts. The neural link also incorporates external factors that affect prices such as the weather, cultural events and global trends. The tool is accessible to the members of the community and is used by the community to manage NOMADAO's community fund.</p>
               <div class="buttons">
                 <button class="other hoverButton">Other</button>
                 <button class="seemore hoverButton">See more</button>
               </div>
             </div>
             <div class="images">
-              <img src="./Images/medperson.png" alt="Medperson" class="imageOne" />
-              <img src="./Images/medperson2.png" alt="Medperson" class="imageTwo" />
+              <img src="./Images/ai.jpg" alt="AI" class="imageOne" />
+              <img src="./Images/ai2.webp" alt="AI" class="imageTwo" />
+            </div>
+          </div>
+        </section>
+        <section class="snap-item" id="NomadPay">
+          <div class="our_projects">
+            <div class="side">
+              <div class="side_heading">
+                <div class="main_image"></div>
+                <h2>
+                  <span>Nomad</span>
+                  Pay
+                </h2>
+              </div>
+              <p>NomadPay is an cryptocurrency exchange platform and payment solutions provider for hotels. It allows clients to seamlessly use hotel's facilities, while paying in desired cryptocurrency. NomadPay also supports a network of crypto terminals, kiosks and ATMs that all seamlessly work together with hotel's internal management tools.</p>
+              <div class="buttons">
+                <button class="other hoverButton">Other</button>
+                <button class="seemore hoverButton">See more</button>
+              </div>
+            </div>
+            <div class="images">
+              <img src="./Images/pay.jpg" alt="Payment" class="imageOne" />
+              <img src="./Images/pay2.jpg" alt="Payment" class="imageTwo" />
+            </div>
+          </div>
+        </section>
+        <section class="snap-item" id="NomadPerson">
+          <div class="our_projects our_projects_second">
+            <div class="side">
+              <div class="side_heading">
+                <div class="main_image"></div>
+                <h2>
+                  <span>Nomad</span>
+                  Person
+                </h2>
+              </div>
+              <p>NomadPerson offers tokenization solutions for personal and corporate brands to create tradable digital assets of their identity. These assets, while aesthetically appealing, also carry utility and functionality specific to the brand. The community around the brand can then purchase a piece of their favorite persona or company, while getting various benefits and perks within the NOMADAO ecosystem, as well as outside of it.</p>
+              <div class="buttons">
+                <button class="other hoverButton">Other</button>
+                <button class="seemore hoverButton">See more</button>
+              </div>
+            </div>
+            <div class="images">
+              <img src="./Images/person.png" alt="Metaverse person" class="imageOne" />
+              <img src="./Images/person2.webp" alt="Metaverse perso " class="imageTwo" />
+            </div>
+          </div>
+        </section>
+        <section class="snap-item" id="CashLink">
+          <div class="our_projects">
+            <div class="side">
+              <div class="side_heading">
+                <div class="main_image"></div>
+                <h2>
+                  <span>Cash</span>
+                  Link
+                </h2>
+              </div>
+              <p>Cashlink is an all in one solution that allows community members to manage all their finances in one space. Ambassadors, affiliates, promoters, hotel management, travel agencies, tour operators, agents and travelers can all use this panel to manage their accounts, issue orders, collect payouts & cashbacks and participate in crowdfunding events.</p>
+              <div class="buttons">
+                <button class="other hoverButton">Other</button>
+                <button class="seemore hoverButton">See more</button>
+              </div>
+            </div>
+            <div class="images">
+              <img src="./Images/btc.png" alt="BTC" class="imageOne" />
+              <img src="./Images/eth.svg" alt="ETH" class="imageTwo" />
             </div>
           </div>
         </section>
@@ -231,13 +340,16 @@
               </div>
               <div class="right">
                 <h3 class="sectionHeading">about us</h3>
-                <p class="sectionParagraph">Lorem ipsum dolor sit amet consectetur. Ut hendrerit bibendum lectus odio. Viverra vel rhoncus purus bibendum facilisi. Natoque molestie ultrices volutpat aliquet fermentum viverra. Sed turpis velit amet purus condimentum feugiat nunc.</p>
+                <p class="sectionParagraph">
+                  Travellers around the world unite to create and nurture a blockchain ecosystem designed and managed by its members, for the benefit every travel enthusiast across the globe. This ecosystem is a space to exchange exclusive goods and services, cultivate global relationships, share experiences and transact without boundaries or borders. Designed by experienced hospitality professionals and guided by executive management of global hotel chains, Nomadao was shaped to be a perfectly
+                  tuned platform for both the receiver and the provider of any service, information or item necessary to move and experience a free - Nomadic lifestyle.
+                </p>
                 <button class="sectionButton hoverButton">Learn more</button>
               </div>
             </div>
           </section>
           <!-- Our Team -->
-          <section class="our_team">
+          <!-- <section class="our_team">
             <div class="left">
               <h3 class="sectionHeading">our team</h3>
               <p class="sectionParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nulla minus repellendus explicabo reiciendis, consectetur quae, officia laborum qui voluptates molestias deserunt nostrum quis voluptatibus rem. Natus fugiat cupiditate sed.</p>
@@ -280,53 +392,38 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> -->
           <!-- Our partners -->
           <section class="our_partners">
             <div>
               <h1 class="sectionHeading">Our partners</h1>
-              <p class="sectionParagraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla architecto maiores saepe reiciendis autem. Vel eaque, amet ratione eum, id itaque laudantium laboriosam debitis expedita quasi ab explicabo cumque quo.</p>
+              <!-- <p class="sectionParagraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla architecto maiores saepe reiciendis autem. Vel eaque, amet ratione eum, id itaque laudantium laboriosam debitis expedita quasi ab explicabo cumque quo.</p> -->
             </div>
 
             <div class="partners">
-              <img src="./Images/partner.svg" alt="Partner" />
-              <img src="./Images/partner.svg" alt="Partner" />
-              <img src="./Images/partner.svg" alt="Partner" />
-              <img src="./Images/partner.svg" alt="Partner" />
-              <img src="./Images/partner.svg" alt="Partner" />
-              <img src="./Images/partner.svg" alt="Partner" />
+              <img src="./Images/hotel.png" alt="Partner" />
+              <img src="./Images/hotel2.png" alt="Partner" />
+              <img src="./Images/hotel3.png" alt="Partner" />
+              <img src="./Images/hotel4.png" alt="Partner" />
+              <img src="./Images/hotel5.png" alt="Partner" />
+              <img src="./Images/hotel6.png" alt="Partner" />
+              <img src="./Images/hotel7.png" alt="Partner" />
+              <img src="./Images/hotel8.png" alt="Partner" />
+              <img src="./Images/hotel9.png" alt="Partner" />
+              <img src="./Images/hotel10.png" alt="Partner" />
+              <img src="./Images/hotel11.png" alt="Partner" />
+              <img src="./Images/hotel12.png" alt="Partner" />
+              <img src="./Images/hotel13.png" alt="Partner" />
             </div>
           </section>
           <!-- Featured In -->
           <section class="featured">
             <h3 class="sectionHeading" style="text-align: center; margin-top: 100px">Featured In</h3>
             <div class="cont">
-              <div class="featured_card">
-                <img src="./Images/featured.png" alt="Forbes" />
-                <div>
-                  <div>
-                    <h4>NOMADAO at Forbes</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur. Imperdiet volutpat ullamcorper malesuada netus.Lorem ipsum dolor sit amet consectetur. Imperdiet volutpat ullamcorper malesuada netus.</p>
-                  </div>
-                  <button>Read more</button>
-                </div>
-              </div>
-              <div class="featured_card">
-                <img src="./Images/featured.png" alt="Forbes" />
-                <div>
-                  <h4>NOMADAO at Forbes</h4>
-                  <p>Lorem ipsum dolor sit amet consectetur. Imperdiet volutpat ullamcorper malesuada netus.Lorem ipsum dolor sit amet consectetur. Imperdiet volutpat ullamcorper malesuada netus.</p>
-                  <button>Read more</button>
-                </div>
-              </div>
-              <div class="featured_card">
-                <img src="./Images/featured.png" alt="Forbes" />
-                <div>
-                  <h4>NOMADAO at Forbes</h4>
-                  <p>Lorem ipsum dolor sit amet consectetur. Imperdiet volutpat ullamcorper malesuada netus.Lorem ipsum dolor sit amet consectetur. Imperdiet volutpat ullamcorper malesuada netus.</p>
-                  <button>Read more</button>
-                </div>
-              </div>
+              <img src="./Images/samsung.png" alt="Samsung" />
+              <img src="./Images/samsung.png" alt="Samsung" />
+              <img src="./Images/samsung.png" alt="Samsung" />
+              <img src="./Images/samsung.png" alt="Samsung" />
             </div>
           </section>
           <!-- Roadmap -->
@@ -335,51 +432,52 @@
             <div class="roadmap_container">
               <div class="phase phase_active">
                 <button>NOW</button>
-                <h4>PHASE 01</h4>
+                <h4>CONCEPT</h4>
                 <ul>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
+                  <li>Conceptualize</li>
+                  <li>MVP Launch</li>
+                  <li>Designs & Art</li>
                 </ul>
               </div>
               <div class="blue blue_active"></div>
               <div class="phase">
                 <button>2023 FEB</button>
-                <h4>PHASE 02</h4>
+                <h4>Research</h4>
                 <ul>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
+                  <li>Process Optimization</li>
+                  <li>Market Research</li>
+                  <li>Team Building</li>
                 </ul>
               </div>
               <div class="blue"></div>
               <div class="phase">
                 <button>2023 FEB</button>
-                <h4>PHASE 02</h4>
+                <h4>Fund Raising</h4>
                 <ul>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
+                  <li>Marketing Kickoff</li>
+                  <li>Community Building</li>
+                  <li>Partner Integration</li>
                 </ul>
               </div>
               <div class="blue"></div>
               <div class="phase">
                 <button>2023 FEB</button>
-                <h4>PHASE 02</h4>
+                <h4>Development</h4>
                 <ul>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
+                  <li>Utility Development</li>
+                  <li>Concept Optimization</li>
+                  <li>Whitelist Generation & SMM Launch</li>
                 </ul>
               </div>
               <div class="blue"></div>
               <div class="phase">
                 <button>2023 FEB</button>
-                <h4>PHASE 02</h4>
+                <h4>Future Plans</h4>
                 <ul>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Lorem Ipsum</li>
+                  <li>Smart Contract & Drs Dev</li>
+                  <li>Merch Prod & Public Launch</li>
+                  <li>Nomadao Contract</li>
+                  <li>Nomadao App</li>
                 </ul>
               </div>
             </div>
@@ -430,6 +528,7 @@
         </div>
       </div>
     </div>
-    <script src="./JavaScript/main.js"></script>
+
+    <script src="./JavaScript/main.js" type="module"></script>
   </body>
 </html>
