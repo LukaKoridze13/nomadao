@@ -346,14 +346,14 @@ function alertCustom(msg, inst) {
   });
 }
 
-document.getElementById("bookForm").addEventListener("submit", (event) => {
+document.getElementById("bookingForm").addEventListener("submit", (event) => {
   event.preventDefault();
   window.location.replace("http://www.nomadao.net");
 });
 
-document.querySelectorAll("#bookForm .type").forEach((item) => {
+document.querySelectorAll("#bookingForm .type").forEach((item) => {
   item.addEventListener("click", (event) => {
-    document.querySelectorAll("#bookForm .type").forEach((x) => {
+    document.querySelectorAll("#bookingForm .type").forEach((x) => {
       x.classList.remove('type_active')
     });
     event.target.classList.add('type_active')
