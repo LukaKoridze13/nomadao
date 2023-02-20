@@ -345,3 +345,17 @@ function alertCustom(msg, inst) {
     box.remove();
   });
 }
+
+document.getElementById("bookForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  window.location.replace("http://www.nomadao.net");
+});
+
+document.querySelectorAll("#bookForm .type").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    document.querySelectorAll("#bookForm .type").forEach((x) => {
+      x.classList.remove('type_active')
+    });
+    event.target.classList.add('type_active')
+  });
+});

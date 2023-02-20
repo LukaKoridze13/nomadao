@@ -9,6 +9,7 @@ $gray200: #d8d8d8;
 $black: #202020;
 $white: #ececec;
 $orange: #fe7c31;
+$blue: #166a8c;
 $gradient: linear-gradient(100deg, #166b8c, rgba(46, 235, 167, 0.76), #fe7c31, rgba(46, 235, 167, 0.76), #166b8c);
 // Container
 .container {
@@ -1282,24 +1283,146 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    &:hover{
-    color: $white;
-    background: $black;
-
+    transform: translate(-50%, -50%);
+    &:hover {
+      color: $white;
+      background: $black;
     }
-    img{
+    img {
       width: 25px;
     }
   }
-  #dashboard{
+  #dashboard {
     display: none;
     padding-top: 80px;
     width: 100%;
     height: 100vh;
-    
+
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
+  }
+}
+// form control
+#bookForm {
+  position: absolute;
+  width: 90%;
+  max-width: 583px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30vh;
+  .types {
+    display: flex;
+    gap: 1px;
+    font-size: 16px;
+    font-weight: 600;
+    flex-wrap: wrap;
+    .type {
+      background-color: $orange;
+      padding: 8px;
+      cursor: pointer;
+      font-family: "Inter";
+      color: $white;
+      &:first-child {
+        border-top-left-radius: 8px;
+      }
+    }
+    .type_active {
+      background-color: $white;
+      color: $black;
+    }
+  }
+  .type_box {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1px;
+  }
+  .input_box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
+    background-color: $white;
+    padding: 10px;
+    input {
+      width: 150px;
+      color: $black;
+      padding: 4px;
+      background-color: transparent;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    label {
+      font-size: 14px;
+      color: $black;
+      font-family: "Albert Sans";
+      font-weight: 500;
+    }
+    &:first-child {
+      border-bottom-left-radius: 8px;
+    }
+    &:last-child {
+      border-bottom-right-radius: 8px;
+    }
+  }
+  .date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    input {
+      width: 100px;
+      font-family: "Albert Sans";
+    }
+  }
+  .details {
+    color: $black;
+    cursor: pointer;
+    position: relative;
+    h3 {
+      margin-top: 8px;
+      font-size: 14px;
+      color: $black;
+      display: flex;
+      align-items: center;
+      input {
+        width: 15px;
+      }
+    }
+    .guests {
+      position: absolute;
+      top: 100%;
+      left: 0px;
+      background-color: $white;
+      width: 100%;
+      padding: 5px;
+      display: none;
+      div {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          span {
+            font-size: 26px;
+          }
+        }
+      }
+    }
+  }
+  button {
+    border: none;
+    background-color: $blue;
+    flex-grow: 1;
+    color: $white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    border-top-right-radius: 8px;
   }
 }
 @media (max-width: 1100px) {
@@ -1447,7 +1570,7 @@ footer {
     .content {
       .socials {
         width: fit-content;
-        top: 62%;
+        top: 85vh;
         left: 50%;
         transform: translateX(-50%);
         flex-direction: row;
@@ -1465,7 +1588,7 @@ footer {
       .see_more {
         width: 100%;
         justify-content: center;
-        top: 80vh;
+        top: 93vh;
       }
     }
   }
@@ -1696,5 +1819,25 @@ footer {
   }
   footer p:first-child {
     text-align: center;
+  }
+  #bookForm .input_box {
+    width: 100%;
+    &:last-child {
+      border-radius: 0px 0px 8px 8px;
+    }
+    &:first-child {
+      border-radius: 0px;
+    }
+  }
+  #bookForm {
+    bottom: 20vh;
+    button {
+      border-radius: 0px;
+      height: 30px;
+    }
+    .type{
+      font-size: 12px;
+      border-radius: 0px !important;
+    }
   }
 }
