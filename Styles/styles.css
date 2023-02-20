@@ -1246,7 +1246,7 @@ footer .footer_logo {
   background-size: 100vw 100vh;
 }
 
-#bookForm {
+#bookingForm {
   position: absolute;
   width: 90%;
   max-width: 583px;
@@ -1254,33 +1254,33 @@ footer .footer_logo {
   transform: translateX(-50%);
   bottom: 30vh;
 }
-#bookForm .types {
+#bookingForm .types {
   display: flex;
   gap: 1px;
   font-size: 16px;
   font-weight: 600;
   flex-wrap: wrap;
 }
-#bookForm .types .type {
+#bookingForm .types .type {
   background-color: #fe7c31;
   padding: 8px;
   cursor: pointer;
   font-family: "Inter";
   color: #ececec;
 }
-#bookForm .types .type:first-child {
+#bookingForm .types .type:first-child {
   border-top-left-radius: 8px;
 }
-#bookForm .types .type_active {
+#bookingForm .types .type_active {
   background-color: #ececec;
   color: #202020;
 }
-#bookForm .type_box {
+#bookingForm .type_box {
   display: flex;
   flex-wrap: wrap;
   gap: 1px;
 }
-#bookForm .input_box {
+#bookingForm .input_box {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -1289,53 +1289,53 @@ footer .footer_logo {
   background-color: #ececec;
   padding: 10px;
 }
-#bookForm .input_box input {
+#bookingForm .input_box input {
   width: 150px;
   color: #202020;
   padding: 4px;
   background-color: transparent;
   border: none;
 }
-#bookForm .input_box input:focus {
+#bookingForm .input_box input:focus {
   outline: none;
 }
-#bookForm .input_box label {
+#bookingForm .input_box label {
   font-size: 14px;
   color: #202020;
   font-family: "Albert Sans";
   font-weight: 500;
 }
-#bookForm .input_box:first-child {
+#bookingForm .input_box:first-child {
   border-bottom-left-radius: 8px;
 }
-#bookForm .input_box:last-child {
+#bookingForm .input_box:last-child {
   border-bottom-right-radius: 8px;
 }
-#bookForm .date {
+#bookingForm .date {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-#bookForm .date input {
+#bookingForm .date input {
   width: 100px;
   font-family: "Albert Sans";
 }
-#bookForm .details {
+#bookingForm .details {
   color: #202020;
   cursor: pointer;
   position: relative;
 }
-#bookForm .details h3 {
+#bookingForm .details h3 {
   margin-top: 8px;
   font-size: 14px;
   color: #202020;
   display: flex;
   align-items: center;
 }
-#bookForm .details h3 input {
+#bookingForm .details h3 input {
   width: 15px;
 }
-#bookForm .details .guests {
+#bookingForm .details .guests {
   position: absolute;
   top: 100%;
   left: 0px;
@@ -1344,21 +1344,21 @@ footer .footer_logo {
   padding: 5px;
   display: none;
 }
-#bookForm .details .guests div {
+#bookingForm .details .guests div {
   font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#bookForm .details .guests div div {
+#bookingForm .details .guests div div {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-#bookForm .details .guests div div span {
+#bookingForm .details .guests div div span {
   font-size: 26px;
 }
-#bookForm button {
+#bookingForm button {
   border: none;
   background-color: #166a8c;
   flex-grow: 1;
@@ -1728,23 +1728,23 @@ footer .footer_logo {
   footer p:first-child {
     text-align: center;
   }
-  #bookForm .input_box {
+  #bookingForm .input_box {
     width: 100%;
   }
-  #bookForm .input_box:last-child {
+  #bookingForm .input_box:last-child {
     border-radius: 0px 0px 8px 8px;
   }
-  #bookForm .input_box:first-child {
+  #bookingForm .input_box:first-child {
     border-radius: 0px;
   }
-  #bookForm {
+  #bookingForm {
     bottom: 20vh;
   }
-  #bookForm button {
+  #bookingForm button {
     border-radius: 0px;
     height: 30px;
   }
-  #bookForm .type {
+  #bookingForm .type {
     font-size: 12px;
     border-radius: 0px !important;
   }

@@ -1303,7 +1303,7 @@ footer {
   }
 }
 // form control
-#bookForm {
+#bookingForm {
   position: absolute;
   width: 90%;
   max-width: 583px;
@@ -1820,7 +1820,7 @@ footer {
   footer p:first-child {
     text-align: center;
   }
-  #bookForm .input_box {
+  #bookingForm .input_box {
     width: 100%;
     &:last-child {
       border-radius: 0px 0px 8px 8px;
@@ -1829,7 +1829,7 @@ footer {
       border-radius: 0px;
     }
   }
-  #bookForm {
+  #bookingForm {
     bottom: 20vh;
     button {
       border-radius: 0px;
