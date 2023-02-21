@@ -348,14 +348,15 @@ function alertCustom(msg, inst) {
 
 document.getElementById("bookingForm").addEventListener("submit", (event) => {
   event.preventDefault();
-  window.location.replace("http://www.nomadao.net");
+  window.open("http://www.nomadao.net", '_blank');
 });
 
-document.querySelectorAll("#bookingForm .type").forEach((item) => {
+document.querySelectorAll("#bookingForm li").forEach((item) => {
   item.addEventListener("click", (event) => {
-    document.querySelectorAll("#bookingForm .type").forEach((x) => {
-      x.classList.remove('type_active')
+    document.querySelectorAll("#bookingForm li").forEach((x) => {
+      x.classList.remove('active')
     });
-    event.target.classList.add('type_active')
+    event.target.classList.add('active')
   });
 });
+

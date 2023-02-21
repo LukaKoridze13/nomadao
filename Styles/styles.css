@@ -15,81 +15,23 @@
   color: #ececec;
 }
 
-.loading {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000;
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #ececec;
+  border-radius: 10px;
 }
 
-.box {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.3333333333));
+html::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ececec;
+  border-radius: 10px;
 }
 
-.box .loader {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  animation: animateLoading 2s linear infinite;
-}
-
-.box .loader:nth-child(2),
-.box .loader:nth-child(4) {
-  animation-delay: -1s;
-  filter: hue-rotate(290deg);
-}
-
-@keyframes animateLoading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.box .loader:nth-child(1)::before,
-.box .loader:nth-child(2)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(to top, transparent, rgba(0, 255, 249, 0.5));
-  background-size: 100px 180px;
-  background-repeat: no-repeat;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-}
-
-.container .loader i {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  background: #00fff9;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #00fff9, 0 0 20px #00fff9, 0 0 30px #00fff9, 0 0 40px #00fff9, 0 0 50px #00fff9, 0 0 60px #00fff9, 0 0 70px #00fff9, 0 0 80px #00fff9, 0 0 90px #00fff9, 0 0 100px #00fff9;
-  z-index: 10;
-}
-
-.box .loader span {
-  position: absolute;
-  inset: 20px;
-  background: #000;
-  border-radius: 50%;
-  z-index: 1;
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #fe7c31;
 }
 
 .snap {
@@ -1247,126 +1189,118 @@ footer .footer_logo {
 }
 
 #bookingForm {
-  position: absolute;
+  max-width: 870px;
   width: 90%;
-  max-width: 583px;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 30vh;
+  bottom: 25vh;
+  padding: 42px;
+  background: rgba(95, 95, 95, 0.5);
+  -webkit-backdrop-filter: blur(5.5px);
+          backdrop-filter: blur(5.5px);
+  border-radius: 12px;
 }
-#bookingForm .types {
+#bookingForm .inner {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  padding: 12px 18px;
   display: flex;
-  gap: 1px;
-  font-size: 16px;
-  font-weight: 600;
-  flex-wrap: wrap;
+  align-items: center;
 }
-#bookingForm .types .type {
-  background-color: #fe7c31;
-  padding: 8px;
+#bookingForm .inner .hotel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+#bookingForm .inner .hotel div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#bookingForm .inner .hotel div span,
+#bookingForm .inner .hotel div label {
+  font-family: "Albert Sans";
+  font-size: 12px;
+  color: #3f3f3f;
+}
+#bookingForm .inner .hotel div label {
   cursor: pointer;
-  font-family: "Inter";
-  color: #ececec;
 }
-#bookingForm .types .type:first-child {
-  border-top-left-radius: 8px;
-}
-#bookingForm .types .type_active {
-  background-color: #ececec;
-  color: #202020;
-}
-#bookingForm .type_box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1px;
-}
-#bookingForm .input_box {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: #ececec;
-  padding: 10px;
-}
-#bookingForm .input_box input {
-  width: 150px;
-  color: #202020;
-  padding: 4px;
-  background-color: transparent;
+#bookingForm .inner .hotel div input {
+  width: 120px;
+  height: 30px;
+  padding: 8px 12px;
+  background: #ffffff;
+  border-radius: 12px;
   border: none;
+  background-image: url(../Images/add.svg);
+  background-repeat: no-repeat;
+  background-position: 92% center;
 }
-#bookingForm .input_box input:focus {
+#bookingForm .inner .hotel div input:focus {
   outline: none;
 }
-#bookingForm .input_box label {
-  font-size: 14px;
-  color: #202020;
-  font-family: "Albert Sans";
-  font-weight: 500;
+#bookingForm .inner .hotel div input[type=date] {
+  background-image: none;
 }
-#bookingForm .input_box:first-child {
-  border-bottom-left-radius: 8px;
-}
-#bookingForm .input_box:last-child {
-  border-bottom-right-radius: 8px;
-}
-#bookingForm .date {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-#bookingForm .date input {
-  width: 100px;
-  font-family: "Albert Sans";
-}
-#bookingForm .details {
-  color: #202020;
-  cursor: pointer;
-  position: relative;
-}
-#bookingForm .details h3 {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #202020;
-  display: flex;
-  align-items: center;
-}
-#bookingForm .details h3 input {
-  width: 15px;
-}
-#bookingForm .details .guests {
-  position: absolute;
-  top: 100%;
-  left: 0px;
-  background-color: #ececec;
-  width: 100%;
-  padding: 5px;
-  display: none;
-}
-#bookingForm .details .guests div {
-  font-size: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#bookingForm .details .guests div div {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-#bookingForm .details .guests div div span {
-  font-size: 26px;
-}
-#bookingForm button {
+#bookingForm .inner .hotel div select {
+  background: none;
   border: none;
-  background-color: #166a8c;
-  flex-grow: 1;
+  outline: none;
+}
+#bookingForm .inner .hotel div select:focus {
+  outline: none;
+}
+#bookingForm .inner .hotel div option {
+  background: none;
+  border: none;
+  outline: none;
+}
+#bookingForm .inner .splitter {
+  width: 2px;
+  height: 30px;
+  background-color: #c5c5c5;
+}
+#bookingForm .top {
+  padding-inline: 12px;
+  background: #ececec;
+  box-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(1.5px);
+          backdrop-filter: blur(1.5px);
+  border-radius: 8px;
+  position: absolute;
+  top: 0px;
+  left: 42px;
+  transform: translateY(-50%);
+}
+#bookingForm .top ul {
+  display: flex;
+}
+#bookingForm .top li {
+  color: #202020;
+  padding: 8px;
+  font-size: 12px;
+}
+#bookingForm .top .active {
+  background-color: #202020;
   color: #ececec;
-  font-size: 16px;
+}
+#bookingForm .search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 24px;
+  background-color: #ececec;
+  border-radius: 6px;
+  border: none;
   cursor: pointer;
-  font-weight: 500;
-  border-top-right-radius: 8px;
+  position: absolute;
+  right: 42px;
+  bottom: 0px;
+  transform: translateY(50%);
 }
 
 @media (max-width: 1100px) {
@@ -1395,6 +1329,21 @@ footer .footer_logo {
   }
   .welcome .content > p {
     font-size: 15px;
+  }
+  #bookingForm .inner .hotel .splitter {
+    height: 60px;
+  }
+  #bookingForm {
+    width: 600px;
+  }
+  #bookingForm .top {
+    left: 0px;
+  }
+  #bookingForm .inner .hotel > div {
+    flex-direction: column;
+  }
+  #bookingForm .inner .hotel > div:last-child {
+    flex-direction: row;
   }
 }
 @media (max-width: 815px) {
@@ -1728,24 +1677,44 @@ footer .footer_logo {
   footer p:first-child {
     text-align: center;
   }
-  #bookingForm .input_box {
+  #bookingForm {
+    width: 90%;
+    padding: 0px;
+  }
+  #bookingForm .top {
+    width: 90vw;
+    flex-wrap: wrap;
+  }
+  #bookingForm .inner .hotel {
+    flex-direction: column;
+    padding: 4px;
+    padding-top: 8px;
+    gap: 10px;
+  }
+  #bookingForm .inner .hotel .splitter {
+    display: none;
+  }
+  #bookingForm .inner .hotel > div {
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
   }
-  #bookingForm .input_box:last-child {
-    border-radius: 0px 0px 8px 8px;
+  #bookingForm .inner .hotel > div:last-child {
+    justify-content: left;
   }
-  #bookingForm .input_box:first-child {
-    border-radius: 0px;
-  }
-  #bookingForm {
-    bottom: 20vh;
+  #bookingForm .inner .hotel input {
+    font-size: 10px;
+    width: 100px !important;
   }
   #bookingForm button {
-    border-radius: 0px;
-    height: 30px;
-  }
-  #bookingForm .type {
+    left: calc(100% - 65px);
+    transform: translate(-50%, -50%) !important;
     font-size: 12px;
-    border-radius: 0px !important;
+    padding: 4px 8px !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  #bookingForm button img {
+    width: 12px;
   }
 }/*# sourceMappingURL=styles.css.map */

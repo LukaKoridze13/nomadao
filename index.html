@@ -34,14 +34,6 @@
     <title>NOMADAO</title>
   </head>
   <body class="light">
-    <!-- <div class="loading">
-      <div class="box">
-        <div class="loader"><span></span></div>
-        <div class="loader"><span></span></div>
-        <div class="loader"><i></i></div>
-        <div class="loader"><i></i></div>
-      </div>
-    </div> -->
     <div class="container">
       <div class="panel">
         <button id="metamask" class="hoverButton" style="display: flex; align-items: center; gap: 10px"><span>Sign in</span> <img src="./Images/metamask.png" alt="Metamask" /></button>
@@ -177,38 +169,46 @@
                 <img src="./Images/instagram.svg" alt="instagram" />
               </div>
               <form id="bookingForm">
-                <div class="types">
-                  <div class="type type_active">Hotel</div>
-                  <div class="type">Apartment</div>
-                  <div class="type">Tour</div>
-                  <div class="type">Car</div>
-                  <div class="type">Event</div>
-                  <div class="type">Flight</div>
-                  <div class="type">Boat</div>
-                  <button>Search</button>
-
+                <div class="top">
+                  <ul>
+                    <li class="active">Hotel</li>
+                    <li>Apartment</li>
+                    <li>Tour</li>
+                    <li>Car</li>
+                    <li>Event</li>
+                    <li>Flight</li>
+                    <li>Boat</li>
+                  </ul>
                 </div>
-                <div class="choose">
-                  <div class="type_hotel type_box">
-                    <div class="input_box">
-                      <label for="location">Location</label>
-                      <!-- prettier-ignore -->
-                      <input type="text" placeholder="Where are you going?">
+                <div class="inner">
+                  <div class="hotel">
+                    <div>
+                      <div><img src="./Images/location.svg" alt="Location" /><span>Where are you going:</span></div>
+                      <input type="text" placeholder="Add location" />
                     </div>
-                    <div class="input_box">
-                      <label for="time">Check In-Out</label>
-                      <div class="date">
-                        <input type="date" />
-                        <span style="color: black; font-size: 20px">&#x2192;</span>
-                        <input type="date" />
-                      </div>
+                    <div class="splitter"></div>
+                    <div>
+                      <div><img src="./Images/date.svg" alt="Location" /> <span>Check in/out</span></div>
+                      <div><input type="date" id="start_date" /> <input type="date" id="end_date" /></div>
                     </div>
-                    <div class="input_box details">
-                      <label>Guests</label>
-                      <h3><input type="text" placeholder="2" id="adult"><label for="adult"> Adult -</label><input type="text" placeholder="0" id="children"><label for="children">Children</label></h3>
+                    <div class="splitter"></div>
+                    <div>
+                      <img src="./Images/human.svg" alt="Human" />
+                      <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                      </select>
                     </div>
                   </div>
                 </div>
+                <button class="search">
+                  <img src="./Images/search.svg" alt="Search" />
+                  <span>SEARCH</span>
+                </button>
               </form>
               <a href="#MetaBooking" class="see_more">
                 <img src="./Images/arrow_in_circle.svg" alt="Down Arrow" />

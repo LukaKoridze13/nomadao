@@ -23,83 +23,24 @@ $gradient: linear-gradient(100deg, #166b8c, rgba(46, 235, 167, 0.76), #fe7c31, r
   background-color: $black;
   color: $white;
 }
-// Loading
-.loading {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000;
+// Scrollbar
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: $white;
+  border-radius: 10px;
 }
 
-.box {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0005);
+html::-webkit-scrollbar {
+  width: 12px;
+  background-color: $white;
+  border-radius: 10px;
 }
 
-.box .loader {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  animation: animateLoading 2s linear infinite;
-}
-
-.box .loader:nth-child(2),
-.box .loader:nth-child(4) {
-  animation-delay: -1s;
-  filter: hue-rotate(290deg);
-}
-
-@keyframes animateLoading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.box .loader:nth-child(1)::before,
-.box .loader:nth-child(2)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(to top, transparent, rgba(0, 255, 249, 0.5));
-  background-size: 100px 180px;
-  background-repeat: no-repeat;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-}
-
-.container .loader i {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  background: #00fff9;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #00fff9, 0 0 20px #00fff9, 0 0 30px #00fff9, 0 0 40px #00fff9, 0 0 50px #00fff9, 0 0 60px #00fff9, 0 0 70px #00fff9, 0 0 80px #00fff9, 0 0 90px #00fff9, 0 0 100px #00fff9;
-  z-index: 10;
-}
-
-.box .loader span {
-  position: absolute;
-  inset: 20px;
-  background: #000;
-  border-radius: 50%;
-  z-index: 1;
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $orange;
 }
 // Snap Scroll
 .snap {
@@ -1304,127 +1245,121 @@ footer {
 }
 // form control
 #bookingForm {
-  position: absolute;
+  max-width: 870px;
   width: 90%;
-  max-width: 583px;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 30vh;
-  .types {
-    display: flex;
-    gap: 1px;
-    font-size: 16px;
-    font-weight: 600;
-    flex-wrap: wrap;
-    .type {
-      background-color: $orange;
-      padding: 8px;
-      cursor: pointer;
-      font-family: "Inter";
-      color: $white;
-      &:first-child {
-        border-top-left-radius: 8px;
-      }
-    }
-    .type_active {
-      background-color: $white;
-      color: $black;
-    }
-  }
-  .type_box {
-    display: flex;
-    flex-wrap: wrap;
+  bottom: 25vh;
+  padding: 42px;
+  background: rgba(95, 95, 95, 0.5);
+  backdrop-filter: blur(5.5px);
+  border-radius: 12px;
 
-    gap: 1px;
-  }
-  .input_box {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: fit-content;
-    background-color: $white;
-    padding: 10px;
-    input {
-      width: 150px;
-      color: $black;
-      padding: 4px;
-      background-color: transparent;
-      border: none;
-      &:focus {
-        outline: none;
-      }
-    }
-    label {
-      font-size: 14px;
-      color: $black;
-      font-family: "Albert Sans";
-      font-weight: 500;
-    }
-    &:first-child {
-      border-bottom-left-radius: 8px;
-    }
-    &:last-child {
-      border-bottom-right-radius: 8px;
-    }
-  }
-  .date {
+  .inner {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    padding: 12px 18px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    input {
-      width: 100px;
-      font-family: "Albert Sans";
-    }
-  }
-  .details {
-    color: $black;
-    cursor: pointer;
-    position: relative;
-    h3 {
-      margin-top: 8px;
-      font-size: 14px;
-      color: $black;
+    .hotel {
       display: flex;
       align-items: center;
-      input {
-        width: 15px;
-      }
-    }
-    .guests {
-      position: absolute;
-      top: 100%;
-      left: 0px;
-      background-color: $white;
+      justify-content: space-between;
       width: 100%;
-      padding: 5px;
-      display: none;
       div {
-        font-size: 16px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        div {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          span {
-            font-size: 26px;
+        gap: 12px;
+        span,
+        label {
+          font-family: "Albert Sans";
+          font-size: 12px;
+          color: #3f3f3f;
+        }
+        label {
+          cursor: pointer;
+        }
+        input {
+          width: 120px;
+          height: 30px;
+          padding: 8px 12px;
+          background: #ffffff;
+          border-radius: 12px;
+          border: none;
+          background-image: url(../Images/add.svg);
+          background-repeat: no-repeat;
+          background-position: 92% center;
+          &:focus {
+            outline: none;
           }
+        }
+        input[type="date"] {
+          background-image: none;
+        }
+        select {
+          background: none;
+          border: none;
+          outline: none;
+          &:focus {
+            outline: none;
+          }
+        }
+        option {
+          background: none;
+          border: none;
+          outline: none;
         }
       }
     }
+    .splitter {
+      width: 2px;
+      height: 30px;
+      background-color: #c5c5c5;
+    }
   }
-  button {
+  .top {
+    padding-inline: 12px;
+    background: $white;
+    box-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1.5px);
+    border-radius: 8px;
+    position: absolute;
+    top: 0px;
+    left: 42px;
+    transform: translateY(-50%);
+    ul {
+      display: flex;
+    }
+    li {
+      color: $black;
+      padding: 8px;
+      font-size: 12px;
+    }
+    .active {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 24px;
+    background-color: $white;
+    border-radius: 6px;
     border: none;
-    background-color: $blue;
-    flex-grow: 1;
-    color: $white;
-    font-size: 16px;
     cursor: pointer;
-    font-weight: 500;
-    border-top-right-radius: 8px;
+    position: absolute;
+    right: 42px;
+    bottom: 0px;
+    transform: translateY(50%);
   }
 }
+
+// Responsive
 @media (max-width: 1100px) {
   .container {
     font-size: 8px;
@@ -1455,6 +1390,23 @@ footer {
   }
   .welcome .content > p {
     font-size: 15px;
+  }
+
+  #bookingForm .inner .hotel .splitter {
+    height: 60px;
+  }
+
+  #bookingForm {
+    width: 600px;
+    .top {
+      left: 0px;
+    }
+  }
+  #bookingForm .inner .hotel > div {
+    flex-direction: column;
+    &:last-child {
+      flex-direction: row;
+    }
   }
 }
 
@@ -1820,24 +1772,47 @@ footer {
   footer p:first-child {
     text-align: center;
   }
-  #bookingForm .input_box {
-    width: 100%;
-    &:last-child {
-      border-radius: 0px 0px 8px 8px;
-    }
-    &:first-child {
-      border-radius: 0px;
-    }
-  }
+  
   #bookingForm {
-    bottom: 20vh;
-    button {
-      border-radius: 0px;
-      height: 30px;
+    width: 90%;
+    padding: 0px;
+    .top{
+      width: 90vw;
+      flex-wrap: wrap;
     }
-    .type{
+    .inner{
+      .hotel{
+        flex-direction: column;
+        padding: 4px;
+        padding-top: 8px;
+        gap: 10px;
+        .splitter{
+          display: none;
+        }
+        &>div{
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+          &:last-child{
+            justify-content: left;
+          }
+        }
+        input{
+          font-size: 10px;
+          width: 100px !important;
+        }
+
+      }
+    }
+    button{
+      left: calc(100% - 65px);
+      transform: translate(-50%,-50%) !important;
       font-size: 12px;
-      border-radius: 0px !important;
+      padding: 4px 8px !important;
+      width: fit-content !important;
+      img{
+        width: 12px;
+      }
     }
   }
 }
