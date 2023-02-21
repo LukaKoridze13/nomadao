@@ -1779,6 +1779,18 @@ footer {
     .top{
       width: 90vw;
       flex-wrap: wrap;
+      padding: 0px;
+      ul{
+        justify-content: space-between;
+      }
+      li{
+        font-size: 11px;
+        padding: 4px;
+        &:first-child{
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
+      }
     }
     .inner{
       .hotel{
@@ -1801,14 +1813,16 @@ footer {
           font-size: 10px;
           width: 100px !important;
         }
-
+        span,input{
+          font-size: 10px;
+        }
       }
     }
     button{
       left: calc(100% - 65px);
-      transform: translate(-50%,-50%) !important;
+      transform: translate(-50%,-20%) !important;
       font-size: 12px;
-      padding: 4px 8px !important;
+      padding: 8px 16px !important;
       width: fit-content !important;
       img{
         width: 12px;

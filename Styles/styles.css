@@ -1684,6 +1684,18 @@ footer .footer_logo {
   #bookingForm .top {
     width: 90vw;
     flex-wrap: wrap;
+    padding: 0px;
+  }
+  #bookingForm .top ul {
+    justify-content: space-between;
+  }
+  #bookingForm .top li {
+    font-size: 11px;
+    padding: 4px;
+  }
+  #bookingForm .top li:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
   #bookingForm .inner .hotel {
     flex-direction: column;
@@ -1706,11 +1718,14 @@ footer .footer_logo {
     font-size: 10px;
     width: 100px !important;
   }
+  #bookingForm .inner .hotel span, #bookingForm .inner .hotel input {
+    font-size: 10px;
+  }
   #bookingForm button {
     left: calc(100% - 65px);
-    transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -20%) !important;
     font-size: 12px;
-    padding: 4px 8px !important;
+    padding: 8px 16px !important;
     width: -moz-fit-content !important;
     width: fit-content !important;
   }
