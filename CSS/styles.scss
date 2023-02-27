@@ -1,0 +1,566 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+// Colors
+$gray200: #d8d8d8;
+$black: #202020;
+$white: #ececec;
+$orange: #fe7c31;
+$blue: #166a8c;
+$gradient: linear-gradient(100deg, #166b8c, rgba(46, 235, 167, 0.76), #fe7c31, rgba(46, 235, 167, 0.76), #166b8c);
+
+// Globa
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #d8d8d8;
+  color: $black;
+  font-size: 10px;
+}
+.dark .container {
+  background-color: $black;
+  color: $white;
+}
+html {
+  scroll-behavior: smooth;
+}
+a,
+button,
+li,
+i {
+  cursor: pointer;
+  color: $white;
+}
+// SCROLLBAR
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: $white;
+  border-radius: 10px;
+}
+html::-webkit-scrollbar {
+  width: 12px;
+  background-color: $white;
+  border-radius: 10px;
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $orange;
+}
+
+// Header
+header {
+  position: fixed;
+  top: 0px;
+
+  width: 100vw;
+  max-width: 1920px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  background: #0000007a;
+
+  padding: 8px 16px;
+  gap: 20px;
+  .nomadao_logo {
+    width: 30px;
+  }
+
+  ul {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+
+  li {
+    font-family: "Albert Sans";
+    font-size: 1.8em;
+    color: $white;
+    &:hover {
+      text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+    a {
+      color: $white;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    img {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: 4px;
+      margin-left: 10px;
+    }
+  }
+
+  li.active {
+    font-weight: 600;
+    position: relative;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 4px;
+      background: $orange;
+      position: absolute;
+      left: 0px;
+      bottom: -10px;
+      border-radius: 4px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    button {
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 1.5em;
+      background: transparent;
+      font-family: "Albert Sans", sans-serif;
+      background: $orange;
+      color: $white;
+      border: none;
+      &:hover {
+        background-image: $gradient;
+        background-size: 200%;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        animation: gradients 10s linear infinite alternate;
+      }
+    }
+  }
+  .last {
+    display: none;
+  }
+  .theme {
+    color: $white;
+  }
+  img {
+    width: 150px;
+  }
+  li {
+    img {
+      width: 12px;
+      margin-top: 2px;
+      margin-left: 2px;
+    }
+  }
+  .drop_down_activated img {
+    transform: rotate(180deg);
+  }
+}
+.mobile_menu {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $black;
+  display: none;
+  .close {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    width: 40px;
+    height: 40px;
+  }
+  header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 25px;
+    height: 100%;
+    img {
+      width: 70vw;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+    li {
+      font-weight: 400;
+      font-size: 25px;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      font-family: "Albert Sans";
+
+      img {
+        width: 18px;
+      }
+    }
+
+    li.active {
+      font-weight: 600;
+      position: relative;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        background: $orange;
+        position: absolute;
+        left: 0px;
+        bottom: -10px;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      button {
+        border-radius: 16px;
+        padding: 8px 24px 8px 24px;
+        font-weight: 400;
+        font-size: 20px;
+        background: transparent;
+        border: 1px solid $white;
+        cursor: pointer;
+        font-family: "Albert Sans", sans-serif;
+        &:first-child {
+          background: $orange;
+          border: none;
+        }
+      }
+    }
+  }
+}
+.burger_menu {
+  display: none;
+}
+#drop_down {
+  position: relative;
+  img {
+    transition: all 0.2s;
+  }
+}
+.drop_down {
+  background: $blue;
+  padding: 12px 16px;
+  width: 80vw;
+  max-width: 215px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 30px;
+  text-shadow: none;
+  display: none;
+  z-index: 1000000;
+
+  a {
+    display: block;
+    margin-top: 12px;
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
+
+  .project {
+    font-family: "Albert Sans";
+    font-size: 16px;
+    color: $orange;
+    font-weight: bold;
+  }
+  .project_description {
+    font-family: "Albert Sans";
+    font-size: 12px;
+    margin-top: 4px;
+    color: $white;
+    font-weight: 200;
+  }
+}
+.menuOpen{
+  display: none;
+}
+
+@keyframes gradients {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 45% 0;
+  }
+  50% {
+    background-position: 90% 0;
+  }
+  60% {
+    background-position: 90%;
+  }
+  75% {
+    background-position: 45%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+// Landing Page
+.landing {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Albert Sans", sans-serif;
+  .content {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    .socials {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      img {
+        cursor: pointer;
+        &:first-child {
+          height: 40px;
+        }
+      }
+    }
+    h1 {
+      position: absolute;
+      z-index: 1;
+      left: 27.08%;
+      bottom: 20%;
+      opacity: 0.2;
+      mix-blend-mode: color-dodge;
+
+      font-family: "Gemunu Libre";
+      font-weight: 700;
+      font-size: 12.2vw;
+      letter-spacing: -0.02em;
+      color: $white;
+
+      animation: nomadao 1.4s linear 1 forwards;
+    }
+
+    .booknow {
+      width: 24vw;
+      aspect-ratio: 4 / 1;
+      background: rgba(65, 65, 65, 0.1);
+      border: 1px solid $white;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(1px);
+      border-radius: 8px;
+
+      position: absolute;
+      z-index: 5;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 55vh;
+
+      font-weight: 500;
+      font-size: 2.6vw;
+      color: $white;
+      font-family: "Albert Sans", sans-serif;
+      &:hover {
+        background: rgba(65, 65, 65, 0.3);
+      }
+    }
+    & > p {
+      position: absolute;
+      z-index: 5;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 71vh;
+
+      font-weight: 500;
+      font-size: 24px;
+
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: $white;
+      mix-blend-mode: normal;
+      text-shadow: 0px 4px 4px rgba(11, 11, 11, 0.25);
+    }
+    .see_more {
+      position: absolute;
+      z-index: 5;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 86vh;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+
+      font-weight: 300;
+      font-size: 25px;
+      letter-spacing: -0.02em;
+      text-transform: capitalize;
+      color: $white;
+      text-shadow: 0px 5.17647px 5.17647px rgba(11, 11, 11, 0.25);
+
+      img {
+        width: 25px;
+      }
+    }
+  }
+  .background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    aspect-ratio: 1.6/1;
+    top: 0;
+    left: 0;
+    animation: blur 1.4s linear 1 forwards;
+    h1 {
+      position: absolute;
+      font-family: "Gemunu Libre";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12vw;
+      color: #ececec;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 55%;
+      z-index: 10;
+      animation: nomadao 1.4s linear 1 forwards;
+    }
+    .mountain {
+      position: absolute;
+      width: 40.486%;
+      height: 42.814%;
+      bottom: 32.814%;
+      right: 0px;
+      z-index: 11;
+      transition: all 2s;
+    }
+    .sky {
+      position: absolute;
+      width: 300vw;
+      height: 60vh;
+      top: 0px;
+      left: 0px;
+      transition: all 2s;
+    }
+
+    .land {
+      position: absolute;
+      width: 100%;
+      height: 81.543%;
+      bottom: 0px;
+      left: 0px;
+      z-index: 2;
+      transition: all 2s;
+    }
+  }
+}
+@keyframes blur {
+  from {
+    transform: scale(1.5);
+    filter: blur(1px);
+  }
+  to {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+@keyframes nomadao {
+  from {
+    opacity: 0.2;
+    bottom: 30.814%;
+    font-size: 8vw;
+  }
+  to {
+    opacity: 1;
+    bottom: 55%;
+    font-size: 12vw;
+  }
+}
+
+@media (max-width: 875px) {
+  .landing{
+    .background{
+      width: 150vw;
+      left: -25vw;
+      .sky{
+        width: 375vw;
+      }
+    }
+  }
+}
+@media (max-width: 680px) {
+  header{
+    justify-content: space-between;
+    nav, .buyNFT{
+      display: none;
+    }
+    
+  }
+  .landing{
+    .background{
+      h1{
+        animation: nomadao2 1.4s linear 1 forwards;
+        transition: text-shadow 1.4s;
+      }
+      width: 400vw;
+      left: -150vw;
+      .sky{
+        width: 1000vw;
+      }
+    }
+    .content{
+      .socials{
+        flex-direction: row;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100vh - 140px);
+        width: fit-content;
+        .fa-4x{
+          font-size: 3em;
+        }
+      }
+    }
+  }
+  .landing .content .see_more{
+    top: 90vh;
+  }
+  .menuOpen{
+    display: block;
+    margin-left: 10px;
+  }
+  .light .landing .background h1{
+    color: $white;
+    text-shadow: 0px 0px 5px black;
+  }
+}
+@keyframes nomadao2 {
+  from {
+    opacity: 0.2;
+    bottom: 30.814%;
+    font-size: 8vw;
+  }
+  to {
+    opacity: 1;
+    bottom: 70%;
+    font-size: 18vw;
+  }
+}
