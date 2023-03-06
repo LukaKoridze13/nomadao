@@ -35,12 +35,8 @@
     <title>Dashboard</title>
     <script>
       window.addEventListener("load", () => {
-        if (localStorage.getItem("Nomadao-Theme") === null) {
-          localStorage.setItem("Nomadao-Theme", "light");
-        }
-        const theme = localStorage.getItem("Nomadao-Theme") || "light";
         document.body.className = "";
-        document.body.classList.add(theme);
+        document.body.classList.add(localStorage.getItem("Nomadao_Theme"));
         document.getElementById("dashboard").classList.add(localStorage.getItem("Nomadao_Token"));
       });
     </script>
@@ -55,11 +51,9 @@
             <p>Nina K.</p>
           </div>
         </div>
-        <div class="menu">
-          <div class="mywallet" style="display: flex; align-items: center; gap: 10px"><i class="fa-wallet fa-solid fa-2x"></i> <span>My Wallet</span></div>
-        </div>
+        <div class="mywallet" style="display: flex; align-items: center; gap: 10px; cursor: pointer"><i class="fa-wallet fa-solid fa-1x"></i> <span>My Wallet</span></div>
         <div class="signout" style="display: flex; align-items: center; gap: 10px">
-          <a id="sign_out" href="./index.html"><i class="fa-solid fa-arrow-right-from-bracket fa-2x" style="transform: scale(-1)"></i> Sign out</a>
+          <a id="sign_out" href="./index.html"><i class="fa-solid fa-arrow-right-from-bracket fa-1x" style="transform: scale(-1)"></i><span>Sign out</span></a>
         </div>
       </aside>
       <header>
@@ -80,6 +74,19 @@
             <p>Dashboard</p>
           </div>
           <img src="./Images/logo.png" alt="Nomadao logo" />
+        </div>
+      </div>
+      <div class="bottom" style="display: flex; justify-content: space-between;">
+        <div class="yourNFT">
+          <p class="you_own"></p>
+          <img src="" class="you_own_img" alt="NFT" />
+        </div>
+        <div class="fares">
+          <p>Flight Fares</p>
+          <p class="thin">compared to 2022 year</p>
+          
+
+          <p class="thin">compared to 2021 year</p>
         </div>
       </div>
     </div>
