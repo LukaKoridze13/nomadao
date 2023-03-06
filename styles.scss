@@ -785,14 +785,14 @@ header {
     gap: 10px;
   }
   .blue {
-    width: 8vw;
+    width: 4vw;
     height: 3px;
     border-radius: 2px;
     background-color: rgba(18, 125, 214, 1);
     margin-top: 20px;
   }
   .blue_active {
-    width: 14vw;
+    width: 7vw;
   }
   .phase {
     color: $black;
@@ -1026,7 +1026,27 @@ footer {
   border-radius: 10px;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   display: none;
+  padding: 10px;
+  gap: 20px;
+  #close_panel{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+  .fa-spinner{
+    display: none;
+    animation: spin 3s linear infinite;
+  }
+  
+}
+#dashboard{
+  display: none;
+}
+
+@keyframes spin {
+  to{transform: rotate(360deg);}
 }
 #metamask {
   border-radius: 8px;
@@ -1044,31 +1064,21 @@ footer {
   img {
     width: 25px;
   }
+  
 }
-@media (max-width:1350px) {
-  // Roadmap Responsive styles
-  #roadmap {
-    margin-top: 70px;
-    gap: 50px;
-    .roadmap_container {
-      flex-direction: column;
-      align-items: center;
-    }
-    .phase {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .blue {
-      width: 3px;
-      height: 60px;
-      margin-top: 0px;
-    }
+#alert{
+  color: $white;
+  display: none;
+  font-family: 'Inter';
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  a{
+    color: $orange;
   }
-  #roadmap .blue_active {
-    height: 120px;
-  }
+  
 }
 @media (max-width: 1320px) {
   #about_us {
@@ -1117,6 +1127,29 @@ footer {
   }
 }
 @media (max-width: 1100px) {
+  // Roadmap Responsive styles
+  #roadmap {
+    margin-top: 70px;
+    gap: 50px;
+    .roadmap_container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .phase {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .blue {
+      width: 3px;
+      height: 60px;
+      margin-top: 0px;
+    }
+  }
+  #roadmap .blue_active {
+    height: 120px;
+  }
   .projectSection {
     h2 {
       font-size: 30px;

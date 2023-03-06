@@ -1,3 +1,10 @@
+import CONTRACT_ABI from "./abi.js";
+// Contract
+const CONTRACT_ADDRESS = "0x2953399124F0cBB46d2CbACD8A89cF0599974963";
+const BRONZE = "93676693700634480901328071075319047135174375533609207086205073443957206159764";
+const SILVER = "93676693700634480901328071075319047135174375533609207086205073445056717784540";
+const GOLD = "93676693700634480901328071075319047135174375533609207086205073446156229411316";
+
 const ourProjectsDropDownButton = document.getElementById("drop_down");
 const ourProjectsDropDownBox = document.querySelector(".drop_down");
 const sky = document.querySelector(".sky");
@@ -49,6 +56,10 @@ mobileNavigationButton.addEventListener("click", () => {
     document.querySelector("header").classList.remove("header_active");
   }
 });
+document.getElementById("close_panel").addEventListener("click", () => {
+  document.querySelector("header li").click();
+  activateAlert("", "none");
+});
 // li items clicked
 document.querySelectorAll("li").forEach((li, i) => {
   li.addEventListener("click", () => {
@@ -58,8 +69,13 @@ document.querySelectorAll("li").forEach((li, i) => {
       });
       li.classList.add("active");
       if (i == 3) {
+        if(localStorage.getItem('Nomadao_Login')){
+          openDashboard()
+        }else{
         document.getElementById("panel").style.display = "flex";
-      }else{
+
+        }
+      } else {
         document.getElementById("panel").style.display = "none";
       }
       if (window.innerWidth < 681) {
@@ -100,7 +116,6 @@ swiperItems.forEach((item, index) => {
     item.style.transform = "scale(1)";
   });
 });
-
 function swipeF() {
   const swiper = document.querySelector(".swiper");
   const swiperItems = document.querySelectorAll(".swiper-slide");
@@ -112,6 +127,74 @@ function swipeF() {
     }
     item.style.left = parseInt(item.style.left) - px + "px";
   });
+}
+// Metamask
+const metamaskButton = document.getElementById("metamask");
+const alert = document.getElementById("alert");
+let web3;
+let account;
+metamaskButton.addEventListener("click", async () => {
+  document.querySelector(".fa-spinner").style.display = "block";
+  if (window.ethereum === undefined) {
+    activateAlert("Please install Metamask to activate this feature", "install");
+  } else {
+    try {
+      await ethereum.request({ method: "eth_requestAccounts" });
+      web3 = await new Web3(window.ethereum);
+      await web3.eth.net.getId(async (err, netId) => {
+        if (err) {
+          console.error("Error getting network ID:", err);
+        } else {
+          if (netId === 137) {
+            const accounts = await web3.eth.getAccounts();
+            account = accounts[0];
+            account = "0xcF1b2134812a36B7AD7592Aa8a7E7CB5321bF450";
+            let contract = await new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
+            let bronze = await contract.methods.balanceOf(account, BRONZE).call();
+            let silver = await contract.methods.balanceOf(account, SILVER).call();
+            let gold = await contract.methods.balanceOf(account, SILVER).call();
+            if (gold > 0) {
+              login(account, "gold");
+            } else if (silver > 0) {
+              login(account, "silver");
+            } else if (bronze > 0) {
+              login(account, "bronze");
+            } else {
+              activateAlert("You must own NOMADAO NFT to use this feature");
+            }
+            document.querySelector(".fa-spinner").style.display = "none";
+          } else {
+            activateAlert("Please switch to Polygon Network in Metamask");
+          }
+        }
+      });
+    } catch (err) {
+      activateAlert("You've rejected the request, try again", "none");
+    }
+  }
+});
+function activateAlert(text, type) {
+  alert.innerHTML = "";
+  alert.style.display = "flex";
+  let p = document.createElement("p");
+  p.innerText = text;
+  alert.appendChild(p);
+  if (type === "install") {
+    let a = document.createElement("a");
+    a.href = "https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn";
+    a.innerText = "Install";
+    a.target = "_blank";
+    alert.appendChild(a);
+  }
+}
+function login(add, type) {
+  localStorage.setItem('Nomadao_Address', add)
+  localStorage.setItem('Nomadao_Token', type)
+  localStorage.setItem('Nomadao_Login', true)
+  openDashboard();
+}
+function openDashboard() {
+  window.location.replace('./dashboard.html')
 }
 // Clicked elsewhere
 window.addEventListener("click", (event) => {
