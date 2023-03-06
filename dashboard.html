@@ -47,11 +47,41 @@
   </head>
   <body>
     <div id="dashboard">
+      <aside>
+        <div class="profile" style="display: flex; gap: 10px">
+          <i class="fa-user fa-solid fa-2x"></i>
+          <div>
+            <p>Welcome back</p>
+            <p>Nina K.</p>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="mywallet" style="display: flex; align-items: center; gap: 10px"><i class="fa-wallet fa-solid fa-2x"></i> <span>My Wallet</span></div>
+        </div>
+        <div class="signout" style="display: flex; align-items: center; gap: 10px">
+          <a id="sign_out" href="./index.html"><i class="fa-solid fa-arrow-right-from-bracket fa-2x" style="transform: scale(-1)"></i> Sign out</a>
+        </div>
+      </aside>
       <header>
         <a href="./index.html">Back to Home</a>
-        <a id="sign_out" href="./index.html">Sign out</a>
-        <div class="nft"></div>
       </header>
+      <div class="top">
+        <div class="balance">
+          <p>Balance</p>
+          <p id="balance"></p>
+        </div>
+        <div class="theme">
+          <i class="fa-sun fa-solid fa-2x"></i>
+          <i class="fa-moon fa-solid fa-2x"></i>
+        </div>
+        <div class="last">
+          <div>
+            <p>NOMADAO</p>
+            <p>Dashboard</p>
+          </div>
+          <img src="./Images/logo.png" alt="Nomadao logo" />
+        </div>
+      </div>
     </div>
     <script src="./dashboard.js"></script>
   </body>

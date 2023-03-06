@@ -23,10 +23,10 @@ document.getElementById("start_date").value = `${year}-${month}-${day}`;
 document.getElementById("end_date").value = `${year}-${month}-${day}`;
 
 document.querySelector(".theme").addEventListener("click", () => {
-  if (localStorage.getItem("Nomadao-Theme") === "light") {
-    localStorage.setItem("Nomadao-Theme", "dark");
+  if (localStorage.getItem("Nomadao_Theme") === "light") {
+    localStorage.setItem("Nomadao_Theme", "dark");
   } else {
-    localStorage.setItem("Nomadao-Theme", "light");
+    localStorage.setItem("Nomadao_Theme", "light");
   }
   themeChange();
 });
@@ -69,11 +69,10 @@ document.querySelectorAll("li").forEach((li, i) => {
       });
       li.classList.add("active");
       if (i == 3) {
-        if(localStorage.getItem('Nomadao_Login')){
-          openDashboard()
-        }else{
-        document.getElementById("panel").style.display = "flex";
-
+        if (localStorage.getItem("Nomadao_Login") === "true") {
+          openDashboard();
+        } else {
+          document.getElementById("panel").style.display = "flex";
         }
       } else {
         document.getElementById("panel").style.display = "none";
@@ -137,6 +136,7 @@ metamaskButton.addEventListener("click", async () => {
   document.querySelector(".fa-spinner").style.display = "block";
   if (window.ethereum === undefined) {
     activateAlert("Please install Metamask to activate this feature", "install");
+    document.querySelector(".fa-spinner").style.display = "none";
   } else {
     try {
       await ethereum.request({ method: "eth_requestAccounts" });
@@ -165,11 +165,13 @@ metamaskButton.addEventListener("click", async () => {
             document.querySelector(".fa-spinner").style.display = "none";
           } else {
             activateAlert("Please switch to Polygon Network in Metamask");
+            document.querySelector(".fa-spinner").style.display = "none";
           }
         }
       });
     } catch (err) {
       activateAlert("You've rejected the request, try again", "none");
+      document.querySelector(".fa-spinner").style.display = "none";
     }
   }
 });
@@ -188,13 +190,13 @@ function activateAlert(text, type) {
   }
 }
 function login(add, type) {
-  localStorage.setItem('Nomadao_Address', add)
-  localStorage.setItem('Nomadao_Token', type)
-  localStorage.setItem('Nomadao_Login', true)
+  localStorage.setItem("Nomadao_Address", add);
+  localStorage.setItem("Nomadao_Token", type);
+  localStorage.setItem("Nomadao_Login", "true");
   openDashboard();
 }
 function openDashboard() {
-  window.location.replace('./dashboard.html')
+  window.location.replace("./dashboard.html");
 }
 // Clicked elsewhere
 window.addEventListener("click", (event) => {
@@ -204,7 +206,7 @@ window.addEventListener("click", (event) => {
   }
 });
 function themeChange() {
-  if (localStorage.getItem("Nomadao-Theme") === "light") {
+  if (localStorage.getItem("Nomadao_Theme") === "light") {
     document.body.className = "";
     document.body.classList.add("light");
     // Theme Change Button

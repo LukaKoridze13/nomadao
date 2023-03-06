@@ -8,12 +8,19 @@
   font-family: "Inter";
   font-size: 16px;
   padding: 20px;
+  color: #202020;
+}
+
+.dark #dashboard {
+  color: #ececec;
 }
 
 .nft {
-  width: 200px;
-  height: 320px;
+  width: 190px;
+  height: 290px;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .dark .gold {
@@ -29,9 +36,6 @@
 .gold {
   background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(243, 238, 166, 0.78) 0%, white 100%);
 }
-.gold .nft {
-  background-image: url("./Images/gold.png");
-}
 
 .silver {
   background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(238, 241, 240, 0.78) 0%, white 100%), #202020;
@@ -44,15 +48,74 @@
 header {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 100px;
 }
 header a {
   display: block;
+  background-color: #202020;
+  border-radius: 8px;
+  color: #ececec;
+  padding: 6px;
 }
 
 .dark header a {
   background-color: #ececec;
-  border-radius: 8px;
   color: #202020;
-  padding: 6px;
+}
+
+.top {
+  width: 100%;
+  background: linear-gradient(104.45deg, rgb(20, 99, 131) 5.01%, rgb(40, 202, 143) 96.35%);
+  border-radius: 8px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 100px;
+  padding: 30px;
+  color: #ececec;
+}
+.top .last {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.top .last div p {
+  font-family: "Gemunu Libre";
+}
+.top .last div p:first-child {
+  font-size: 26px;
+  font-weight: 700;
+}
+.top .balance {
+  margin-right: auto;
+}
+.top .theme i {
+  display: none;
+}
+.top .theme i.active {
+  display: block;
+  cursor: pointer;
+}
+
+aside {
+  position: absolute;
+  top: 68px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 30px;
+  padding-top: 45px;
+  border-radius: 8px;
+  background: rgba(32, 32, 32, 0.7);
+}
+aside .menu {
+  margin-top: 100px;
+}
+aside .signout a {
+  color: #ececec;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
 }/*# sourceMappingURL=dashboard.css.map */

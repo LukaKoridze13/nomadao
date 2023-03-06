@@ -36,10 +36,10 @@
     <title>NOMADAO</title>
     <script>
       window.addEventListener("load", () => {
-        if (localStorage.getItem("Nomadao-Theme") === null) {
-          localStorage.setItem("Nomadao-Theme", "light");
+        if (localStorage.getItem("Nomadao_Theme") === null) {
+          localStorage.setItem("Nomadao_Theme", "light");
         }
-        const theme = localStorage.getItem("Nomadao-Theme") || "light";
+        const theme = localStorage.getItem("Nomadao_Theme") || "light";
         document.body.className = "";
         document.body.classList.add(theme);
       });
