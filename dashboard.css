@@ -4,7 +4,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 #dashboard {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   font-family: "Inter";
   font-size: 16px;
   padding: 20px;
@@ -47,25 +48,6 @@
   background: radial-gradient(165.63% 327.53% at 109.17% 115.38%, rgba(185, 159, 145, 0.3588) 0%, white 100%), #202020;
 }
 
-header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  gap: 100px;
-}
-header a {
-  display: block;
-  background-color: #202020;
-  border-radius: 8px;
-  color: #ececec;
-  padding: 6px;
-}
-
-.dark header a {
-  background-color: #ececec;
-  color: #202020;
-}
-
 .top {
   width: 100%;
   background: linear-gradient(104.45deg, rgb(20, 99, 131) 5.01%, rgb(40, 202, 143) 96.35%);
@@ -105,10 +87,14 @@ header a {
   display: block;
   cursor: pointer;
 }
+.top a {
+  color: #ececec;
+  font-weight: 500;
+}
 
 aside {
   position: absolute;
-  top: 68px;
+  top: 40px;
   width: -moz-fit-content;
   width: fit-content;
   padding: 30px;
@@ -116,8 +102,20 @@ aside {
   border-radius: 8px;
   background: rgba(32, 32, 32, 0.7);
 }
+aside .d-pages {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 5px;
+}
+aside .d-pages.active {
+  background-color: #fe7c31;
+}
+aside .home {
+  margin-top: 80px;
+}
 aside .mywallet {
-  margin-top: 100px;
+  margin-top: 20px;
 }
 aside .signout a {
   color: #ececec;
@@ -125,6 +123,7 @@ aside .signout a {
   align-items: center;
   gap: 10px;
   margin-top: 50px;
+  padding: 8px;
 }
 aside div span,
 aside div div {
@@ -160,11 +159,115 @@ aside.active div div {
   color: #202020;
 }
 
+.fares {
+  height: 375px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.459);
+  border-radius: 10px;
+}
 .fares .thin {
   font-weight: 300;
   font-size: 14px;
+  margin-top: 10px;
 }
 
 .light .fares {
   color: #202020;
+}
+
+.container_fares {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 280px;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.flight_box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: #C5C5C5;
+  padding: 15px;
+  border-radius: 10px;
+}
+.flight_box span.low {
+  color: #3fb280;
+}
+.flight_box div {
+  padding: 10px;
+  border-radius: 10px;
+  background: #3f3f3f;
+  font-size: 14px;
+  width: 140px;
+  text-align: center;
+}
+.flight_box button {
+  background-color: #ececec;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.flight_box button:hover {
+  color: #ececec;
+  background-color: #202020;
+}
+
+.flight_box.low {
+  background-color: #3fb280;
+}
+
+.container_fares::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #ececec;
+  border-radius: 10px;
+}
+
+.container_fares::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ececec;
+  border-radius: 10px;
+}
+
+.container_fares::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #fe7c31;
+}
+
+.assets {
+  margin-top: 30px;
+}
+
+.container_owned_fares {
+  margin-top: 20px;
+  padding-right: 30px;
+  height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container_owned_fares::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #ececec;
+  border-radius: 10px;
+}
+
+.container_owned_fares::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ececec;
+  border-radius: 10px;
+}
+
+.container_owned_fares::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #fe7c31;
 }/*# sourceMappingURL=dashboard.css.map */

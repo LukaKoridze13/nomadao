@@ -15,7 +15,8 @@ $gradient: linear-gradient(100deg, #166b8c, rgba(46, 235, 167, 0.76), #fe7c31, r
 
 #dashboard {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   font-family: "Inter";
   font-size: 16px;
   padding: 20px;
@@ -55,25 +56,7 @@ $gradient: linear-gradient(100deg, #166b8c, rgba(46, 235, 167, 0.76), #fe7c31, r
 .yourNFT.bronze {
   background: radial-gradient(165.63% 327.53% at 109.17% 115.38%, rgba(185, 159, 145, 0.3588) 0%, white 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #202020;
 }
-header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  gap: 100px;
-  a {
-    display: block;
-    background-color: $black;
-    border-radius: 8px;
-    color: $white;
-    padding: 6px;
-  }
-}
-.dark header {
-  a {
-    background-color: $white;
-    color: $black;
-  }
-}
+
 
 .top {
   width: 100%;
@@ -119,18 +102,33 @@ header {
       cursor: pointer;
     }
   }
+  a{
+    color: $white;
+    font-weight: 500;
+  }
 }
 
 aside {
   position: absolute;
-  top: 68px;
+  top: 40px;
   width: fit-content;
   padding: 30px;
   padding-top: 45px;
   border-radius: 8px;
   background: rgba(32, 32, 32, 0.7);
+  .d-pages{
+    width: fit-content;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  .d-pages.active{
+    background-color: $orange;
+  }
+  .home{
+    margin-top: 80px;
+  }
   .mywallet {
-    margin-top: 100px;
+    margin-top: 20px;
   }
   .signout {
     a {
@@ -139,6 +137,7 @@ aside {
       align-items: center;
       gap: 10px;
       margin-top: 50px;
+      padding: 8px;
     }
   }
   div {
@@ -176,12 +175,105 @@ aside.active {
 .light .yourNFT {
   color: $black;
 }
-.fares{
-  .thin{
+.fares {
+  height: 375px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.459);
+  border-radius: 10px;
+  .thin {
     font-weight: 300;
     font-size: 14px;
+    margin-top: 10px;
   }
 }
-.light .fares{
+.light .fares {
   color: $black;
+}
+.container_fares {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 280px;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+.flight_box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: #C5C5C5;
+  padding: 15px;
+  border-radius: 10px;
+  span.low {
+    color: #3fb280;
+  }
+  div {
+    padding: 10px;
+    border-radius: 10px;
+    background: #3f3f3f;
+    font-size: 14px;
+    width: 140px;
+    text-align: center;
+  }
+  button{
+    background-color: $white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover{
+      color: $white;
+      background-color: $black;
+    }
+  }
+}
+.flight_box.low {
+  background-color: #3fb280;
+}
+// SCROLLBAR
+.container_fares::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: $white;
+  border-radius: 10px;
+}
+.container_fares::-webkit-scrollbar {
+  width: 12px;
+  background-color: $white;
+  border-radius: 10px;
+}
+.container_fares::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $orange;
+}
+.assets{
+  margin-top: 30px;
+}
+.container_owned_fares{
+  margin-top: 20px;
+  padding-right: 30px;
+  height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container_owned_fares::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: $white;
+  border-radius: 10px;
+}
+.container_owned_fares::-webkit-scrollbar {
+  width: 12px;
+  background-color: $white;
+  border-radius: 10px;
+}
+.container_owned_fares::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $orange;
 }
