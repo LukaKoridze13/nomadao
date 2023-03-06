@@ -196,7 +196,11 @@ function login(add, type) {
   openDashboard();
 }
 function openDashboard() {
-  window.location.replace("./dashboard.html");
+  if (window.innerWidth < 481) {
+    alert("User Panel is not available for mobile devices");
+  } else {
+    window.location.replace("./dashboard.html");
+  }
 }
 // Clicked elsewhere
 window.addEventListener("click", (event) => {
