@@ -229,7 +229,7 @@ function drawPagesNavigation() {
             document.querySelector(`.${z.id}`).style.display = "none";
           });
           p.classList.add("active");
-          document.querySelector(`.${p.id}`).style.display = "flex";
+          document.querySelector(`.${p.id}`).style.display = "block";
         }
         p.addEventListener("click", () => {
           document.querySelectorAll(`#${page.name.replace(/\s/g, "")} header p`).forEach((z, index) => {
@@ -237,7 +237,7 @@ function drawPagesNavigation() {
             document.querySelector(`.${z.id}`).style.display = "none";
           });
           p.classList.add("active");
-          document.querySelector(`.${p.id}`).style.display = "flex";
+          document.querySelector(`.${p.id}`).style.display = "block";
         });
       });
       drawPagesNavigation();
