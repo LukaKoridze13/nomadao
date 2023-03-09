@@ -19,72 +19,76 @@ const flights = JSON.parse(localStorage.getItem("Nomadao_Flights")) || [
   { from: "JFK", to: "MCO", date: "18-MAR-23", price: 174, price2022: 156, low: false, bought: false },
 ];
 
-document.getElementById("sign_out").addEventListener("click", () => {
-  localStorage.setItem("Nomadao_Login", "false");
-});
 const NFT = localStorage.getItem("Nomadao_Token");
 const ADDRESS = localStorage.getItem("Nomadao_Address");
 const BALANCE = localStorage.getItem("Nomadao_Balance") || 3000;
-localStorage.getItem("Nomadao_Balance") === null && localStorage.setItem("Nomadao_Balance", 3000);
-const MOON = document.querySelector(".fa-moon");
-const SUN = document.querySelector(".fa-sun");
 const ASIDE = document.querySelector("aside");
 const TOP = document.querySelector(".top");
-const BOTTOM = document.querySelector(".bottom");
-const MYWALLET = document.querySelector(".mywallet");
+const SPACE = document.querySelector("#space");
 const DASHBOARD = document.querySelector(".home");
-const Pages = document.querySelectorAll(".d-pages");
-const ASSETS = document.querySelector(".assets");
-MYWALLET.addEventListener("click", () => {
-  BOTTOM.style.display = "none";
-  ASSETS.style.display = "flex";
+const Navigation = document.querySelector("nav ul");
+const EXPAND = document.querySelector("#expand");
+const EXPAND_ICON = document.querySelector(".icon-expand");
+const pages = [
+  {
+    name: "Dashboard",
+    icon: "fa-home",
+    active: true,
+  },
+  {
+    name: "Account",
+    icon: "fa-gear",
+    active: false,
+  },
+  {
+    name: "My Assets",
+    icon: "fa-wallet",
+    active: false,
+  },
+  {
+    name: "Funds",
+    icon: "fa-sack-dollar",
+    status: false,
+  },
+  {
+    name: "Marketplace",
+    icon: "fa-store",
+    status: false,
+  },
+  {
+    name: "Exchange",
+    icon: "fa-arrows-rotate",
+    status: false,
+  },
+  {
+    name: "Cashlink",
+    icon: "fa-dollar-sign",
+    status: false,
+  },
+  {
+    name: "Travel Signals",
+    icon: "fa-satellite-dish",
+    status: false,
+  },
+];
 
-  Pages.forEach((p) => {
-    p.classList.remove("active");
-  });
-  MYWALLET.classList.add("active");
-  drawOwnedFlights();
-});
-DASHBOARD.addEventListener("click", () => {
-  BOTTOM.style.display = "flex";
-  ASSETS.style.display = "none";
-  Pages.forEach((p) => {
-    p.classList.remove("active");
-  });
-  DASHBOARD.classList.add("active");
-});
-document.querySelector(".yourNFT").classList.add(localStorage.getItem("Nomadao_Token"));
-document.querySelector(".you_own_img").src = "./Images/" + localStorage.getItem("Nomadao_Token") + ".png";
-document.querySelector(".you_own").innerText = "You own " + localStorage.getItem("Nomadao_Token").toUpperCase() + " NFT";
-
-ASIDE.addEventListener("mouseover", () => {
-  ASIDE.classList.add("active");
-  TOP.style.paddingLeft = "240px";
-  BOTTOM.style.paddingLeft = "240px";
-  ASSETS.style.paddingLeft = "240px";
-});
-ASIDE.addEventListener("mouseleave", () => {
-  ASIDE.classList.remove("active");
-  TOP.style.paddingLeft = "120px";
-  BOTTOM.style.paddingLeft = "120px";
-  ASSETS.style.paddingLeft = "120px";
+EXPAND.addEventListener("click", () => {
+  if (ASIDE.classList.contains("active")) {
+    ASIDE.classList.remove("active");
+    TOP.style.paddingLeft = "120px";
+    SPACE.style.marginLeft = "100px";
+    SPACE.style.width = "91%";
+    EXPAND_ICON.style.transform = "rotate(0deg)";
+  } else {
+    ASIDE.classList.add("active");
+    TOP.style.paddingLeft = "240px";
+    SPACE.style.marginLeft = "215px";
+    SPACE.style.width = "calc(91% - 115px)";
+    EXPAND_ICON.style.transform = "rotate(180deg)";
+  }
 });
 
-MOON.addEventListener("click", () => {
-  themeChange("dark");
-});
-SUN.addEventListener("click", () => {
-  themeChange("light");
-});
-if (localStorage.getItem("Nomadao_Theme") === "light") {
-  SUN.classList.remove("active");
-  MOON.classList.add("active");
-} else {
-  MOON.classList.remove("active");
-  SUN.classList.add("active");
-}
-
-document.getElementById("balance").innerText = "$ " + Number(BALANCE);
+start();
 
 function setBalance(num) {
   num = Number(num);
@@ -103,7 +107,6 @@ function setBalance(num) {
     }
   }, 1);
 }
-
 function themeChange(theme) {
   localStorage.setItem("Nomadao_Theme", theme);
   if (theme === "light") {
@@ -118,7 +121,6 @@ function themeChange(theme) {
     document.body.classList.add("dark");
   }
 }
-drawFlightsForSale();
 
 function drawFlightsForSale() {
   document.querySelector(".container_fares").innerHTML = "";
@@ -198,4 +200,59 @@ function drawOwnedFlights() {
   if (num === 0) {
     document.querySelector(".container_owned_fares").innerHTML = "You don't have any owned flights yet";
   }
+}
+function drawPagesNavigation() {
+  Navigation.innerHTML = "";
+  pages.forEach((page) => {
+    const box = document.createElement("li");
+    const i = document.createElement("i");
+    i.classList.add("fa-solid", "fa-1x", page.icon);
+    const span = document.createElement("span");
+    span.innerText = page.name;
+    box.append(i, span);
+    page.active && box.classList.add("active");
+    Navigation.appendChild(box);
+
+    box.addEventListener("click", () => {
+      pages.forEach((x) => {
+        x.active = false;
+      });
+      page.active = true;
+      document.querySelectorAll(".section").forEach((sect) => {
+        sect.style.display = "none";
+      });
+      document.querySelector(`#${page.name.replace(/\s/g, "")}`).style.display = "block";
+      document.querySelectorAll(`#${page.name.replace(/\s/g, "")} header p`).forEach((p, index) => {
+        if (index === 0) {
+          document.querySelectorAll(`#${page.name.replace(/\s/g, "")} header p`).forEach((z, index) => {
+            z.classList.remove("active");
+            document.querySelector(`.${z.id}`).style.display = "none";
+          });
+          p.classList.add("active");
+          document.querySelector(`.${p.id}`).style.display = "flex";
+        }
+        p.addEventListener("click", () => {
+          document.querySelectorAll(`#${page.name.replace(/\s/g, "")} header p`).forEach((z, index) => {
+            z.classList.remove("active");
+            document.querySelector(`.${z.id}`).style.display = "none";
+          });
+          p.classList.add("active");
+          document.querySelector(`.${p.id}`).style.display = "flex";
+        });
+      });
+      drawPagesNavigation();
+    });
+  });
+}
+function start() {
+  localStorage.getItem("Nomadao_Balance") === null && localStorage.setItem("Nomadao_Balance", 3000);
+  // document.querySelector(".yourNFT").classList.add(localStorage.getItem("Nomadao_Token"));
+  // document.querySelector(".you_own_img").src = "./Images/" + localStorage.getItem("Nomadao_Token") + ".png";
+  // document.querySelector(".you_own").innerText = "You own " + localStorage.getItem("Nomadao_Token").toUpperCase() + " NFT";
+  document.getElementById("balance").innerText = "$ " + Number(BALANCE);
+  // drawFlightsForSale();
+  document.getElementById("sign_out").addEventListener("click", () => {
+    localStorage.setItem("Nomadao_Login", "false");
+  });
+  drawPagesNavigation();
 }

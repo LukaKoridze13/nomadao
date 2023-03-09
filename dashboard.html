@@ -36,7 +36,7 @@
     <script>
       window.addEventListener("load", () => {
         document.body.className = "";
-        document.body.classList.add(localStorage.getItem("Nomadao_Theme"));
+        document.body.classList.add("dark");
         document.getElementById("dashboard").classList.add(localStorage.getItem("Nomadao_Token"));
       });
     </script>
@@ -44,24 +44,20 @@
   <body>
     <div id="dashboard">
       <aside>
+        <button id="expand"><i class="fa-angle-right fa-solid fa-1x icon-expand"></i></button>
         <div class="profile" style="display: flex; gap: 10px; align-items: center; padding: 8px">
           <i class="fa-user fa-solid fa-1x" style="font-size: 20px"></i>
           <span>Nina K.</span>
         </div>
-        <div class="home d-pages active" style="display: flex; align-items: center; gap: 10px; cursor: pointer"><i class="fa-home fa-solid fa-1x"></i> <span>Dashboard</span></div>
-        <div class="mywallet d-pages" style="display: flex; align-items: center; gap: 10px; cursor: pointer"><i class="fa-wallet fa-solid fa-1x"></i> <span>My Assets</span></div>
+        <nav><ul></ul></nav>
         <div class="signout" style="display: flex; align-items: center; gap: 10px">
           <a id="sign_out" href="./index.html"><i class="fa-solid fa-arrow-right-from-bracket fa-1x" style="transform: scale(-1)"></i><span>Sign out</span></a>
         </div>
       </aside>
       <div class="top">
         <div class="balance">
-          <p>Balance</p>
+          <p>Balance:</p>
           <p id="balance"></p>
-        </div>
-        <div class="theme">
-          <i class="fa-sun fa-solid fa-2x"></i>
-          <i class="fa-moon fa-solid fa-2x"></i>
         </div>
         <a href="./index.html"><i class="fa-solid fa-arrow-right-from-bracket fa-1x" style="transform: scale(-1)"></i> Back to Home</a>
 
@@ -73,7 +69,70 @@
           <img src="./Images/logo.png" alt="Nomadao logo" />
         </div>
       </div>
-      <div class="bottom" style="display: flex; justify-content: flex-start; gap: 50px">
+      <div id="space">
+        <section id="Dashboard" class="section">Dashboard</section>
+        <section id="Account" class="section">
+          <header class="Account">
+            <p id="personal_details" class="active">Personal Details</p>
+            <p id="email_verification">Email Verification</p>
+            <p id="passport_id">Passport or ID Details</p>
+          </header>
+          <div class="personal_details sectView">
+            <div class="left">
+              <label for="name">Name</label>
+              <input type="text" class="dashInp" placeholder="John" id="name" />
+              <label for="surname">Surname</label>
+              <input type="text" class="dashInp" placeholder="Surname" id="surname" />
+              <label for="tel">Phone number</label>
+              <input type="tel" class="dashInp" placeholder="+995551325586" id="tel" />
+              <label for="birthday">Birthday</label>
+              <input type="date" class="dashInp" id="birthday" />
+            </div>
+            <div class="right">
+              <label for="nationality">Nationality</label>
+              <input type="text" class="dashInp" placeholder="Georgian" id="nationality" />
+              <label for="address">Address</label>
+              <input type="text" class="dashInp" placeholder="Enter your address" id="address" />
+              <label for="city">City</label>
+              <input type="text" class="dashInp" id="city" placeholder="Tbilisi" />
+              <label for="zip">Zip code</label>
+              <input type="text" class="dashInp" id="zip" placeholder="0197" />
+            </div>
+          </div>
+          <div class="email_verification sectView">Email Verification</div>
+          <div class="passport_id sectView">Passport or ID Details</div>
+        </section>
+        <section id="MyAssets" class="section">
+          <header class="Account">
+            <p id="myassets">My assets</p>
+          </header>
+          <div class="myassets sectView" style="flex-direction: column">
+            <input class="dashInp" type="search" placeholder="Search for assets" style="width: 40%; margin: auto" />
+            <i class="fa-solid fa-search"></i>
+            <div class="asset_box" style="margin-top: 50px">
+              <i class="fa-solid fa-plane fa-2x"></i>
+              <div>
+                <p>Lorem Ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, aut? Soluta quae, odit minima autem temporibus similique.</p>
+              </div>
+              <div style="text-align: center">
+                <p>Value Of Asset</p>
+                <p>200.00 NOM</p>
+              </div>
+              <div style="display: flex;flex-direction: column; gap: 10px;">
+                <button>Action One</button>
+                <button>Action Two</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="Funds" class="section">Funds</section>
+        <section id="Marketplace" class="section">Marketplace</section>
+        <section id="Exchange" class="section">Exchange</section>
+        <section id="Cashlink" class="section">Cashlink</section>
+        <section id="TravelSignals" class="section">Travel Signals</section>
+      </div>
+      <!-- <div class="bottom" style="display: flex; justify-content: flex-start; gap: 50px">
         <div class="yourNFT">
           <p class="you_own"></p>
           <img src="" class="you_own_img" alt="NFT" />
@@ -84,12 +143,12 @@
           <div class="container_fares"></div>
         </div>
       </div>
-      <div class="assets" style="display: flex; justify-content: flex-start; gap: 50px; display: none;">
+      <div class="assets" style="display: flex; justify-content: flex-start; gap: 50px; display: none">
         <div class="fares">
           <p>Your Flights</p>
           <div class="container_owned_fares"></div>
         </div>
-      </div>
+      </div> -->
     </div>
     <script src="./dashboard.js"></script>
   </body>

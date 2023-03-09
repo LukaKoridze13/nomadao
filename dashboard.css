@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 #dashboard {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   font-family: "Inter";
   font-size: 16px;
@@ -20,32 +20,19 @@
   background-position: center;
 }
 
-.dark .gold,
-.dark .yourNFT.gold {
-  background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(243, 238, 166, 0.78) 0%, rgba(0, 0, 0, 0) 100%), #202020;
-}
-.dark .silver,
-.dark .yourNFT.silver {
-  background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(238, 241, 240, 0.78) 0%, rgba(0, 0, 0, 0) 100%), #202020;
-}
-.dark .bronze,
-.dark .yourNFT.bronze {
-  background: radial-gradient(165.63% 327.53% at 109.17% 115.38%, rgba(185, 159, 145, 0.3588) 0%, rgba(0, 0, 0, 0) 100%), #202020;
-}
-
 .gold,
 .yourNFT.gold {
-  background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(243, 238, 166, 0.78) 0%, white 100%);
+  background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(243, 238, 166, 0.78) 0%, rgba(0, 0, 0, 0) 100%), #202020;
 }
 
 .silver,
 .yourNFT.silver {
-  background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(238, 241, 240, 0.78) 0%, white 100%), #202020;
+  background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(238, 241, 240, 0.78) 0%, rgba(0, 0, 0, 0) 100%), #202020;
 }
 
 .bronze,
 .yourNFT.bronze {
-  background: radial-gradient(165.63% 327.53% at 109.17% 115.38%, rgba(185, 159, 145, 0.3588) 0%, white 100%), #202020;
+  background: radial-gradient(165.63% 327.53% at 109.17% 115.38%, rgba(185, 159, 145, 0.3588) 0%, rgba(0, 0, 0, 0) 100%), #202020;
 }
 
 .top {
@@ -57,7 +44,8 @@
   align-items: center;
   justify-content: flex-end;
   gap: 50px;
-  padding: 30px;
+  padding: 10px;
+  padding-bottom: 50px;
   padding-left: 120px;
   color: #ececec;
 }
@@ -66,26 +54,24 @@
   gap: 15px;
   align-items: center;
 }
+.top .last img {
+  width: 30px;
+}
 .top .last div p {
   font-family: "Gemunu Libre";
 }
 .top .last div p:first-child {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 700;
 }
 .top .balance {
   margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .top #balance {
-  font-size: 30px;
-  margin-top: 10px;
-}
-.top .theme i {
-  display: none;
-}
-.top .theme i.active {
-  display: block;
-  cursor: pointer;
+  font-size: 20px;
 }
 .top a {
   color: #ececec;
@@ -97,19 +83,58 @@ aside {
   top: 40px;
   width: -moz-fit-content;
   width: fit-content;
+  height: calc(100vh - 80px);
   padding: 30px;
-  padding-top: 45px;
+  padding-top: 30px;
   border-radius: 8px;
   background: rgba(32, 32, 32, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-aside .d-pages {
+aside #expand {
+  width: 20px;
+  height: 40px;
+  background-color: #ececec;
+  border-radius: 4px 0px 0px 4px;
+  border: none;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  cursor: pointer;
+}
+aside .icon-expand {
+  transition: all 0.5s;
+}
+aside ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+aside li {
   width: -moz-fit-content;
   width: fit-content;
   padding: 8px;
   border-radius: 5px;
+  color: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 30px;
+  font-size: 16px;
+  cursor: pointer;
 }
-aside .d-pages.active {
-  background-color: #fe7c31;
+aside li i {
+  width: 16px;
+  text-align: center;
+}
+aside li span {
+  display: none;
+}
+aside li.active {
+  background-color: #2eeba7;
+  color: #202020;
 }
 aside .home {
   margin-top: 80px;
@@ -122,7 +147,6 @@ aside .signout a {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 50px;
   padding: 8px;
 }
 aside div span,
@@ -130,8 +154,14 @@ aside div div {
   display: none;
 }
 
-aside.active div span,
-aside.active div div {
+aside.active li {
+  width: 150px;
+  justify-content: flex-start;
+}
+aside.active li span {
+  display: block;
+}
+aside.active div span {
   display: block;
 }
 
@@ -189,7 +219,7 @@ aside.active div div {
   display: flex;
   align-items: center;
   gap: 30px;
-  background-color: #C5C5C5;
+  background-color: #c5c5c5;
   padding: 15px;
   border-radius: 10px;
 }
@@ -270,4 +300,131 @@ aside.active div div {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #fe7c31;
+}
+
+#space {
+  width: 91%;
+  background-color: rgba(32, 32, 32, 0.7);
+  margin-left: 100px;
+  border-radius: 10px;
+  margin-top: -30px;
+  padding: 20px;
+}
+
+.section {
+  display: none;
+}
+.section header {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: #ececec;
+  padding-bottom: 30px;
+}
+.section header p {
+  cursor: pointer;
+}
+.section header p.active {
+  color: #009bd8;
+  position: relative;
+}
+.section header p.active::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  width: 100%;
+  border-bottom: 2px solid #009bd8;
+}
+.section .sectView {
+  display: none;
+  position: relative;
+}
+
+#Dashboard {
+  display: flex;
+}
+
+.dashInp {
+  width: 100%;
+  padding: 10px;
+  background: #3f3f3f;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  color: #ececec;
+}
+.dashInp:focus {
+  outline: none;
+}
+
+.personal_details {
+  display: flex;
+  justify-content: space-between;
+}
+.personal_details .left,
+.personal_details .right {
+  width: 45%;
+}
+
+label {
+  margin-top: 20px;
+  display: block;
+}
+
+input {
+  margin-top: 10px;
+  display: block;
+  font-family: "Inter";
+}
+
+input[type=search] {
+  padding-left: 35px;
+}
+
+.fa-search {
+  position: absolute;
+  left: 31%;
+  top: 12px;
+  font-size: 14px;
+}
+
+.asset_box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #424242;
+  padding: 20px;
+  border-radius: 8px;
+}
+.asset_box i {
+  padding: 10px;
+  background-color: #2eeba7;
+  color: #202020;
+  border-radius: 6px;
+}
+.asset_box div {
+  width: 300px;
+}
+.asset_box div p {
+  font-size: 12px;
+  color: #d8d8d8;
+}
+.asset_box div p:first-child {
+  font-size: 16px;
+  color: #ececec;
+  margin-bottom: 5px;
+}
+.asset_box button {
+  width: 100px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: none;
+  color: #ececec;
+  background: #009bd8;
+  cursor: pointer;
+}
+.asset_box button:first-child {
+  background: #2eeba7;
+  color: #202020;
 }/*# sourceMappingURL=dashboard.css.map */
