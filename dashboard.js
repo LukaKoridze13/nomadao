@@ -55,11 +55,11 @@ const pages = [
     icon: "fa-store",
     status: false,
   },
-  {
-    name: "Exchange",
-    icon: "fa-arrows-rotate",
-    status: false,
-  },
+  // {
+  //   name: "Exchange",
+  //   icon: "fa-arrows-rotate",
+  //   status: false,
+  // },
   {
     name: "Cashlink",
     icon: "fa-dollar-sign",
@@ -214,6 +214,8 @@ function drawPagesNavigation() {
     Navigation.appendChild(box);
 
     box.addEventListener("click", () => {
+      drawFlightsForSale();
+      drawOwnedFlights();
       pages.forEach((x) => {
         x.active = false;
       });
@@ -246,11 +248,13 @@ function drawPagesNavigation() {
 }
 function start() {
   localStorage.getItem("Nomadao_Balance") === null && localStorage.setItem("Nomadao_Balance", 3000);
-  // document.querySelector(".yourNFT").classList.add(localStorage.getItem("Nomadao_Token"));
-  // document.querySelector(".you_own_img").src = "./Images/" + localStorage.getItem("Nomadao_Token") + ".png";
-  // document.querySelector(".you_own").innerText = "You own " + localStorage.getItem("Nomadao_Token").toUpperCase() + " NFT";
+  document.querySelector(".yourNFT").classList.add(localStorage.getItem("Nomadao_Token"));
+  document.querySelector(".you_own_img").src = "./Images/" + localStorage.getItem("Nomadao_Token") + ".png";
+  document.querySelector(".you_own").innerText = localStorage.getItem("Nomadao_Token").toUpperCase() + " NFT";
   document.getElementById("balance").innerText = "$ " + Number(BALANCE);
-  // drawFlightsForSale();
+  document.querySelector("#wallet span").innerText = localStorage.getItem("Nomadao_Address")
+  drawFlightsForSale();
+  drawOwnedFlights();
   document.getElementById("sign_out").addEventListener("click", () => {
     localStorage.setItem("Nomadao_Login", "false");
   });
