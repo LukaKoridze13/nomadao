@@ -2,6 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+.black {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  -webkit-backdrop-filter: blur(17.5px) !important;
+          backdrop-filter: blur(17.5px) !important;
+  border-radius: 8px !important;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: rgba(22, 22, 22, 0.5);
+  border: 1px solid rgba(46, 235, 167, 0.29);
+}
+
 #dashboard {
   width: 100%;
   min-height: 100vh;
@@ -12,12 +25,9 @@
   color: #ececec;
 }
 
-.nft {
-  width: 190px;
-  height: 290px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.yourNFT {
+  margin-top: 100px;
+  border: 1px solid rgba(46, 235, 167, 0.29);
 }
 
 .gold {
@@ -70,17 +80,36 @@
   font-size: 20px;
   font-weight: 700;
 }
-.top .balance {
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.top #balance {
-  font-size: 20px;
-}
 .top a {
   color: #ececec;
+  font-weight: 500;
+}
+
+.balance {
+  position: absolute;
+  z-index: 5;
+  left: 20px;
+  top: -20px;
+  padding: 10px 20px;
+}
+.balance p:first-child {
+  font-size: 20px;
+  background: linear-gradient(270deg, #8cd4e1 0%, #c4a7df 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.balance #balance {
+  margin-top: 15px;
+  font-size: 40px;
+  color: #d8d8d8;
+}
+.balance p:last-child {
+  margin-top: 8px;
+}
+
+.you_own {
+  font-size: 24px;
   font-weight: 500;
 }
 
@@ -180,7 +209,7 @@ aside.active div span {
   font-size: 14px;
   font-family: "Inter";
   border-radius: 8px;
-  padding: 10px;
+  padding: 30px;
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -188,7 +217,32 @@ aside.active div span {
 }
 .yourNFT img {
   margin-top: 15px;
-  width: 200px;
+  width: 180px;
+}
+
+.mini {
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
+  height: 300px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.mini h1 {
+  font-size: 18px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.fa-circle-arrow-right {
+  position: absolute;
+  z-index: 10;
+  right: 15px;
+  top: 15px;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  font-size: 25px;
 }
 
 .light .yourNFT {
@@ -221,6 +275,12 @@ aside.active div span {
   height: 280px;
   overflow-y: auto;
   padding-right: 20px;
+}
+
+.container_fares_mini {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .flight_box {
@@ -278,13 +338,10 @@ aside.active div span {
 
 #space {
   width: 91%;
-  max-height: 76vh;
-  background-color: rgba(32, 32, 32, 0.7);
   margin-left: 100px;
   border-radius: 10px;
   margin-top: -30px;
   padding: 20px;
-  overflow: auto;
 }
 
 *::-webkit-scrollbar-track {
@@ -363,16 +420,22 @@ aside.active div span {
   width: 100%;
   margin-top: 15px;
 }
-.mainDashBox #wallet {
+
+#wallet {
   background-color: #3f3f3f;
   border-radius: 8px;
   padding: 8px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   justify-content: center;
+}
+
+#walletbox {
+  width: 100%;
+  padding: 10px;
 }
 
 .dashInp {

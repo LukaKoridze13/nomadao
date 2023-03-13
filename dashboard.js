@@ -29,6 +29,16 @@ const DASHBOARD = document.querySelector(".home");
 const Navigation = document.querySelector("nav ul");
 const EXPAND = document.querySelector("#expand");
 const EXPAND_ICON = document.querySelector(".icon-expand");
+const BALANCE_BOX = document.querySelector(".balance");
+
+document.querySelector('#market_open').addEventListener('click',()=>{
+  document.querySelectorAll('li')[4].click()
+})
+document.querySelector('#travel_open').addEventListener('click',()=>{
+  document.querySelectorAll('li')[6].click()
+})
+
+
 const pages = [
   {
     name: "Dashboard",
@@ -72,16 +82,15 @@ const pages = [
   },
 ];
 
+
 EXPAND.addEventListener("click", () => {
   if (ASIDE.classList.contains("active")) {
     ASIDE.classList.remove("active");
-    TOP.style.paddingLeft = "120px";
     SPACE.style.marginLeft = "100px";
     SPACE.style.width = "91%";
     EXPAND_ICON.style.transform = "rotate(0deg)";
   } else {
     ASIDE.classList.add("active");
-    TOP.style.paddingLeft = "240px";
     SPACE.style.marginLeft = "215px";
     SPACE.style.width = "calc(91% - 115px)";
     EXPAND_ICON.style.transform = "rotate(180deg)";
@@ -98,7 +107,7 @@ function setBalance(num) {
       document.getElementById("balance").innerText = "$ " + before;
       before++;
     } else if (before > num) {
-      document.getElementById("balance").innerText = "$ " + before;
+      document.getElementById("balance").innerText = "$" + before;
       before--;
     } else {
       document.getElementById("balance").innerText = "$ " + num;
@@ -144,6 +153,7 @@ function drawFlightsForSale() {
       box.append(location, date, price, purchase);
       flight.low && box.classList.add("low");
       document.querySelector(".container_fares").appendChild(box);
+
       box.classList.add("flight_box");
       span.style.marginLeft = "10px";
 
@@ -250,9 +260,11 @@ function start() {
   localStorage.getItem("Nomadao_Balance") === null && localStorage.setItem("Nomadao_Balance", 3000);
   document.querySelector(".yourNFT").classList.add(localStorage.getItem("Nomadao_Token"));
   document.querySelector(".you_own_img").src = "./Images/" + localStorage.getItem("Nomadao_Token") + ".png";
-  document.querySelector(".you_own").innerText = localStorage.getItem("Nomadao_Token").toUpperCase() + " NFT";
-  document.getElementById("balance").innerText = "$ " + Number(BALANCE);
-  document.querySelector("#wallet span").innerText = localStorage.getItem("Nomadao_Address")
+  let nft = localStorage.getItem("Nomadao_Token");
+  nft = nft.charAt(0).toUpperCase() + nft.slice(1);
+  document.querySelector(".you_own").innerText = nft + " NFT";
+  document.getElementById("balance").innerText = "$" + Number(BALANCE);
+  document.querySelector("#wallet span").innerText = localStorage.getItem("Nomadao_Address");
   drawFlightsForSale();
   drawOwnedFlights();
   document.getElementById("sign_out").addEventListener("click", () => {
