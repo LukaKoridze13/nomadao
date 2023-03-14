@@ -30,13 +30,10 @@ const Navigation = document.querySelector("nav ul");
 const EXPAND = document.querySelector("#expand");
 const EXPAND_ICON = document.querySelector(".icon-expand");
 const BALANCE_BOX = document.querySelector(".balance");
+const OPENVERIFY =  document.getElementById('open_verify')
+const VERIFY =  document.getElementById('verify')
 
-document.querySelector('#market_open').addEventListener('click',()=>{
-  document.querySelectorAll('li')[4].click()
-})
-document.querySelector('#travel_open').addEventListener('click',()=>{
-  document.querySelectorAll('li')[6].click()
-})
+
 
 
 const pages = [
@@ -82,7 +79,9 @@ const pages = [
   },
 ];
 
-
+OPENVERIFY.addEventListener('click',()=>{
+  VERIFY.style.display = 'block'
+})
 EXPAND.addEventListener("click", () => {
   if (ASIDE.classList.contains("active")) {
     ASIDE.classList.remove("active");

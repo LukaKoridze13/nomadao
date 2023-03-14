@@ -1300,7 +1300,7 @@ footer .footer_logo {
   #bookingForm {
     width: 270px;
     padding: 20px;
-    bottom: 35%;
+    bottom: 26%;
   }
   #bookingForm .top {
     width: 270px;
@@ -1355,11 +1355,11 @@ footer .footer_logo {
   }
   .landing .content .socials {
     top: auto;
-    bottom: 22%;
+    bottom: 16%;
   }
   .landing .content .see_more {
     top: auto;
-    bottom: 14%;
+    bottom: 10%;
   }
   #bookingForm .inner .hotel div input[type=date] {
     width: 194px;

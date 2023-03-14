@@ -13,6 +13,7 @@
   height: fit-content;
   background: rgba(22, 22, 22, 0.5);
   border: 1px solid rgba(46, 235, 167, 0.29);
+  padding: 10px;
 }
 
 #dashboard {
@@ -23,15 +24,12 @@
   font-size: 16px;
   padding: 20px;
   color: #ececec;
+  background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(0, 70, 98, 0.3744) 0%, rgba(0, 0, 0, 0) 100%), #202020;
 }
 
 .yourNFT {
   margin-top: 100px;
   border: 1px solid rgba(46, 235, 167, 0.29);
-}
-
-.gold {
-  background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(243, 238, 166, 0.78) 0%, rgba(0, 0, 0, 0) 100%), #202020;
 }
 
 .yourNFT.gold {
@@ -41,12 +39,10 @@
           backdrop-filter: blur(19px);
 }
 
-.silver,
 .yourNFT.silver {
   background: radial-gradient(167.12% 330.48% at 110.66% 129.39%, rgba(238, 241, 240, 0.78) 0%, rgba(0, 0, 0, 0) 100%), #202020;
 }
 
-.bronze,
 .yourNFT.bronze {
   background: radial-gradient(165.63% 327.53% at 109.17% 115.38%, rgba(185, 159, 145, 0.3588) 0%, rgba(0, 0, 0, 0) 100%), #202020;
 }
@@ -221,7 +217,6 @@ aside.active div span {
 }
 
 .mini {
-  width: 100%;
   padding: 20px;
   margin-top: 20px;
   position: relative;
@@ -336,12 +331,27 @@ aside.active div span {
   gap: 20px;
 }
 
+.cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 #space {
   width: 91%;
   margin-left: 100px;
   border-radius: 10px;
   margin-top: -30px;
   padding: 20px;
+}
+
+.mrktimg {
+  width: 40%;
+}
+.mrktimg img {
+  width: 100%;
 }
 
 *::-webkit-scrollbar-track {
@@ -448,6 +458,11 @@ aside.active div span {
 }
 .dashInp:focus {
   outline: none;
+}
+
+button.dashInp:hover {
+  background-color: #ececec;
+  color: #202020;
 }
 
 .personal_details {
@@ -586,7 +601,7 @@ input[type=search] {
   display: flex;
 }
 
-.deposit button {
+.pay {
   border: none;
   padding: 10px 90px;
   font-size: 16px;
@@ -633,11 +648,12 @@ input[type=search] {
   font-weight: 500;
 }
 
-.statistics .table-wrapper {
+.table-wrapper {
   margin: 10px 70px 70px;
   box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
 }
-.statistics .fl-table {
+
+.fl-table {
   border-radius: 5px;
   font-size: 16px;
   font-weight: normal;
@@ -648,33 +664,40 @@ input[type=search] {
   white-space: nowrap;
   background: rgba(117, 117, 117, 0.5);
 }
-.statistics .fl-table td,
-.statistics .fl-table th {
+
+.fl-table td,
+.fl-table th {
   text-align: center;
   padding: 8px;
 }
-.statistics th {
+
+th {
   font-weight: 500;
 }
-.statistics td {
+
+td {
   padding: 20px !important;
 }
-.statistics tr {
+
+tr {
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.312);
 }
-.statistics tr:last-child {
+tr:last-child {
   border: none;
 }
-.statistics tbody tr:hover {
+
+tbody tr:hover {
   background: linear-gradient(104.45deg, rgb(20, 99, 131) 5.01%, rgb(40, 202, 143) 96.35%);
 }
-.statistics thead {
+
+thead {
   border-bottom: 2px solid rgba(255, 255, 255, 0.353);
 }
-.statistics .fl-table td {
+
+.fl-table td {
   font-size: 16px;
 }
-.statistics .fl-table td:last-child {
+.fl-table td:last-child {
   border: none;
 }/*# sourceMappingURL=dashboard.css.map */
