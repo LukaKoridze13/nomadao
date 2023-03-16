@@ -101,11 +101,14 @@ header li.active {
   font-weight: 600;
   position: relative;
 }
+header li.active a {
+  color: #fe7c31;
+}
 header li.active::after {
   content: "";
   width: 100%;
   height: 4px;
-  background: #fe7c31;
+  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
   position: absolute;
   left: 0px;
   bottom: -10px;
@@ -122,7 +125,7 @@ header .buyNFT {
   border: none;
 }
 header .buyNFT:hover {
-  background-image: linear-gradient(100deg, #166b8c, rgba(46, 235, 167, 0.76), #fe7c31, rgba(46, 235, 167, 0.76), #166b8c);
+  background-image: linear-gradient(100deg, #166b8c, rgba(46, 235, 167, 0.76), #fe7c31, rgb(46, 235, 166), #166b8c);
   background-size: 200%;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -158,6 +161,11 @@ header .drop_down_activated img {
   font-family: "Gemunu Libre";
   font-size: 26px;
   font-weight: 700;
+}
+#logo h1 {
+  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header_active {
@@ -254,9 +262,10 @@ header .drop_down_activated img {
 #hotelsmap {
   display: block;
   margin: 100px auto;
-  width: 50%;
-  aspect-ratio: 1/0.6;
+  width: 70%;
+  aspect-ratio: 1/0.5;
   border-radius: 20px;
+  border: 10px solid #166a8c;
 }
 
 .hotelname {
@@ -289,6 +298,7 @@ header .drop_down_activated img {
   }
 }
 .landing {
+  transition: filter 1s;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -410,6 +420,7 @@ header .drop_down_activated img {
   bottom: 55%;
   z-index: 10;
   animation: nomadao 1.4s linear 1 forwards;
+  transition: all 1.4s linear;
 }
 .landing .background .mountain {
   position: absolute;
@@ -436,6 +447,20 @@ header .drop_down_activated img {
   left: 0px;
   z-index: 2;
   transition: all 2s;
+}
+
+.dark .landing .background h1 {
+  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: #ececec 1px 0 1px;
+}
+
+.landing .background h1 {
+  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
 }
 
 @keyframes blur {
@@ -1029,6 +1054,10 @@ footer .footer_logo {
 
 #dashboard {
   display: none;
+}
+
+#shrink {
+  filter: brightness(0) blur(50px);
 }
 
 @keyframes spin {

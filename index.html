@@ -50,7 +50,6 @@
     <!-- Web3 js -->
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <!-- Google Map API -->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJy_tHL--Kl3oNz5m1LReJ82S3HkngogA&callback=initMap"></script>
     <script>
       window.addEventListener("load", () => {
         if (localStorage.getItem("Nomadao_Theme") === null) {
@@ -430,7 +429,10 @@
         </div>
       </footer>
     </div>
+    <script src="./handleScroll.js"></script>
     <script src="./main.js" type="module"></script>
     <script src="./map.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJy_tHL--Kl3oNz5m1LReJ82S3HkngogA&callback=initMap"></script>
+
   </body>
 </html>

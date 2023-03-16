@@ -66,8 +66,7 @@ function createMarkers() {
     const marker = new google.maps.Marker({
       position: hotel.location,
       map: map,
-      title: hotel.name,
-      icon: { url: `./images/hotel${i}.png`, scaledSize: new google.maps.Size(100, 100) },
+      icon: { url: `./images/hotel${i}.png`, scaledSize: new google.maps.Size(60, 60) },
     });
     marker.addListener("click", () => {
       map.setZoom(15);
