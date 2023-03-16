@@ -4,7 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <!-- SEO -->
+    <title>Nomadao - Decentralized Web3 Traveling Hub</title>
+    <meta name="description" content="Nomadao is a decentralized web3 traveling hub that offers access to a unique set of features, including NFTs, tokens, metaverse, and more. We store hotel data on the blockchain, making it accessible to everyone." />
+    <meta name="keywords" content="Nomadao, decentralized, web3, traveling hub, NFT, token, metaverse, blockchain, hotel data" />
+    <meta name="author" content="Nomadao Team" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nomadao.xyz/" />
+    <meta property="og:title" content="Nomadao - Decentralized Web3 Traveling Hub" />
+    <meta property="og:description" content="Nomadao is a decentralized web3 traveling hub that offers access to a unique set of features, including NFTs, tokens, metaverse, and more." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nomadao.xyz/" />
+    <meta property="og:image" content="https://nomadao.xyz/images/nomadao-logo.png" />
+    <meta name="twitter:title" content="Nomadao - Decentralized Web3 Traveling Hub" />
+    <meta name="twitter:description" content="Nomadao is a decentralized web3 traveling hub that offers access to a unique set of features, including NFTs, tokens, metaverse, and more." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://nomadao.xyz/" />
+    <meta name="twitter:image" content="https://nomadao.xyz/images/nomadao-logo.png" />
     <!-- Favicon -->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./Images/favicon/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./Images/favicon/apple-touch-icon-114x114.png" />
@@ -33,7 +49,8 @@
     <script src="https://kit.fontawesome.com/97a57dac33.js" crossorigin="anonymous"></script>
     <!-- Web3 js -->
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <title>NOMADAO</title>
+    <!-- Google Map API -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJy_tHL--Kl3oNz5m1LReJ82S3HkngogA&callback=initMap"></script>
     <script>
       window.addEventListener("load", () => {
         if (localStorage.getItem("Nomadao_Theme") === null) {
@@ -104,6 +121,7 @@
               </div>
             </li>
             <li><a href="#about_us">About us</a></li>
+            <li><a href="#our_partners">Partners</a></li>
             <li><a href="#home">User Panel</a></li>
           </ul>
         </nav>
@@ -304,6 +322,7 @@
             <img src="./Images/hotel13.png" alt="Partner" />
           </div>
         </div>
+        <div id="hotelsmap"></div>
       </section>
       <section id="featured">
         <h3 class="sectionTitle">Featured In</h3>
@@ -412,5 +431,6 @@
       </footer>
     </div>
     <script src="./main.js" type="module"></script>
+    <script src="./map.js"></script>
   </body>
 </html>

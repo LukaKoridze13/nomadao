@@ -251,6 +251,19 @@ header .drop_down_activated img {
   font-weight: 200;
 }
 
+#hotelsmap {
+  display: block;
+  margin: 100px auto;
+  width: 50%;
+  aspect-ratio: 1/0.6;
+  border-radius: 20px;
+}
+
+.hotelname {
+  color: #202020;
+  font-weight: 600;
+}
+
 .menuOpen {
   display: none;
 }
@@ -636,7 +649,7 @@ header .drop_down_activated img {
 }
 
 #about_us {
-  margin-top: 100px;
+  padding-top: 100px;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -655,7 +668,7 @@ header .drop_down_activated img {
 }
 
 #our_partners {
-  margin-top: 100px;
+  padding-top: 100px;
   overflow: hidden;
 }
 #our_partners .sectionTitle {

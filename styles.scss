@@ -22,9 +22,9 @@ $gradient: linear-gradient(100deg, #166b8c, rgba(46, 235, 167, 0.76), #fe7c31, r
   color: $black;
   font-size: 10px;
   position: relative;
-  background-image: url(./Images/left_1.png), url(./Images/left_2.png), url(./Images/left_3.png) ,url(./Images/right_1.png), url(./Images/right_2.png), url(./Images/right_3.png);
+  background-image: url(./Images/left_1.png), url(./Images/left_2.png), url(./Images/left_3.png), url(./Images/right_1.png), url(./Images/right_2.png), url(./Images/right_3.png);
   background-size: 33vw;
-  background-position: left 110vh, left 320vh, left 587vh, right 26vh, right 220vh,right 440vh;
+  background-position: left 110vh, left 320vh, left 587vh, right 26vh, right 220vh, right 440vh;
   background-repeat: no-repeat;
 }
 .dark .container {
@@ -40,6 +40,14 @@ li,
 i {
   cursor: pointer;
   color: $white;
+}
+@mixin gradientText() {
+  background: -webkit-linear-gradient($blue, $orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@mixin gradient() {
+  background: -webkit-linear-gradient($blue, $orange);
 }
 // SCROLLBAR
 html::-webkit-scrollbar-track {
@@ -262,6 +270,18 @@ header {
     color: $white;
     font-weight: 200;
   }
+}
+// map
+#hotelsmap {
+  display: block;
+  margin: 100px auto;
+  width: 50%;
+  aspect-ratio: 1/0.6;
+  border-radius: 20px;
+}
+.hotelname {
+  color: $black;
+  font-weight: 600;
 }
 .menuOpen {
   display: none;
@@ -656,7 +676,7 @@ header {
 }
 // About Us
 #about_us {
-  margin-top: 100px;
+  padding-top: 100px;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -675,7 +695,7 @@ header {
 }
 // Our Partners
 #our_partners {
-  margin-top: 100px;
+  padding-top: 100px;
   overflow: hidden;
   .sectionTitle {
     text-align: center;
@@ -843,16 +863,16 @@ header {
     }
   }
 }
-.dark #roadmap{
+.dark #roadmap {
   .phase {
-    button{
+    button {
       color: $white;
     }
     h4 {
       color: $white;
     }
-    li{
-      color:$white
+    li {
+      color: $white;
     }
   }
 }
@@ -909,7 +929,6 @@ header {
   p {
     color: $white;
   }
-  
 }
 
 // Footer
@@ -1013,14 +1032,14 @@ footer {
 }
 
 // Panel
-#panel{
+#panel {
   width: 300px;
   height: 200px;
   position: absolute;
   z-index: 100000;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -1030,23 +1049,24 @@ footer {
   display: none;
   padding: 10px;
   gap: 20px;
-  #close_panel{
+  #close_panel {
     position: absolute;
     right: 15px;
     top: 15px;
   }
-  .fa-spinner{
+  .fa-spinner {
     display: none;
     animation: spin 3s linear infinite;
   }
-  
 }
-#dashboard{
+#dashboard {
   display: none;
 }
 
 @keyframes spin {
-  to{transform: rotate(360deg);}
+  to {
+    transform: rotate(360deg);
+  }
 }
 #metamask {
   border-radius: 8px;
@@ -1064,21 +1084,19 @@ footer {
   img {
     width: 25px;
   }
-  
 }
-#alert{
+#alert {
   color: $white;
   display: none;
-  font-family: 'Inter';
+  font-family: "Inter";
   text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  a{
+  a {
     color: $orange;
   }
-  
 }
 @media (max-width: 1320px) {
   #about_us {
@@ -1116,12 +1134,12 @@ footer {
       }
     }
   }
-  #subscribe{
+  #subscribe {
     flex-direction: column;
-    button{
+    button {
       position: static;
     }
-    p{
+    p {
       font-size: 26px;
     }
   }
