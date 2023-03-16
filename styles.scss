@@ -131,9 +131,8 @@ header {
   li.active {
     font-weight: 600;
     position: relative;
-    a{
+    a {
       color: $orange;
-
     }
     &::after {
       content: "";
@@ -491,7 +490,6 @@ header {
     @include gradientText3();
     text-shadow: $white 1px 0 1px;
   }
-  
 }
 
 .landing .background h1 {
@@ -638,6 +636,55 @@ header {
 }
 
 // Project
+#services {
+  position: relative;
+  .wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 50px;
+  }
+  i,
+  p {
+    color: $black;
+  }
+  .service-box {
+    width: 200px;
+    &:nth-child(odd) {
+      margin-top: 70px;
+    }
+    p {
+      width: 100%;
+      text-align: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 20px;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 80%;
+        bottom: -10px;
+        left: 10%;
+        border-bottom: 1px solid white;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+.dark #services {
+  i,
+  p {
+    color: $white;
+  }
+}
 .projectSection {
   width: 100%;
   overflow: hidden;
@@ -652,7 +699,9 @@ header {
     text-align: center;
     font-size: 35px;
     font-weight: 600;
-    color: $orange;
+    & > span {
+      @include gradientText3();
+    }
     text-transform: uppercase;
   }
   h2 {
@@ -662,6 +711,7 @@ header {
     text-transform: uppercase;
     span {
       font-weight: 700;
+      @include gradientText3();
     }
   }
   p {
@@ -1061,7 +1111,32 @@ footer {
     }
   }
 }
-
+.moveLeft {
+  animation: moveLeft 0.2s linear 1 forwards;
+}
+.moveLeft10 {
+  animation: moveLeft10 0.2s linear 1 forwards;
+}
+@keyframes moveLeft {
+  100% {
+    margin-left: 0px;
+  }
+}
+@keyframes moveLeft10 {
+  100% {
+    margin-left: 10px;
+  }
+}
+#animatedText {
+  width: 360px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 35px;
+  font-weight: 600;
+  @include gradientText3();
+}
 // Panel
 #panel {
   width: 300px;
@@ -1093,7 +1168,7 @@ footer {
 #dashboard {
   display: none;
 }
-#shrink{
+#shrink {
   filter: brightness(0) blur(50px);
 }
 @keyframes spin {

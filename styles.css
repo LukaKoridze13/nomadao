@@ -601,6 +601,53 @@ header .drop_down_activated img {
   transform: translateY(50%);
 }
 
+#services {
+  position: relative;
+}
+#services .wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 50px;
+}
+#services i,
+#services p {
+  color: #202020;
+}
+#services .service-box {
+  width: 200px;
+}
+#services .service-box:nth-child(odd) {
+  margin-top: 70px;
+}
+#services .service-box p {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+#services .service-box p::after {
+  position: absolute;
+  content: "";
+  width: 80%;
+  bottom: -10px;
+  left: 10%;
+  border-bottom: 1px solid white;
+}
+#services .service-box img {
+  width: 100%;
+}
+
+.dark #services i,
+.dark #services p {
+  color: #ececec;
+}
+
 .projectSection {
   width: 100%;
   overflow: hidden;
@@ -616,8 +663,12 @@ header .drop_down_activated img {
   text-align: center;
   font-size: 35px;
   font-weight: 600;
-  color: #fe7c31;
   text-transform: uppercase;
+}
+.projectSection .sectionHeading > span {
+  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .projectSection h2 {
   width: -moz-fit-content;
@@ -628,6 +679,9 @@ header .drop_down_activated img {
 }
 .projectSection h2 span {
   font-weight: 700;
+  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .projectSection p {
   width: 600px;
@@ -1021,6 +1075,37 @@ footer .footer_logo {
 }
 .dark footer .footer_logo {
   background-image: url(../Images/logo.png);
+}
+
+.moveLeft {
+  animation: moveLeft 0.2s linear 1 forwards;
+}
+
+.moveLeft10 {
+  animation: moveLeft10 0.2s linear 1 forwards;
+}
+
+@keyframes moveLeft {
+  100% {
+    margin-left: 0px;
+  }
+}
+@keyframes moveLeft10 {
+  100% {
+    margin-left: 10px;
+  }
+}
+#animatedText {
+  width: 360px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 35px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #panel {
