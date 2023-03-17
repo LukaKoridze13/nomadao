@@ -108,7 +108,7 @@ header li.active::after {
   content: "";
   width: 100%;
   height: 4px;
-  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
+  background-color: #fe7c31;
   position: absolute;
   left: 0px;
   bottom: -10px;
@@ -185,6 +185,22 @@ header .drop_down_activated img {
 }
 .header_active nav .buyNFT {
   display: block;
+}
+
+#getaccess {
+  position: fixed;
+  bottom: 2%;
+  left: calc(50% - 110px);
+  transform: translateX(-50%);
+  z-index: 5000;
+  padding: 10px 50px;
+  color: #202020;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "Gemunu Libre";
+  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
+  border: none;
+  border-radius: 16px;
 }
 
 .burger_menu {
@@ -602,21 +618,45 @@ header .drop_down_activated img {
 }
 
 #services {
+  justify-content: center;
   position: relative;
 }
 #services .wrapper {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
+  flex-wrap: wrap;
   gap: 30px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 #services i,
 #services p {
   color: #202020;
 }
 #services .service-box {
+  cursor: pointer;
   width: 200px;
+  height: 450px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#services .service-box .bg-image {
+  position: relative;
+  flex-grow: 1;
+  width: 200px;
+  height: 380px;
+}
+#services .service-box .bg-image img {
+  width: 200px;
+  height: 380px;
+}
+#services .service-box .bg-image img:first-child {
+  width: 96%;
+  height: 98%;
+  margin: 2%;
+  border-radius: 20px;
 }
 #services .service-box:nth-child(odd) {
   margin-top: 70px;
@@ -637,15 +677,24 @@ header .drop_down_activated img {
   width: 80%;
   bottom: -10px;
   left: 10%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #202020;
 }
 #services .service-box img {
+  width: 100%;
+}
+#services .service-box .absol {
+  position: absolute;
+  left: 0px;
+  top: 0px;
   width: 100%;
 }
 
 .dark #services i,
 .dark #services p {
   color: #ececec;
+}
+.dark #services .service-box p::after {
+  border-bottom: 1px solid #ececec;
 }
 
 .projectSection {
@@ -708,19 +757,24 @@ header .drop_down_activated img {
 }
 
 .sectionTitle {
-  color: #fe7c31;
   font-weight: 600;
   font-size: 48px;
   font-family: "Inter";
   text-transform: uppercase;
 }
+.sectionTitle span {
+  background: -webkit-linear-gradient(180deg, #166a8c, rgb(46, 235, 166), #fe7c31);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .sectionParagraph {
   color: #202020;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 500;
   margin-top: 64px;
   font-family: "Inter";
+  text-align: center;
 }
 
 .dark .sectionParagraph {
@@ -791,52 +845,33 @@ header .drop_down_activated img {
 #featured .cont img {
   width: 280px;
 }
-#featured .featured_card {
-  display: flex;
-  position: relative;
-  width: 90%;
-  max-width: 427px;
-  padding: 16px;
-  background: white;
-  border-radius: 24px;
-  gap: 21px;
-}
-#featured .featured_card::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  bottom: -10px;
-  left: -10px;
-  right: -10px;
-  background: linear-gradient(104.45deg, #166b8c 5.01%, rgba(46, 235, 167, 0.76) 51.63%, #fe7c31 96.36%);
-  z-index: -1;
-  border-radius: 24px;
-}
-#featured .featured_card > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px;
-}
-#featured .featured_card h4 {
-  font-family: "Inter";
-  font-weight: 600;
-  font-size: 20px;
-}
-#featured .featured_card p {
-  font-family: "Inter";
-  font-weight: 500;
-  font-size: 14px;
-  margin-top: 16px;
-}
-#featured .featured_card button {
-  padding: 8px 10px;
-  border: 1px solid #000000;
+#featured .box {
+  padding: 30px;
+  padding-bottom: 10px;
+  background-color: #fe7c31;
   border-radius: 8px;
+}
+#featured .box * {
+  color: #202020;
+}
+#featured .box p {
+  width: 200px;
+  margin-top: 20px;
+  font-size: 18px;
   font-family: "Inter";
-  font-weight: 500;
-  font-size: 13px;
+}
+#featured .box button {
+  display: block;
+  margin: 20px auto;
+  width: 60%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #202020;
+  color: #ececec;
+}
+#featured .box img {
+  width: 150px;
 }
 
 #roadmap {
@@ -978,10 +1013,6 @@ header .drop_down_activated img {
   animation: float 2s linear infinite;
 }
 
-.dark #subscribe p {
-  color: #ececec;
-}
-
 footer {
   background: #ececec;
   margin-top: 90px;
@@ -1098,7 +1129,7 @@ footer .footer_logo {
 #animatedText {
   width: 360px;
   position: absolute;
-  top: 50px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 35px;
