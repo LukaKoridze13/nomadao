@@ -49,9 +49,9 @@ html::-webkit-scrollbar-thumb {
 }
 
 .bg-gradients {
-  background-image: url(./Images/Vector.png), url(./Images/Vector1.png), url(./Images/Vector2.png), url(./Images/Vector3.png), url(./Images/Vector2.png), url(./Images/Vector5.png), url(./Images/Vector6.png), url(./Images/Vector7.png);
-  background-size: 90vw;
-  background-position: left 0vh, right 120vh, left 200vh, right 300vh, left 400vh, right 500vh, left 600vh, right 700vh;
+  background-image: url(./Images/v-left.png), url(./Images/v-right.png), url(./Images/v-left.png), url(./Images/v-right.png), url(./Images/v-left.png), url(./Images/v-right.png), url(./Images/v-left.png), url(./Images/v-right.png);
+  background-size: 50vw 50vw;
+  background-position: left 0vh, right 100vh, left 200vh, right 290vh, left 390vh, right 480vh, left 600vh, right 700vh;
   background-repeat: no-repeat;
 }
 
@@ -1606,7 +1606,8 @@ footer .footer_logo {
     width: 90%;
     flex-direction: column;
   }
-  .wrap, .pic {
+  .wrap,
+  .pic {
     width: 100%;
     gap: 0px;
   }
@@ -1666,9 +1667,8 @@ footer .footer_logo {
     gap: 15px;
   }
   .bg-gradients {
-    background-image: url(./Images/main-bg.png);
-    background-position: top;
-    background-size: 100vw;
+    background-size: 80vw 80vw;
+    background-position: left 0vh, right 100vh, left 200vh, right 290vh, left 370vh, right 470vh, left 570vh, right 640vh;
     background-repeat: no-repeat;
   }
 }/*# sourceMappingURL=styles.css.map */
