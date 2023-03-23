@@ -286,7 +286,14 @@ header {
 .menuOpen {
   display: none;
 }
-
+.section-title {
+  font-size: 64px;
+  position: relative;
+  text-align: center;
+  color: $orange;
+  font-family: "Inter";
+  margin-top: 100px;
+}
 @keyframes gradients {
   0% {
     background-position: 0 0;
@@ -433,6 +440,7 @@ header {
       font-size: 12vw;
       color: #ececec;
       left: 50%;
+      text-shadow: 0px 0px 3px $black;
       transform: translateX(-50%);
       bottom: 55%;
       z-index: 10;
@@ -450,7 +458,7 @@ header {
     .sky {
       position: absolute;
       width: 300vw;
-      height: 60vh;
+      height: 80vh;
       top: 0px;
       left: 0px;
       transition: all 2s;
@@ -605,6 +613,134 @@ header {
     transform: translateY(50%);
   }
 }
+// Project
+.wrapper {
+  width: 100%;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  &:nth-child(odd) {
+    .aligner {
+      flex-direction: row-reverse;
+    }
+    .orange-bg {
+      transform: scaleX(-1);
+    }
+  }
+  .pic {
+    position: relative;
+  }
+  .orange-image {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    left: 10px;
+  }
+}
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  * {
+    font-family: "Inter";
+  }
+}
+
+.aligner {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.wrap,
+.pic {
+  width: 35%;
+}
+
+.orange-bg {
+  width: 100%;
+}
+h3 {
+  font-size: 96px;
+  font-weight: 400;
+  color: #202020;
+}
+.title-head h3 span {
+  font-weight: 600;
+}
+.pretitle span {
+  font-weight: 300;
+  font-size: 24px;
+  color: #202020;
+}
+.pretitle {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.more {
+  outline: none;
+  border: none;
+  background: #fe7c31;
+  backdrop-filter: blur(8.5px);
+  height: 72px;
+  width: 100%;
+  border-radius: 8px;
+  color: #ececec;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 32px;
+  font-weight: 400;
+  font-size: 28px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.more .arrow {
+  margin-top: 4.5px;
+}
+.pic {
+  width: 25%;
+}
+.wrap {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 100px;
+}
+.more-mobile {
+  display: none;
+}
+
+@media (max-width: 1750px) {
+  .content .text .title-head h3 {
+    font-size: 60px;
+  }
+  .pic {
+    width: 25%;
+  }
+}
+@media (max-width: 1330px) {
+  .content .text .title-head h3 {
+    font-size: 50px;
+  }
+  .content .text .pretitle span {
+    font-size: 20px;
+  }
+  .content .text .pretitle {
+    margin-top: 5px;
+    width: 410px;
+  }
+  .more {
+    display: none;
+  }
+  .more-mobile {
+    display: flex;
+  }
+}
 
 // Project
 .projectSection {
@@ -676,21 +812,97 @@ header {
 }
 // About Us
 #about_us {
-  padding-top: 100px;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding-inline: 50px;
-  gap: 50px;
-  .left,
-  .right {
-    width: 40%;
-  }
-  .right {
-    text-align: right;
+  svg {
+    width: 677px;
+    height: 470px;
   }
   .left {
-    min-width: 670px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    align-self: stretch;
+    gap: 50px;
+  }
+  .right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  * {
+    font-family: "Inter";
+  }
+  width: 80%;
+  margin: 100px auto;
+  gap: 50px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  p {
+    font-size: 24px;
+    color: #202020;
+    font-weight: 400;
+  }
+  p span {
+    font-weight: 600;
+  }
+  .btn {
+    outline: none;
+    background: #fe7c31;
+    border-radius: 8px;
+    width: 330px;
+    height: 52px;
+    color: #ececec;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .dissapaer-resp {
+    display: block;
+  }
+  .appaer-resp {
+    display: none;
+  }
+  @media (max-width: 1308px) {
+    .about-us-section {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .left {
+      height: unset;
+    }
+    .dissapaer-resp {
+      display: none !important;
+    }
+    .appaer-resp {
+      display: block !important;
+    }
+    .left {
+      width: 100%;
+    }
+    .right {
+      width: 100%;
+      justify-content: center;
+      margin: 24px 0px;
+    }
+  }
+  @media (max-width: 778px) {
+    p {
+      font-size: 20px;
+    }
+    .btn {
+      width: 148px;
+      height: 35px;
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 650px) {
+    svg {
+      width: unset !important;
+      height: unset !important;
+    }
   }
 }
 // Our Partners
@@ -878,7 +1090,7 @@ header {
 }
 // subscribe
 #subscribe {
-  margin: 96px auto;
+  margin: 200px auto;
   width: fit-content;
   display: flex;
   justify-content: center;
@@ -1099,41 +1311,7 @@ footer {
   }
 }
 @media (max-width: 1320px) {
-  #about_us {
-    justify-content: space-around;
-    align-items: center;
-    padding-inline: 30px;
-    gap: 50px;
-    .left,
-    .right {
-      width: 50%;
-    }
-    .right {
-      text-align: right;
-    }
-    .left {
-      min-width: 350px;
-      width: 30%;
-      .top {
-        img:first-child {
-          display: none;
-        }
-      }
-      .bottom {
-        margin-top: 30px;
-
-        img:first-child {
-          display: none;
-        }
-        img {
-          float: right;
-        }
-      }
-      img {
-        width: 80%;
-      }
-    }
-  }
+  
   #subscribe {
     flex-direction: column;
     button {
@@ -1237,31 +1415,7 @@ footer {
       }
     }
   }
-  #about_us {
-    flex-direction: column-reverse;
-    .left,
-    .right {
-      width: 100%;
-      text-align: center;
-    }
-    .left {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      .bottom,
-      .top {
-        width: 250px;
-        height: 160px;
-        margin-top: 0px;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-  }
+  
 }
 @media (max-width: 680px) {
   header {
@@ -1341,20 +1495,7 @@ footer {
     }
   }
 }
-@media (max-width: 570px) {
-  #about_us {
-    .left {
-      .bottom {
-        display: none;
-      }
-      .top {
-        width: 70%;
-        height: auto;
-        margin: auto;
-      }
-    }
-  }
-}
+
 @media (max-width: 481px) {
   #bookingForm {
     width: 270px;
@@ -1426,18 +1567,8 @@ footer {
     width: 194px;
     color: $black;
   }
-  #about_us {
-    margin-top: 30px;
-  }
-  #about_us .left {
-    min-width: 0px;
-    .top {
-      width: 100%;
-    }
-    img {
-      width: 100%;
-    }
-  }
+  
+  
   .sectionTitle {
     font-size: 26px;
   }
@@ -1479,5 +1610,82 @@ footer {
     opacity: 1;
     bottom: 85%;
     font-size: 18vw;
+  }
+}
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 32px;
+  }
+  .wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .more{
+    display: none;
+  }
+  .more-mobile{
+    display: flex;
+  }
+  .aligner{
+    margin: 0 auto;
+    width: 90%;
+    flex-direction: column;
+  }
+  .wrap,.pic{
+    width: 100%;
+    gap: 0px;
+  }
+  #mod{
+    width: 80% !important;
+    height: 50% !important;
+  }
+  .content .text .pretitle span{
+    width: 80%;
+  }
+  .pic{
+    margin-top:20px;
+  }
+  .pretitle{
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+  .content .text .title-head h3{
+    font-size: 36px;
+    text-align: center;
+    width: 100%;
+  }
+  .more-mobile{
+    width: 50%;
+    font-size: 20px;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px 16px;
+    display: block;
+    margin: 30px auto;
+    .arrow{
+      display: none;
+    }
+  }
+  #about_us{
+    flex-direction: column;
+    gap: 0px;
+    margin: 20px auto;
+  }
+  #about_us .btn{
+    display: none !important;
+  }
+  #featured .cont img{
+    width: 120px;
+  }
+  #subscribe{
+    margin: 50px auto;
+  }
+  #our_partners .swiper-slide{
+    width: 120px;
+    height: 120px;
+  }
+  #our_partners .swiper{
+    height: 120px;
+    gap: 15px;
   }
 }

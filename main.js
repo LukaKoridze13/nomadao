@@ -68,7 +68,7 @@ document.querySelectorAll("li").forEach((li, i) => {
         el.classList.remove("active");
       });
       li.classList.add("active");
-      if (i == 3) {
+      if (i == 4) {
         if (localStorage.getItem("Nomadao_Login") === "true") {
           openDashboard();
         } else {
