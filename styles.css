@@ -277,7 +277,7 @@ header .drop_down_activated img {
   text-align: center;
   color: #fe7c31;
   font-family: "Inter";
-  margin-top: 100px;
+  padding-top: 100px;
 }
 
 @keyframes gradients {
@@ -1142,7 +1142,6 @@ h3 {
 }
 
 footer {
-  background: #ececec;
   margin-top: 90px;
   padding: 30px 0px;
   width: 100%;
@@ -1223,7 +1222,6 @@ footer .footer_logo {
 }
 
 .dark footer {
-  background-color: #3f3f3f;
   color: #ececec;
 }
 .dark footer .socials a i {
@@ -1669,7 +1667,7 @@ footer .footer_logo {
   }
   .bg-gradients {
     background-image: url(./Images/main-bg.png);
-    background-position: left top;
+    background-position: top;
     background-size: 100vw;
     background-repeat: no-repeat;
   }

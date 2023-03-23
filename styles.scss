@@ -294,7 +294,7 @@ header {
   text-align: center;
   color: $orange;
   font-family: "Inter";
-  margin-top: 100px;
+  padding-top: 100px;
 }
 @keyframes gradients {
   0% {
@@ -1163,7 +1163,6 @@ h3 {
 
 // Footer
 footer {
-  background: $white;
   margin-top: 90px;
   padding: 30px 0px;
   width: 100%;
@@ -1247,7 +1246,6 @@ footer {
 }
 .dark {
   footer {
-    background-color: #3f3f3f;
     color: $white;
     .socials a i {
       color: $white;
@@ -1708,7 +1706,7 @@ footer {
   }
   .bg-gradients{
     background-image: url(./Images/main-bg.png);
-    background-position: left top;
+    background-position: top;
     background-size: 100vw;
     background-repeat: no-repeat;
   }
