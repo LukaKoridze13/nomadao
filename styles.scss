@@ -741,6 +741,22 @@ h3 {
     display: flex;
   }
 }
+.dark{
+  .title-head h3{
+    color: $white;
+  }
+  .pretitle span{
+    color: $white;
+  }
+  #about_us p{
+    color: $white;
+  }
+  #featured .cont img{
+    padding: 10px;
+    background-color: $white;
+    border-radius: 8px;
+  }
+}
 
 // Project
 .projectSection {

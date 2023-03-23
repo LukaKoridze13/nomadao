@@ -720,6 +720,21 @@ h3 {
     display: flex;
   }
 }
+.dark .title-head h3 {
+  color: #ececec;
+}
+.dark .pretitle span {
+  color: #ececec;
+}
+.dark #about_us p {
+  color: #ececec;
+}
+.dark #featured .cont img {
+  padding: 10px;
+  background-color: #ececec;
+  border-radius: 8px;
+}
+
 .projectSection {
   width: 100%;
   overflow: hidden;
