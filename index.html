@@ -55,7 +55,7 @@
         if (localStorage.getItem("Nomadao_Theme") === null) {
           localStorage.setItem("Nomadao_Theme", "dark");
         }
-        const theme = localStorage.getItem("Nomadao_Theme") || "dark";
+        const theme = localStorage.getItem("Nomadao_Theme") || "light";
         document.body.className = "";
         document.body.classList.add(theme);
       });
