@@ -278,6 +278,7 @@ header .drop_down_activated img {
   color: #fe7c31;
   font-family: "Inter";
   padding-top: 100px;
+  font-weight: 700;
 }
 
 @keyframes gradients {
