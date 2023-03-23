@@ -210,7 +210,7 @@ window.addEventListener("click", (event) => {
   }
 });
 function themeChange() {
-  if (localStorage.getItem("Nomadao_Theme") === "light") {
+  if (localStorage.getItem("Nomadao_Theme") === "light" || localStorage.getItem("Nomadao_Theme") === null) {
     document.body.className = "";
     document.body.classList.add("light");
     // Theme Change Button
