@@ -10,10 +10,6 @@
   color: #202020;
   font-size: 10px;
   position: relative;
-  background-image: url(./Images/left_1.png), url(./Images/left_2.png), url(./Images/left_3.png), url(./Images/right_1.png), url(./Images/right_2.png), url(./Images/right_3.png);
-  background-size: 33vw;
-  background-position: left 110vh, left 320vh, left 587vh, right 26vh, right 220vh, right 440vh;
-  background-repeat: no-repeat;
 }
 
 .dark .container {
@@ -50,6 +46,13 @@ html::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #fe7c31;
+}
+
+.bg-gradients {
+  background-image: url(./Images/Vector.png), url(./Images/Vector1.png), url(./Images/Vector2.png), url(./Images/Vector3.png), url(./Images/Vector2.png), url(./Images/Vector5.png), url(./Images/Vector6.png), url(./Images/Vector7.png);
+  background-size: 90vw;
+  background-position: left 2vh, right 120vh, left 200vh, right 300vh, left 400vh, right 500vh, left 600vh, right 700vh;
+  background-repeat: no-repeat;
 }
 
 header {
@@ -1663,5 +1666,10 @@ footer .footer_logo {
   #our_partners .swiper {
     height: 120px;
     gap: 15px;
+  }
+  .bg-gradients {
+    background-image: url(./Images/main-bg.png);
+    background-size: 100vw;
+    background-repeat: no-repeat;
   }
 }/*# sourceMappingURL=styles.css.map */
