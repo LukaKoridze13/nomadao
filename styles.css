@@ -51,7 +51,7 @@ html::-webkit-scrollbar-thumb {
 .bg-gradients {
   background-image: url(./Images/Vector.png), url(./Images/Vector1.png), url(./Images/Vector2.png), url(./Images/Vector3.png), url(./Images/Vector2.png), url(./Images/Vector5.png), url(./Images/Vector6.png), url(./Images/Vector7.png);
   background-size: 90vw;
-  background-position: left 2vh, right 120vh, left 200vh, right 300vh, left 400vh, right 500vh, left 600vh, right 700vh;
+  background-position: left 0vh, right 120vh, left 200vh, right 300vh, left 400vh, right 500vh, left 600vh, right 700vh;
   background-repeat: no-repeat;
 }
 
@@ -1669,6 +1669,7 @@ footer .footer_logo {
   }
   .bg-gradients {
     background-image: url(./Images/main-bg.png);
+    background-position: left top;
     background-size: 100vw;
     background-repeat: no-repeat;
   }
