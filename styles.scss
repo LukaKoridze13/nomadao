@@ -8,7 +8,9 @@
 $gray200: #d8d8d8;
 $black: #202020;
 $white: #ececec;
+// $orange: #fe7c31;
 $orange: #fe7c31;
+
 $blue: #166a8c;
 
 $gradient: linear-gradient(100deg, #166b8c, rgba(46, 235, 167, 0.76), #fe7c31, rgba(46, 235, 167, 0.76), #166b8c);
@@ -323,6 +325,7 @@ header {
   height: 100vh;
   overflow: hidden;
   font-family: "Albert Sans", sans-serif;
+  box-shadow: 0px 0px 10px 5px $black;
   .content {
     position: absolute;
     z-index: 1;
@@ -960,9 +963,9 @@ h3 {
   }
   .cont {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding-inline: 20px;
-    gap: 30px;
+    gap: 100px;
     flex-wrap: wrap;
     padding-bottom: 10px;
     margin-top: 50px;
